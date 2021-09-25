@@ -10,7 +10,8 @@ jobs:
           submodules: true
 
       - uses: peaceiris/actions-hugo@v2
-
+      
+      - run: sed -i  -e 's_baseURL = "https://f3.anthus.ir/"_baseURL = "https://pipitsong.github.io/"_g' config.toml
       - run: hugo -D
 
       - run: |
