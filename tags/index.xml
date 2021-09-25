@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Blog</title>
-    <link>https://f3.anthus.ir/tags/</link>
+    <link>https://pipitsong.github.io/tags/</link>
     <description>Recent content in Tags on Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;3</copyright>
-    <lastBuildDate>Wed, 02 Jul 1400 02:00:00 +0000</lastBuildDate><atom:link href="https://f3.anthus.ir/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Jul 1400 02:00:00 +0000</lastBuildDate><atom:link href="https://pipitsong.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>about</title>
-      <link>https://f3.anthus.ir/tags/about/</link>
+      <link>https://pipitsong.github.io/tags/about/</link>
       <pubDate>Wed, 02 Jul 1400 02:00:00 +0000</pubDate>
       
-      <guid>https://f3.anthus.ir/tags/about/</guid>
+      <guid>https://pipitsong.github.io/tags/about/</guid>
       <description></description>
     </item>
     
