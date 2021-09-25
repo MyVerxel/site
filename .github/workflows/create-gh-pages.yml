@@ -1,0 +1,29 @@
+name: createGhPages
+on: [push]
+
+jobs:
+  TEST:
+    runs-on : ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+
+      - uses: peaceiris/actions-hugo@v2
+
+      - run: hudo -D
+
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          mv -f public/ /tmp/
+
+      - uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+      - run: |
+          git checkout gh-pages
+          cp -rf /tmp/public/* .
+          git add --all
+          git commit -m "add to gh-pages"
+          git push
