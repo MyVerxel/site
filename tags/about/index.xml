@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>about on Blog</title>
+    <link>https://f3.anthus.ir/tags/about/</link>
+    <description>Recent content in about on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;3</copyright>
+    <lastBuildDate>Wed, 02 Jul 1400 02:00:00 +0000</lastBuildDate><atom:link href="https://f3.anthus.ir/tags/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://f3.anthus.ir/about/</link>
+      <pubDate>Wed, 02 Jul 1400 02:00:00 +0000</pubDate>
+      
+      <guid>https://f3.anthus.ir/about/</guid>
+      <description>درباره من تجربیاتم رو مینویسم</description>
+    </item>
+    
+  </channel>
+</rss>
