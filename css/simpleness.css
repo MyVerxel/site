@@ -279,6 +279,7 @@ article h5, h6 {
 }
 
 .post-text .highlight pre {
+  direction: ltr;
   font-size: var(--code-font);
   font-size: 14px;
   overflow-x: auto;
