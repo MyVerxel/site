@@ -12,8 +12,8 @@ jobs:
       - uses: peaceiris/actions-hugo@v2
       
       # - run: sed -i  -e 's_baseURL = "https://f3.anthus.ir/"_baseURL = "https://pipitsong.github.io/"_g' config.toml
-      - run: sed -i  -e 's_baseURL = "https://f3.anthus.ir/"_baseURL = "https://f4.anthus.ir/"_g' config.toml
-      - run: hugo -D
+      # - run: sed -i  -e 's_baseURL = "https://f3.anthus.ir/"_baseURL = "https://f4.anthus.ir/"_g' config.toml
+      - run: hugo -D --config config.toml,config-git.toml
 
       - run: |
           git config user.name github-actions
