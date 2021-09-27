@@ -14,8 +14,9 @@
       <pubDate>Fri, 04 Jul 1400 23:31:53 +0000</pubDate>
       
       <guid>https://f4.anthus.ir/posts/golang/</guid>
-      <description>هر برنامه باید دارای یک پکیچ باشد :
-package main import ( &amp;#34;fmt&amp;#34; &amp;#34;math/rand&amp;#34; ) func main() { fmt.Println(&amp;#34;My favorite number is&amp;#34;, rand.Intn(10)) } </description>
+      <description>package: هر برنامه باید دارای یک پکیچ باشد :
+package main import ( &amp;#34;fmt&amp;#34; &amp;#34;math/rand&amp;#34; ) func main() { fmt.Println(&amp;#34;My favorite number is&amp;#34;, rand.Intn(10)) } Exported names :  نامهای اکسپورت شده فقط با حروف بزرگ شروع میشوند در غیر اینصورت اکسپورت نخواهند شد  `fmt.Println(math.pi)` // error `fmt.Println(math.Pi)` // correct  Functions: برای تعریف آرایه باید حتما براکت باز شدن در همان خز اول باشد
+func NAME ( [ARGs] ) [TYPE[,.</description>
     </item>
     
     <item>

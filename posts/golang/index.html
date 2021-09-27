@@ -54,7 +54,9 @@
       
       
       
-      6 s
+        1 min
+      
+      51 s
       &nbsp;
     
     
@@ -64,7 +66,8 @@
   
 
   <div class="post-text">
-    <p>هر برنامه باید دارای یک پکیچ باشد :</p>
+    <h3 id="package">package:</h3>
+<p>هر برنامه باید دارای یک پکیچ باشد :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
 
 <span style="color:#f92672">import</span> (
@@ -75,7 +78,134 @@
 <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
 	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;My favorite number is&#34;</span>, <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#ae81ff">10</span>))
 }
-</code></pre></div>
+</code></pre></div><h3 id="exported-names-">Exported names :</h3>
+<ul>
+<li>نامهای اکسپورت شده فقط با حروف بزرگ شروع میشوند</li>
+<li>در غیر اینصورت اکسپورت نخواهند شد</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#e6db74">`fmt.Println(math.pi)`</span> <span style="color:#75715e">// error
+</span><span style="color:#75715e"></span><span style="color:#e6db74">`fmt.Println(math.Pi)`</span> <span style="color:#75715e">// correct
+</span><span style="color:#75715e"></span>
+</code></pre></div><h3 id="functions">Functions:</h3>
+<p>برای تعریف آرایه باید حتما براکت باز شدن در همان خز اول باشد</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NAME</span> ( [<span style="color:#a6e22e">ARGs</span>] ) [<span style="color:#a6e22e">TYPE</span>[,<span style="color:#f92672">...</span>] ] { <span style="color:#75715e">// &lt;-mohem
+</span><span style="color:#75715e"></span>
+}
+
+
+<span style="color:#75715e">// ERROR:
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NAME</span> ( [<span style="color:#a6e22e">ARGs</span>] ) [<span style="color:#a6e22e">TYPE</span>[,<span style="color:#f92672">...</span>] ]
+{
+
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">x</span>    , <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>
+}
+</code></pre></div><p>بازگشت چند متغیری:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">swap</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">string</span>) (<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">string</span>) {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">swap</span>(<span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#e6db74">&#34;world&#34;</span>)
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>)
+}
+</code></pre></div><p>میتوانیم برای مقادیری که میخواهیم برگردانیم اسم تعریف کنمی:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">split</span>(<span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) {
+	<span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">sum</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">9</span>
+	<span style="color:#a6e22e">y</span> = <span style="color:#a6e22e">sum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">x</span>
+	<span style="color:#66d9ef">return</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">split</span>(<span style="color:#ae81ff">17</span>))
+}
+
+<span style="color:#75715e">// OUTPUT:
+</span><span style="color:#75715e">// 7 10
+</span></code></pre></div><h3 id="variables">Variables:</h3>
+<ul>
+<li>متغیر ها توسط کلیمه کلیدی <code>var</code> تعریف میشوند</li>
+<li>میتوانند در ابتدا دارای مقدار باشند</li>
+<li>اگر مقدار دهی اولیه نشوند خود زبان <code>go</code> به انها مقدار پیش فرض میدهد</li>
+<li>میتوان از عبارت <code>:=</code> برای ایجاد متغیر هم استفاده کرد</li>
+<li>اگر از <code>:=</code> استفاده کنیم به صورت خودکار با توجه به مقدار سمت راست نوع متغیر هم تعریف میشود</li>
+<li>در خارج از توابع حتما باید از <code>var</code> استفاده نماییم</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#75715e">//−−−−−−−−−−
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> <span style="color:#66d9ef">bool</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
+}
+
+<span style="color:#75715e">//−−−−−−−−−−
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> = <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;no!&#34;</span>
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
+}
+
+<span style="color:#75715e">//−−−−−−−−
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+	<span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3</span>
+	<span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;no!&#34;</span>
+
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
+}
+
+<span style="color:#75715e">//−−−−−−−
+</span><span style="color:#75715e"></span>
+
+
+</code></pre></div><ul>
+<li>برای اعداد مقدار پیش فرض ۰ است</li>
+<li>برای نوع بولی false</li>
+<li>برای رشته ها؛ رشته خالی</li>
+</ul>
+<h3 id="basic-types">Basic types</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">bool</span>
+
+<span style="color:#66d9ef">string</span>
+
+<span style="color:#66d9ef">int</span>  <span style="color:#66d9ef">int8</span>  <span style="color:#66d9ef">int16</span>  <span style="color:#66d9ef">int32</span>  <span style="color:#66d9ef">int64</span>
+<span style="color:#66d9ef">uint</span> <span style="color:#66d9ef">uint8</span> <span style="color:#66d9ef">uint16</span> <span style="color:#66d9ef">uint32</span> <span style="color:#66d9ef">uint64</span> <span style="color:#66d9ef">uintptr</span>
+
+<span style="color:#66d9ef">byte</span> <span style="color:#75715e">// alias for uint8
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">rune</span> <span style="color:#75715e">// alias for int32
+</span><span style="color:#75715e"></span>     <span style="color:#75715e">// represents a Unicode code point
+</span><span style="color:#75715e"></span>
+<span style="color:#66d9ef">float32</span> <span style="color:#66d9ef">float64</span>
+
+<span style="color:#66d9ef">complex64</span> <span style="color:#66d9ef">complex128</span>
+</code></pre></div><ul>
+<li>موع ‍<code>int</code> در سیستم های ۳۲ بیتی ۳۲ بیت و درسیتم های ۶۴ بیتی ۶۴ بیت است</li>
+</ul>
+<blockquote>
+<p>The int, uint, and uintptr types are usually 32 bits wide on 32-bit systems and 64 bits wide on 64-bit systems.</p>
+</blockquote>
+
   </div>
 
   <footer class="post-footer">
