@@ -441,7 +441,7 @@ a[low : high]
 ```
 
 ## مهم
-- تغییر بخشی از آیرایه اسلایس شده در ایاره اصلی هم تاثیر گذار است
+- تغییر بخشی از آرایه اسلایس شده در آرایه اصلی هم تاثیر گذار است
 - اسلایس ها هیچ داده رو ذخیره نمیکنند وفقط به عنوان یک زیر لابه و یا یک ارجاع به ارایه ها استفاده میشود
 
 ```go
@@ -450,3 +450,103 @@ primes := [6]int{2, 3, 5, 7, 11, 13}
 var s []int = primes[1:4]
 s[1] = 120 // change prime
 ```
+
+### Slice literals
+
+میتوانند همانند آرایه های بدون ذکر طول استفاده شوند
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	q := []int{2, 3, 5, 7, 11, 13}
+	fmt.Println(q)
+
+	r := []bool{true, false, true, true, false, true}
+	fmt.Println(r)
+
+	s := []struct {
+		i int
+		b bool
+	}{
+		{2, true},
+		{3, false},
+		{5, true},
+		{7, true},
+		{11, false},
+		{13, true},
+	}
+	fmt.Println(s)
+}
+
+```
+
+این نوع استفاده از اسلایس مجاز است:
+
+```go
+a[0:10]
+a[:10]
+a[0:]
+a[:]
+```
+
+### Slice length and capacity
+
+> The length of a slice is the number of elements it contains.
+
+> طول یک برش تعداد عناصر موجود در آن است.
+
+> The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice. 
+
+> ظرفیت یک برش تعداد عناصر موجود در آرایه زیرین است که از اولین عنصر در برش شمارش می شود.
+
+
+- `len` تعداد المنت ها
+- `cap` میشود تعداد المنت هایی که در زیر لایه ارایه موجود است. شمارش از اولین عنصر شروع میشود
+
+
+ اسلایس زیر دارای مقدار ‍`nil` میباشد
+  گخ به این معنا میباشد که هم `len`  و هم  `cap` ان صفر هستند
+```go
+var s []int
+```
+
+
+منبع [^1]
+
+[^1]: https://www.w3-farsi.com/posts/62895/slice-in-golang/
+
+در خط 6 کد بالا، ما یک آرایه به طول 11 کاراکتر ایجاد کرده ایم. یعنی تعداد عناصر آرایه 11 می باشد. در خط 8 یک برش یا Slice از این آرایه ایجاد کرده ایم. [4:7] در خط 11 بدین معنی است که از عنصری که دارای اندیس 6 تا عنصری که دارای اندیس 7 است را برش بزن. یعنی کاراکتر های t و h را جدا کن و در داخل یک Slice به نام sliceOfCharacter قرار بده. حال در خطوط 14-10 با استفاده از دو متد ()len و ()cap طول و ظرفیت آرایه و Slice را به دست آورده ایم. طول و ظرفیت آرایه به هم برابرند. یعنی تعداد عناصر آرایه مشخص کننده طول و ظرفیت آرایه است. اما در Slice وضع بدین منوال نیست. طول Slice تعداد عناصر Slice، که در مثال بالا 2 عنصر هستند، ولی ظرفیت Slice از جاییکه برش آرایه شروع شده است تا پایان آرایه می باشد یعنی 5. برای درک بهتر به شکل زیر توجه کنید:
+
+```go
+ package main
+
+ import "fmt"
+
+
+ func main() {
+
+     var arrayOfCharacter = [11] string { "s","l","i","c","e"," ","t","h","i","s","!" }
+
+ 
+
+     sliceOfCharacter := arrayOfCharacter[6:8]
+
+ 
+
+     fmt.Println("Capacity of array :", cap(arrayOfCharacter))
+
+     fmt.Println("Lenght   of array :", cap(arrayOfCharacter))
+
+     fmt.Println()
+
+     fmt.Println("Capacity of slice :", cap(sliceOfCharacter))
+
+     fmt.Println("Lenght   of slice :", len(sliceOfCharacter))
+
+ }
+ ```
+
+ ![Image of Yaktocat](slice-in-golang-01.png)
