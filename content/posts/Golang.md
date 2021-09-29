@@ -1,7 +1,7 @@
 ---
 title: "Golang"
 date: 1400-07-04T23:31:53
-draft: true
+draft: false
 ---
 
 ### package:
@@ -549,4 +549,4 @@ var s []int
  }
  ```
 
- ![Image of Yaktocat](slice-in-golang-01.png)
+ ![Image of Yaktocat](/image/slice-in-golang-01.png)
