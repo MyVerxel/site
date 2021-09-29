@@ -54,9 +54,9 @@
       
       
       
-        5 min
+        7 min
       
-      30 s
+      16 s
       &nbsp;
     
     
@@ -443,14 +443,103 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">low</span> : <span style="color:#a6e22e">high</span>]
 </code></pre></div><h2 id="مهم-1">مهم</h2>
 <ul>
-<li>تغییر بخشی از آیرایه اسلایس شده در ایاره اصلی هم تاثیر گذار است</li>
+<li>تغییر بخشی از آرایه اسلایس شده در آرایه اصلی هم تاثیر گذار است</li>
 <li>اسلایس ها هیچ داده رو ذخیره نمیکنند وفقط به عنوان یک زیر لابه و یا یک ارجاع به ارایه ها استفاده میشود</li>
 </ul>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">primes</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">6</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
 
 <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span> = <span style="color:#a6e22e">primes</span>[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">4</span>]
 <span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">120</span> <span style="color:#75715e">// change prime
-</span></code></pre></div>
+</span></code></pre></div><h3 id="slice-literals">Slice literals</h3>
+<p>میتوانند همانند آرایه های بدون ذکر طول استفاده شوند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">q</span>)
+
+	<span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">bool</span>{<span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#66d9ef">true</span>}
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">r</span>)
+
+	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">struct</span> {
+		<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
+		<span style="color:#a6e22e">b</span> <span style="color:#66d9ef">bool</span>
+	}{
+		{<span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">true</span>},
+		{<span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">false</span>},
+		{<span style="color:#ae81ff">5</span>, <span style="color:#66d9ef">true</span>},
+		{<span style="color:#ae81ff">7</span>, <span style="color:#66d9ef">true</span>},
+		{<span style="color:#ae81ff">11</span>, <span style="color:#66d9ef">false</span>},
+		{<span style="color:#ae81ff">13</span>, <span style="color:#66d9ef">true</span>},
+	}
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+}
+
+</code></pre></div><p>این نوع استفاده از اسلایس مجاز است:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span>]
+<span style="color:#a6e22e">a</span>[:<span style="color:#ae81ff">10</span>]
+<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>:]
+<span style="color:#a6e22e">a</span>[:]
+</code></pre></div><h3 id="slice-length-and-capacity">Slice length and capacity</h3>
+<blockquote>
+<p>The length of a slice is the number of elements it contains.</p>
+</blockquote>
+<blockquote>
+<p>طول یک برش تعداد عناصر موجود در آن است.</p>
+</blockquote>
+<blockquote>
+<p>The capacity of a slice is the number of elements in the underlying array, counting from the first element in the slice.</p>
+</blockquote>
+<blockquote>
+<p>ظرفیت یک برش تعداد عناصر موجود در آرایه زیرین است که از اولین عنصر در برش شمارش می شود.</p>
+</blockquote>
+<ul>
+<li><code>len</code> تعداد المنت ها</li>
+<li><code>cap</code> میشود تعداد المنت هایی که در زیر لایه ارایه موجود است. شمارش از اولین عنصر شروع میشود</li>
+</ul>
+<p>اسلایس زیر دارای مقدار ‍<code>nil</code> میباشد
+گخ به این معنا میباشد که هم <code>len</code>  و هم  <code>cap</code> ان صفر هستند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span>
+</code></pre></div><p>منبع <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>در خط 6 کد بالا، ما یک آرایه به طول 11 کاراکتر ایجاد کرده ایم. یعنی تعداد عناصر آرایه 11 می باشد. در خط 8 یک برش یا Slice از این آرایه ایجاد کرده ایم. [4:7] در خط 11 بدین معنی است که از عنصری که دارای اندیس 6 تا عنصری که دارای اندیس 7 است را برش بزن. یعنی کاراکتر های t و h را جدا کن و در داخل یک Slice به نام sliceOfCharacter قرار بده. حال در خطوط 14-10 با استفاده از دو متد ()len و ()cap طول و ظرفیت آرایه و Slice را به دست آورده ایم. طول و ظرفیت آرایه به هم برابرند. یعنی تعداد عناصر آرایه مشخص کننده طول و ظرفیت آرایه است. اما در Slice وضع بدین منوال نیست. طول Slice تعداد عناصر Slice، که در مثال بالا 2 عنصر هستند، ولی ظرفیت Slice از جاییکه برش آرایه شروع شده است تا پایان آرایه می باشد یعنی 5. برای درک بهتر به شکل زیر توجه کنید:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+ <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+
+
+ <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+
+     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arrayOfCharacter</span> = [<span style="color:#ae81ff">11</span>] <span style="color:#66d9ef">string</span> { <span style="color:#e6db74">&#34;s&#34;</span>,<span style="color:#e6db74">&#34;l&#34;</span>,<span style="color:#e6db74">&#34;i&#34;</span>,<span style="color:#e6db74">&#34;c&#34;</span>,<span style="color:#e6db74">&#34;e&#34;</span>,<span style="color:#e6db74">&#34; &#34;</span>,<span style="color:#e6db74">&#34;t&#34;</span>,<span style="color:#e6db74">&#34;h&#34;</span>,<span style="color:#e6db74">&#34;i&#34;</span>,<span style="color:#e6db74">&#34;s&#34;</span>,<span style="color:#e6db74">&#34;!&#34;</span> }
+
+ 
+
+     <span style="color:#a6e22e">sliceOfCharacter</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">arrayOfCharacter</span>[<span style="color:#ae81ff">6</span>:<span style="color:#ae81ff">8</span>]
+
+ 
+
+     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Capacity of array :&#34;</span>, cap(<span style="color:#a6e22e">arrayOfCharacter</span>))
+
+     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Lenght   of array :&#34;</span>, cap(<span style="color:#a6e22e">arrayOfCharacter</span>))
+
+     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>()
+
+     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Capacity of slice :&#34;</span>, cap(<span style="color:#a6e22e">sliceOfCharacter</span>))
+
+     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Lenght   of slice :&#34;</span>, len(<span style="color:#a6e22e">sliceOfCharacter</span>))
+
+ }
+</code></pre></div><p><img src="/image/slice-in-golang-01.png" alt="Image of Yaktocat"></p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="https://www.w3-farsi.com/posts/62895/slice-in-golang/">https://www.w3-farsi.com/posts/62895/slice-in-golang/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+
   </div>
 
   <footer class="post-footer">
