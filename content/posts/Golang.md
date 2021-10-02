@@ -492,7 +492,9 @@ a[0:]
 a[:]
 ```
 
-### Slice length and capacity
+### Slice length and capacity [^2]
+
+[^2]: https://tour.golang.org/moretypes/11
 
 > The length of a slice is the number of elements it contains.
 
@@ -549,4 +551,218 @@ var s []int
  }
  ```
 
- ![Image of Yaktocat](/image/slice-in-golang-01.png)
+ ![slice in go](/image/slice-in-golang-01.png)
+
+### Creating a slice with make
+توسط تابع `make` هم میشود اسلایس ایحاد کرد
+
+```go
+b := make([]int, 0, 5) // len(b)=0, cap(b)=5
+```
+
+### slices of slice
+
+```go
+board := [][]string{
+	[]string{"_", "_", "_"},
+	[]string{"_", "_", "_"},
+	[]string{"_", "_", "_"},
+}
+
+// The players take turns.
+board[0][0] = "X"
+board[2][2] = "O"
+board[1][2] = "X"
+board[1][0] = "O"
+board[0][2] = "X"
+```
+
+### Appending to a slice
+
+```go
+var s []int
+s = append(s, 0)
+
+```
+
+### Range
+- کار همان `foreach` را میکند
+- در مورد اسلایس ها دو مقدار ایندکس و مقدار را برمیگرداند
+
+```go
+package main
+
+import "fmt"
+
+var pow = []int{1, 2, 4, 8, 16, 32, 64, 128}
+
+func main() {
+	for i, v := range pow {
+		fmt.Printf("2**%d = %d\n", i, v)
+	}
+}
+```
+
+اگر احتیاج به مقداری نداریم میتوانیم از `_` استفاده کنمی
+
+```go
+pow := make([]int, 10)
+
+for i, _ := range pow
+for _, value := range pow
+for i := range pow
+```
+
+### Maps
+
+- همان دیکشنری در پایتون
+- دارای مقدار و کلید 
+
+- بعد از ایجاد توسط `var` مپ دارای مقدار `nil` میباشد
+- اگر تلاش کنیم وقتی که مقدار `nil` دارد از آن استافده کنیم؛ دچار خطای `panic` میشویم
+- در نتیجه باید برای مقدار دهی اولیه از `make` استافده کرد
+
+> Map types are reference types, like pointers or slices, and so the value of m above is nil; it doesn’t point to an initialized map. A nil map behaves like an empty map when reading, but attempts to write to a nil map will cause a runtime panic; don’t do that. To initialize a map, use the built in make function
+
+```go
+
+map[ KEY_TYPE ] VALUE_TYPE
+
+
+/// ERROR
+
+var m map[string]Vertex
+//m = make(map[string]Vertex)
+m["Bell Labs"] = Vertex{
+	40.68433, -74.39967,
+}
+
+/// CORRECT
+
+var m map[string]Vertex
+m = make(map[string]Vertex)
+m["Bell Labs"] = Vertex{
+	40.68433, -74.39967,
+}
+
+/// CORRECT (without use var)
+
+m := make(map[string]Vertex)
+m["Bell Labs"] = Vertex{
+	40.68433, -74.39967,
+}
+
+```
+
+### Map literals
+
+ترکیب انواع مختلف داده ای
+
+```go
+package main
+
+import "fmt"
+
+type Vertex struct {
+	Lat, Long float64
+}
+
+var m = map[string]Vertex{
+	"Bell Labs": Vertex{
+		40.68433, -74.39967,
+	},
+	"Google": Vertex{
+		37.42202, -122.08408,
+	},
+}
+
+/*
+If the top-level type is just a type name, you can omit it from the elements of the literal. 
+
+var m = map[string]Vertex{
+	"Bell Labs": {40.68433, -74.39967},
+	"Google":    {37.42202, -122.08408},
+}
+*/
+
+func main() {
+	fmt.Println(m)
+}
+
+```
+
+- هر عضو `map` دو مقدرا برمیگرداند؛ اولی مقدار و دیگیری وضعیت
+- اگر `key` موجود بود که `elem` مثدار و در `ok` مثدار صحیح قرار میگیرد
+- در غیر این صورت مقدار `ok` برابر با `false` میشود
+
+```go
+elem, ok = m[key]
+```
+
+مثال:
+
+```go
+
+delete(m, "Answer")
+fmt.Println("The value:", m["Answer"])
+
+v, ok := m["Answer"]
+fmt.Println("The value:", v, "Present?", ok)
+
+/*
+The value: 0
+The value: 0 Present? false
+*/
+
+```
+
+### Function values
+
+```go
+ package main
+
+import (
+	"fmt"
+	"math"
+)
+
+func compute(fn func(float64, float64) float64) float64 {
+	return fn(3, 4)
+}
+
+func main() {
+	hypot := func(x, y float64) float64 {
+		return math.Sqrt(x*x + y*y)
+	}
+	fmt.Println(hypot(5, 12))
+
+	fmt.Println(compute(hypot))
+	fmt.Println(compute(math.Pow))
+}
+
+//--------------
+
+package main
+
+import "fmt"
+
+func adder() func(int) int {
+	sum := 0
+	return func(x int) int {
+		sum += x
+		return sum
+	}
+}
+
+func main() {
+	pos, neg := adder(), adder()
+	for i := 0; i < 10; i++ {
+		fmt.Println(
+			pos(i),
+			neg(-2*i),
+		)
+	}
+}
+```
+
+
