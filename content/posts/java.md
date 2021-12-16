@@ -9,7 +9,7 @@ draft: false
 ```java
 //filename Gg.java
 public class Gg{
-  public static void ( String[] args ) {
+  public static void main ( String[] args ) {
     ...
   }
 }
@@ -47,8 +47,21 @@ int number1;
 8. long
 
 # محاسبات
-- +
-- -
-- *
-- / 
-- % (mod)
+حرف ٪ به معنی باقیمانده است
+
+
+# کلاس
+
+```java
+public class G {
+  public static void method (){
+    ///code
+  }
+}
+public class caller {
+ public method void main (String[] args){
+   G gc = new G();
+  gc.method();
+ }
+}
+```
