@@ -59,9 +59,59 @@ public class G {
   }
 }
 public class caller {
- public method void main (String[] args){
+ public static void main (String[] args){
    G gc = new G();
   gc.method();
  }
 }
 ```
+# سازنده ها
+
+```java
+public class G {
+  private String ss;
+  public G (String str){
+    ss =str;
+  }
+}
+
+//
+G h = new G("text");
+....
+```
+
+# دستورات شرطی
+
+```java
+if ( condition )
+{
+
+}
+
+else if ( .. )
+{
+}
+
+else ( ... )
+{
+}
+
+cond > 6 ? 7 : 8 ;
+
+
+a > b
+a >= b
+a <= b
+a == b
+```
+
+اگر از if و else های تو در توی بدون آکولاد استفاده کنیم، دچار مشکل else سرگردان میشویم، برای مثال
+
+```java
+if (1)
+  if (2)
+    aaa
+  else
+   bbbb
+```
+در شرایط بالا else متعلق به if اولی خواهد شد! برای حل مشکل باید از اکولاد استفاده کنیم. 
