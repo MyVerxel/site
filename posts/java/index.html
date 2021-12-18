@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.90.1" />
+  <meta name="generator" content="Hugo 0.91.0" />
   <title> java | Blog </title>
   <meta name="description" content="A simple and concise hugo theme.">
   <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
@@ -54,7 +54,7 @@
       
       
       
-      28 s
+      58 s
       &nbsp;
     
     
@@ -101,12 +101,51 @@ System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span>
 </span><span style="color:#75715e"></span>  <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
 <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">caller</span> <span style="color:#f92672">{</span>
- <span style="color:#66d9ef">public</span> method <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
+ <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">){</span>
    G gc <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> G<span style="color:#f92672">();</span>
   gc<span style="color:#f92672">.</span><span style="color:#a6e22e">method</span><span style="color:#f92672">();</span>
  <span style="color:#f92672">}</span>
 <span style="color:#f92672">}</span>
-</code></pre></div>
+</code></pre></div><h1 id="سازنده-ها">سازنده ها</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">G</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">private</span> String ss<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">G</span> <span style="color:#f92672">(</span>String str<span style="color:#f92672">){</span>
+    ss <span style="color:#f92672">=</span>str<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">//
+</span><span style="color:#75715e"></span>G h <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> G<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;text&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">....</span>
+</code></pre></div><h1 id="دستورات-شرطی">دستورات شرطی</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span> condition <span style="color:#f92672">)</span>
+<span style="color:#f92672">{</span>
+
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span> <span style="color:#f92672">..</span> <span style="color:#f92672">)</span>
+<span style="color:#f92672">{</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">else</span> <span style="color:#f92672">(</span> <span style="color:#f92672">...</span> <span style="color:#f92672">)</span>
+<span style="color:#f92672">{</span>
+<span style="color:#f92672">}</span>
+
+cond <span style="color:#f92672">&gt;</span> 6 <span style="color:#f92672">?</span> 7 <span style="color:#f92672">:</span> 8 <span style="color:#f92672">;</span>
+
+
+a <span style="color:#f92672">&gt;</span> b
+a <span style="color:#f92672">&gt;=</span> b
+a <span style="color:#f92672">&lt;=</span> b
+a <span style="color:#f92672">==</span> b
+</code></pre></div><p>اگر از if و else های تو در توی بدون آکولاد استفاده کنیم، دچار مشکل else سرگردان میشویم، برای مثال</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>
+  <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>2<span style="color:#f92672">)</span>
+    aaa
+  <span style="color:#66d9ef">else</span>
+   bbbb
+</code></pre></div><p>در شرایط بالا else متعلق به if اولی خواهد شد! برای حل مشکل باید از اکولاد استفاده کنیم.</p>
+
   </div>
 
   <footer class="post-footer">
