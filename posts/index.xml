@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Blog</title>
+    <link>https://f4.anthus.ir/posts/</link>
+    <description>Recent content in Posts on Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>&lt;3</copyright>
+    <lastBuildDate>Thu, 25 Sep 1400 12:45:43 +0000</lastBuildDate><atom:link href="https://f4.anthus.ir/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>java</title>
+      <link>https://f4.anthus.ir/posts/java/</link>
+      <pubDate>Thu, 25 Sep 1400 12:45:43 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/java/</guid>
+      <description>شروع: //filename Gg.java public class Gg{ public static void main ( String[] args ) { ... } } خواندن از ورودی import java.util.Scanner; // program uses class Scanner Scanner input new Scanner(System.in); number1= input.nextInt (); نوشتن در خروجی System.out.print() System.out.println() System.out.printf( format , ...) تعریف متغیر int number1; اینها نوع اصلی هستند که باید به حروف کوچک نوشته شوند
+ int float double char boolean byte short long  محاسبات حرف ٪ به معنی باقیمانده است</description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>https://f4.anthus.ir/posts/golang/</link>
+      <pubDate>Fri, 04 Jul 1400 23:31:53 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/golang/</guid>
+      <description>package: هر برنامه باید دارای یک پکیچ باشد :
+package main import ( &amp;#34;fmt&amp;#34; &amp;#34;math/rand&amp;#34; ) func main() { fmt.Println(&amp;#34;My favorite number is&amp;#34;, rand.Intn(10)) } Exported names :  نامهای اکسپورت شده فقط با حروف بزرگ شروع میشوند در غیر اینصورت اکسپورت نخواهند شد  `fmt.Println(math.pi)` // error `fmt.Println(math.Pi)` // correct  Functions: برای تعریف آرایه باید حتما براکت باز شدن در همان خز اول باشد
+func NAME ( [ARGs] ) [TYPE[,.</description>
+    </item>
+    
+    <item>
+      <title>Vlang</title>
+      <link>https://f4.anthus.ir/posts/vlang/</link>
+      <pubDate>Thu, 03 Jul 1400 02:31:16 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/vlang/</guid>
+      <description>نصب : git clone https://github.com/vlang/v cd v make ساختار برنامه : fn main() { println(&amp;#39;hello world&amp;#39;) } comment: // ... /* ..... */ functions 1 : نوع متغیر بعد از اسم آن میآید
+fn NAME ( var TYPE ) TYPE { } توابع میتوانند اول فراخونی شوند و در ادامه تعریف شوند &amp;hellip;
+fn main() { println(add(77, 33)) println(sub(100, 50)) } fn add(x int, y int) int { return x + y } fn sub(x int, y int) int { return x - y } برگشت چند متغیری:</description>
+    </item>
+    
+    <item>
+      <title>بعداز تغییرات</title>
+      <link>https://f4.anthus.ir/posts/%D8%A8%D8%B9%D8%AF%D8%A7%D8%B2-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1%D8%A7%D8%AA/</link>
+      <pubDate>Wed, 02 Jul 1400 06:14:12 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/%D8%A8%D8%B9%D8%AF%D8%A7%D8%B2-%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1%D8%A7%D8%AA/</guid>
+      <description>کاستون کانفیگ برای تغییر URL اضافه شد</description>
+    </item>
+    
+    <item>
+      <title>شروع کار وبلاگ</title>
+      <link>https://f4.anthus.ir/posts/%D8%B4%D8%B1%D9%88%D8%B9-%DA%A9%D8%A7%D8%B1-%D9%88%D8%A8%D9%84%D8%A7%DA%AF/</link>
+      <pubDate>Wed, 02 Jul 1400 05:26:11 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/%D8%B4%D8%B1%D9%88%D8%B9-%DA%A9%D8%A7%D8%B1-%D9%88%D8%A8%D9%84%D8%A7%DA%AF/</guid>
+      <description>هم ازطریق سایت ورکل و هم از طریق خود گیتهاب این وبلاگ در دسترس است
+میتونید ورک فلو اینکار رو در گیتهاب پروژه ببینید</description>
+    </item>
+    
+    <item>
+      <title>نوشتار اول</title>
+      <link>https://f4.anthus.ir/posts/%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D9%86%D9%88%D8%B4%D8%AA%D8%A7%D8%B1/</link>
+      <pubDate>Wed, 02 Jul 1400 02:11:13 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/%D8%A7%D9%88%D9%84%DB%8C%D9%86-%D9%86%D9%88%D8%B4%D8%AA%D8%A7%D8%B1/</guid>
+      <description>اولین پست من برای شروع کار</description>
+    </item>
+    
+  </channel>
+</rss>
