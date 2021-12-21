@@ -72,105 +72,105 @@
 </ol>
 <h2 id="به-بزرگی-کوچکی-حروف-حساسیت-نیستند">به بزرگی کوچکی حروف حساسیت نیستند</h2>
 <p>امکان اینها ارایه هستند</p>
-<pre tabindex="0"><code>o open
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">o open
 c close
 h high
 l low
 v volume
-</code></pre><h1 id="آرایه-ها">آرایه ها</h1>
+</code></pre></div><h1 id="آرایه-ها">آرایه ها</h1>
 <p>از طریق براکت می‌توان مقداری را ست کرد ویا صدا زد</p>
-<pre tabindex="0"><code>a[0] = 33 //set
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">33</span> <span style="color:#f92672">//</span>set
 
-a[0] //get
-</code></pre><h2 id="مثال">مثال</h2>
-<pre tabindex="0"><code>MA( Close, 10 );
- IIf( H &gt; Ref(H,-1), MA(H,20), MA(C,20) );
-</code></pre><pre tabindex="0"><code>relational ( &lt;, &gt;, &lt;=, &gt;= )
-equality ( ==, != )
+a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">//</span>get
+</code></pre></div><h2 id="مثال">مثال</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">MA( Close, <span style="color:#ae81ff">10</span> );
+ IIf( H <span style="color:#f92672">&gt;</span> Ref(H,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), MA(H,<span style="color:#ae81ff">20</span>), MA(C,<span style="color:#ae81ff">20</span>) );
+</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">relational ( <span style="color:#f92672">&lt;</span>, <span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;=</span>, <span style="color:#f92672">&gt;=</span> )
+equality ( <span style="color:#f92672">==</span>, <span style="color:#f92672">!=</span> )
 
- bit-wise
-| 
-&amp;
+ bit<span style="color:#f92672">-</span>wise
+<span style="color:#f92672">|</span> 
+<span style="color:#f92672">&amp;</span>
  
  
 Logical operators:
 NOT
 AND
 OR
-</code></pre><p>عبارت زیر ولید است</p>
-<pre tabindex="0"><code>i = j = k = 0
-</code></pre><h1 id="محاسبات">محاسبات</h1>
-<pre tabindex="0"><code>+
--
-/
-*
-%
-^
-+=
--=
-/=
-*=
-%=
-^=
-&amp;=
-|=
-</code></pre><p>ساختار</p>
-<pre tabindex="0"><code>if ( CONDITION )
+</code></pre></div><p>عبارت زیر ولید است</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> j <span style="color:#f92672">=</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</code></pre></div><h1 id="محاسبات">محاسبات</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">+</span>
+<span style="color:#f92672">-</span>
+<span style="color:#f92672">/</span>
+<span style="color:#f92672">*</span>
+<span style="color:#f92672">%</span>
+<span style="color:#f92672">^</span>
+<span style="color:#f92672">+=</span>
+<span style="color:#f92672">-=</span>
+<span style="color:#f92672">/=</span>
+<span style="color:#f92672">*=</span>
+<span style="color:#f92672">%=</span>
+<span style="color:#f92672">^=</span>
+<span style="color:#f92672">&amp;=</span>
+<span style="color:#f92672">|=</span>
+</code></pre></div><p>ساختار</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> ( CONDITION )
 {
 
 }
 
-for( i = 0; i &lt; 10; i++ )
+<span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span> )
 {
 }
-</code></pre><hr>
-<pre tabindex="0"><code>typeof() operator
+</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">typeof() operator
 
-The typeof operator is used in the following way:
+The typeof operator <span style="color:#f92672">is</span> used <span style="color:#f92672">in</span> the following way:
 typeof (operand)
-The typeof operator returns a string indicating the type of the *unevaluated* operand.
+The typeof operator returns a string indicating the type of the <span style="color:#f92672">*</span>unevaluated<span style="color:#f92672">*</span> operand<span style="color:#f92672">.</span>
 
-Possible return values are:
+Possible <span style="color:#66d9ef">return</span> values are:
 
-&quot;undefined&quot; - identifier is not defined
+<span style="color:#e6db74">&#34;undefined&#34;</span> <span style="color:#f92672">-</span> identifier <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> defined
 
-&quot;number&quot; - operand represents a number (scalar)
+<span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#f92672">-</span> operand represents a number (scalar)
 
-&quot;array&quot; - operand represents an array
+<span style="color:#e6db74">&#34;array&#34;</span> <span style="color:#f92672">-</span> operand represents an array
 
-&quot;string&quot; - operand represents a string
+<span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#f92672">-</span> operand represents a string
 
-&quot;function&quot; - operand is a built-in function identifier
+<span style="color:#e6db74">&#34;function&#34;</span> <span style="color:#f92672">-</span> operand <span style="color:#f92672">is</span> a built<span style="color:#f92672">-</span><span style="color:#f92672">in</span> function identifier
 
-&quot;user function&quot; - operand is a user-defined function
+<span style="color:#e6db74">&#34;user function&#34;</span> <span style="color:#f92672">-</span> operand <span style="color:#f92672">is</span> a user<span style="color:#f92672">-</span>defined function
 
-&quot;object&quot; - operand represents COM object
+<span style="color:#e6db74">&#34;object&#34;</span> <span style="color:#f92672">-</span> operand represents COM object
 
-&quot;member&quot; - operand represents member function or property of COM object
+<span style="color:#e6db74">&#34;member&#34;</span> <span style="color:#f92672">-</span> operand represents member function <span style="color:#f92672">or</span> property of COM object
 
-&quot;handle&quot; - operand represents Windows handle
+<span style="color:#e6db74">&#34;handle&#34;</span> <span style="color:#f92672">-</span> operand represents Windows handle
 
-&quot;unknown&quot; - type of operand is unknown (should not happen)typeof operator allows among other things to detect undefined variables in the following way
-</code></pre><hr>
-<pre tabindex="0"><code>The unary operators (++ and --) are called “prefix” increment or decrement operators
-++
---
+<span style="color:#e6db74">&#34;unknown&#34;</span> <span style="color:#f92672">-</span> type of operand <span style="color:#f92672">is</span> unknown (should <span style="color:#f92672">not</span> happen)typeof operator allows among other things to detect undefined variables <span style="color:#f92672">in</span> the following way
+</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">The unary operators (<span style="color:#f92672">++</span> <span style="color:#f92672">and</span> <span style="color:#f92672">--</span>) are called <span style="color:#960050;background-color:#1e0010">“</span>prefix<span style="color:#960050;background-color:#1e0010">”</span> increment <span style="color:#f92672">or</span> decrement operators
+<span style="color:#f92672">++</span>
+<span style="color:#f92672">--</span>
 [] array element operator
-</code></pre><hr>
+</code></pre></div><hr>
 <h3 id="ثابت-barcount-تعداد-نهایی-کندلهایی-که-در-دسترس-داریم-را-بر-میگرداند">ثابت BarCount تعداد نهایی کندلهایی که در دسترس داریم را بر میگرداند</h3>
-<pre tabindex="0"><code>BarCount constant gives the number of bars in array (such as Close, High, Low, Open, Volume, etc). Array elements are numbered from 0 (zero) to BarCount-1. BarCount does NOT change as long as your formula continues execution, but it may change between executions when new bars are added, zoom factor is changed or symbol is changed.
-</code></pre><h1 id="matrix">matrix</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BarCount constant gives the number of bars <span style="color:#f92672">in</span> array (such <span style="color:#66d9ef">as</span> Close, High, Low, Open, Volume, etc)<span style="color:#f92672">.</span> Array elements are numbered <span style="color:#f92672">from</span> <span style="color:#ae81ff">0</span> (zero) to BarCount<span style="color:#f92672">-</span><span style="color:#ae81ff">1.</span> BarCount does NOT change <span style="color:#66d9ef">as</span> long <span style="color:#66d9ef">as</span> your formula continues execution, but it may change between executions when new bars are added, zoom factor <span style="color:#f92672">is</span> changed <span style="color:#f92672">or</span> symbol <span style="color:#f92672">is</span> changed<span style="color:#f92672">.</span>
+</code></pre></div><h1 id="matrix">matrix</h1>
 <p>یه ارایه دو بعدی است</p>
-<pre tabindex="0"><code>my_var_name = Matrix( rows, cols, initvalue);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_var_name <span style="color:#f92672">=</span> Matrix( rows, cols, initvalue);
 
 To access matrix elements, use:
 my_var_name[ row ][ col ];
 
 where
-row is a row index (0... number of rows-1)
-and
-col is a column index (0... number of columns-1)
-</code></pre><p>..</p>
+row <span style="color:#f92672">is</span> a row index (<span style="color:#ae81ff">0.</span><span style="color:#f92672">..</span> number of rows<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+<span style="color:#f92672">and</span>
+col <span style="color:#f92672">is</span> a column index (<span style="color:#ae81ff">0.</span><span style="color:#f92672">..</span> number of columns<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><p>..</p>
 
   </div>
 
