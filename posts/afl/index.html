@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.91.0" />
+  <title> Afl | Blog </title>
+  <meta name="description" content="A simple and concise hugo theme.">
+  <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
+  <link rel="canonical" href="https://f4.anthus.ir/posts/afl/">
+  <link rel="alternate" type="application/rss+xml" href="" title="Blog">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  
+</head>
+<body class="container">
+  <nav class="navigation">
+  <div class="nav-left">
+    
+    <div class="nav-item nav-title">
+      <a href="https://f4.anthus.ir/"> Blog</a>
+    </div>
+    <div class="nav-item nav-menu">
+      
+      <a href="/"> Home</a>
+      
+      <a href="/about/"> About</a>
+      
+    </div>
+  </div>
+  <div class="nav-item nav-right fontawesome">
+    
+    
+    
+  </div>
+</nav>
+
+  <div style="direction: rtl;">
+  	
+<article class="post">
+  <header class="post-header">
+    <h1 style="text-align: center;" >Afl</h1>
+    <div class="post-metadata">
+    
+    
+    
+    
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+      
+        1 min
+      
+      43 s
+      &nbsp;
+    
+    
+    </div>
+  </header>
+
+  
+
+  <div class="post-text">
+    <ol>
+<li>تمامی عبارت ها به سمی‌کالن بسته می‌شود</li>
+<li>از نقطه برای دسترسی به ابجکت مورد نظر استفاده میشود</li>
+</ol>
+<h2 id="به-بزرگی-کوچکی-حروف-حساسیت-نیستند">به بزرگی کوچکی حروف حساسیت نیستند</h2>
+<p>امکان اینها ارایه هستند</p>
+<pre tabindex="0"><code>o open
+c close
+h high
+l low
+v volume
+</code></pre><h1 id="آرایه-ها">آرایه ها</h1>
+<p>از طریق براکت می‌توان مقداری را ست کرد ویا صدا زد</p>
+<pre tabindex="0"><code>a[0] = 33 //set
+
+a[0] //get
+</code></pre><h2 id="مثال">مثال</h2>
+<pre tabindex="0"><code>MA( Close, 10 );
+ IIf( H &gt; Ref(H,-1), MA(H,20), MA(C,20) );
+</code></pre><pre tabindex="0"><code>relational ( &lt;, &gt;, &lt;=, &gt;= )
+equality ( ==, != )
+
+ bit-wise
+| 
+&amp;
+ 
+ 
+Logical operators:
+NOT
+AND
+OR
+</code></pre><p>عبارت زیر ولید است</p>
+<pre tabindex="0"><code>i = j = k = 0
+</code></pre><h1 id="محاسبات">محاسبات</h1>
+<pre tabindex="0"><code>+
+-
+/
+*
+%
+^
++=
+-=
+/=
+*=
+%=
+^=
+&amp;=
+|=
+</code></pre><p>ساختار</p>
+<pre tabindex="0"><code>if ( CONDITION )
+{
+
+}
+
+for( i = 0; i &lt; 10; i++ )
+{
+}
+</code></pre><hr>
+<pre tabindex="0"><code>typeof() operator
+
+The typeof operator is used in the following way:
+typeof (operand)
+The typeof operator returns a string indicating the type of the *unevaluated* operand.
+
+Possible return values are:
+
+&quot;undefined&quot; - identifier is not defined
+
+&quot;number&quot; - operand represents a number (scalar)
+
+&quot;array&quot; - operand represents an array
+
+&quot;string&quot; - operand represents a string
+
+&quot;function&quot; - operand is a built-in function identifier
+
+&quot;user function&quot; - operand is a user-defined function
+
+&quot;object&quot; - operand represents COM object
+
+&quot;member&quot; - operand represents member function or property of COM object
+
+&quot;handle&quot; - operand represents Windows handle
+
+&quot;unknown&quot; - type of operand is unknown (should not happen)typeof operator allows among other things to detect undefined variables in the following way
+</code></pre><hr>
+<pre tabindex="0"><code>The unary operators (++ and --) are called “prefix” increment or decrement operators
+++
+--
+[] array element operator
+</code></pre><hr>
+<h3 id="ثابت-barcount-تعداد-نهایی-کندلهایی-که-در-دسترس-داریم-را-بر-میگرداند">ثابت BarCount تعداد نهایی کندلهایی که در دسترس داریم را بر میگرداند</h3>
+<pre tabindex="0"><code>BarCount constant gives the number of bars in array (such as Close, High, Low, Open, Volume, etc). Array elements are numbered from 0 (zero) to BarCount-1. BarCount does NOT change as long as your formula continues execution, but it may change between executions when new bars are added, zoom factor is changed or symbol is changed.
+</code></pre><h1 id="matrix">matrix</h1>
+<p>یه ارایه دو بعدی است</p>
+<pre tabindex="0"><code>my_var_name = Matrix( rows, cols, initvalue);
+
+To access matrix elements, use:
+my_var_name[ row ][ col ];
+
+where
+row is a row index (0... number of rows-1)
+and
+col is a column index (0... number of columns-1)
+</code></pre>
+  </div>
+
+  <footer class="post-footer">
+    
+
+    
+
+    
+    
+  </footer>
+  
+  <div class="comments">
+  <div class="comments">
+
+
+
+</div>
+  </div>
+</article>
+
+  </div>
+  <div class="foot">
+  
+  &copy; 2019 - 2021 &#183;
+  <a href="/"> Blog </a> &#183;
+</div>
+</body>
+  <script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({container: document.getElementById('article')});
+</script>
+
+
+
+
+</html>
