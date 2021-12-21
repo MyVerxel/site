@@ -9,7 +9,7 @@ draft: false
 
 ##  به بزرگی کوچکی حروف حساسیت نیستند
 امکان اینها ارایه هستند
-```
+```python
 o open
 c close
 h high
@@ -20,19 +20,19 @@ v volume
 #  آرایه ها
 از طریق براکت می‌توان مقداری را ست کرد ویا صدا زد
 
-```
+```python
 a[0] = 33 //set
 
 a[0] //get
 ```
 ## مثال
 
-```
+```python
 MA( Close, 10 );
  IIf( H > Ref(H,-1), MA(H,20), MA(C,20) );
 ```
 
-```
+```python
 relational ( <, >, <=, >= )
 equality ( ==, != )
 
@@ -48,12 +48,12 @@ OR
 ```
 عبارت زیر ولید است
 
-```
+```python
 i = j = k = 0
 ```
 
 # محاسبات
-```
+```python
 +
 -
 /
@@ -72,7 +72,7 @@ i = j = k = 0
  ساختار
 
 
-```
+```python
 if ( CONDITION )
 {
 
@@ -87,7 +87,7 @@ for( i = 0; i < 10; i++ )
 ----
 
 
-```
+```python
 typeof() operator
 
 The typeof operator is used in the following way:
@@ -121,7 +121,7 @@ Possible return values are:
 ----
 
 
-```
+```python
 The unary operators (++ and --) are called “prefix” increment or decrement operators
 ++
 --
@@ -133,7 +133,7 @@ The unary operators (++ and --) are called “prefix” increment or decrement o
 ###   ثابت BarCount تعداد نهایی کندلهایی که در دسترس داریم را بر میگرداند
 
 
-```
+```python
 BarCount constant gives the number of bars in array (such as Close, High, Low, Open, Volume, etc). Array elements are numbered from 0 (zero) to BarCount-1. BarCount does NOT change as long as your formula continues execution, but it may change between executions when new bars are added, zoom factor is changed or symbol is changed.
 ```
 
@@ -142,7 +142,7 @@ BarCount constant gives the number of bars in array (such as Close, High, Low, 
 یه ارایه دو بعدی است
 
 
-```
+```python
 my_var_name = Matrix( rows, cols, initvalue);
 
 To access matrix elements, use:
