@@ -56,7 +56,7 @@
       
         2 min
       
-      0 s
+      24 s
       &nbsp;
     
     
@@ -181,7 +181,21 @@ ema( data , period )
 </code></pre></div><p>همچنین بدون iif من می‌توانیم شروط را پیاده سازی کنیم
 یک ارایه بر میگرداند که اگر شرط درست بود،مقدار یک در غیر اینصورت مقدار صفر</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> RSI(<span style="color:#ae81ff">14</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">70</span>;
-</code></pre></div>
+</code></pre></div><h1 id="valuewhen">ValueWhen</h1>
+<p><img src="/image/afl/valuewhen-1.gif" alt="slice in go"></p>
+<p>این تابع در صروتی که شرط بقرار باشد مقدار آرایه را برمیگرداند و آنرا حفظ میکند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">/*</span>
+If you run above code you will clearly see how ValueWhen picks 
+the value when condition <span style="color:#f92672">is</span> true <span style="color:#f92672">and</span> <span style="color:#960050;background-color:#1e0010">“</span>holds<span style="color:#960050;background-color:#1e0010">”</span> 
+it <span style="color:#66d9ef">for</span> all other bars (when condition <span style="color:#f92672">is</span> false)<span style="color:#f92672">.</span>
+<span style="color:#f92672">*/</span>
+
+ ValueWhen(EXPRESSION, ARRAY, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) 
+
+</code></pre></div><p>مقدار EXPRESSION یک ارایه با مقادیر صحیح یا غلط هستن
+در جایی که EXPRESSION صحیح باشد، مقدار متناظر آن در array برگردانده میشود
+و تا مقدار بعدی که EXPRESSION صحیح باشد آن مقدار نگه داری میشود</p>
+
   </div>
 
   <footer class="post-footer">
