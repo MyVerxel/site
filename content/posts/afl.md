@@ -154,4 +154,25 @@ and
 col is a column index (0... number of columns-1)
 ```
 
-..
+# توابع
+
+```python
+sqrt()
+rsi( period )
+macd()
+ema( data , period )
+
+```
+تابع iif یک تابع شرطی است که بر روی ارایه کار می‌کند
+
+
+```python
+dynamicrsi = IIf( Close > MA(C,10), RSI(9), RSI(14) );
+```
+
+همچنین بدون iif من می‌توانیم شروط را پیاده سازی کنیم
+یک ارایه بر میگرداند که اگر شرط درست بود،مقدار یک در غیر اینصورت مقدار صفر
+
+```python
+result = RSI(14) > 70;
+```
