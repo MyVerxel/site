@@ -178,6 +178,26 @@ result = RSI(14) > 70;
 ```
 
 # ValueWhen
+
+تکنیک های دیباگ [^1]
+
+کد زیر را ذخیره کرده و از قسمت انالایز سپس explorer کرده
+
+```python
+Filter = 1; // show all bars
+//
+m = MA( C, 10 );
+cond = Cross( C, m );
+bi = BarIndex();
+//
+AddColumn( C, "Close" );
+AddColumn( m, "Mov Avg" );
+AddColumn( cond, "Condition");
+AddColumn( bi, "BarIndex" );
+AddColumn( ValueWhen( cond, bi ), "ValueWhen( cond, BarIndex() )" );
+AddColumn( ValueWhen( cond, Close), "ValueWhen( cond, Close )" )
+```
+
  ![slice in go](/image/afl/valuewhen-1.gif)
  
  این تابع در صروتی که شرط بقرار باشد مقدار آرایه را برمیگرداند و آنرا حفظ میکند
@@ -199,5 +219,42 @@ it for all other bars (when condition is false).
  
  
  
+ # AddColumn
+ ```python
+  AddColumn( array, name,
+		format = 1.2, textColor = colorDefault,
+		bkgndColor = colorDefault, width = -1,
+		barchart = Null ) 
+ ```
  
+ یک ستون به قسمت انالایزر اضافه میکند که میتوانیم دیتاهای خود را در ان ببینیم [^2]
+ 
+برای اینکه دیتاها روی تمامی کندل ها نمایش داده شود باید مقدار filter را در ابتدا یک کنیم [^1]
+
+```python
+Filter = 1; // show all bars
+```
+ 
+ # BarIndex
+ شماره کندل را بر میگرداند [^3]
+ 
+ # LastValue
+ ```python
+  LastValue(ARRAY, lastmode = True ) 
+ ```
+ اخرین مقدار آرایه بر میگرداند [^4]
+ 
+ اگر اخرین مقداری وجود نداشته باشد صفر برمیگرداند
+ 
+ آخرین مقدار محاسبه شده آرایه مشخص شده را برمی گرداند. نتیجه این تابع را می توان به جای ثابت (NUMBER) در هر آرگومان تابع استفاده کرد.
+  
+اگر آخرین نوار آرایه تعریف نشده یا تهی باشد (به عنوان مثال، فقط 100 روز بارگیری شده است و آخرین مقدار میانگین متحرک 200 روزه را درخواست می کنید)، تابع lastvalue صفر را برمی گرداند.
+هشدار: از آنجایی که این تابع مقدار آخرین نوار آرایه را دریافت می کند، به فرمولی اجازه می دهد تا به آینده نگاه کند، اگر نوار فعلی آخرین مورد نباشد.
+ 
+  
+ 
+ [^4]: http://www.amibroker.com/guide/afl/lastvalue.html
+ [^1]: http://www.amibroker.com/kb/2014/09/29/debugging-techniques-part-1-exploration/
+ [^2]: https://www.amibroker.com/guide/afl/addcolumn.html
+ [^3]: http://www.amibroker.com/guide/afl/barindex.html
  
