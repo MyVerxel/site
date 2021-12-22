@@ -176,3 +176,28 @@ dynamicrsi = IIf( Close > MA(C,10), RSI(9), RSI(14) );
 ```python
 result = RSI(14) > 70;
 ```
+
+# ValueWhen
+ ![slice in go](/image/afl/valuewhen-1.gif)
+ 
+ این تابع در صروتی که شرط بقرار باشد مقدار آرایه را برمیگرداند و آنرا حفظ میکند
+ 
+```python
+/*
+If you run above code you will clearly see how ValueWhen picks 
+the value when condition is true and “holds” 
+it for all other bars (when condition is false).
+*/
+
+ ValueWhen(EXPRESSION, ARRAY, n = 1) 
+
+```
+ 
+ مقدار EXPRESSION یک ارایه با مقادیر صحیح یا غلط هستن
+ در جایی که EXPRESSION صحیح باشد، مقدار متناظر آن در array برگردانده میشود 
+ و تا مقدار بعدی که EXPRESSION صحیح باشد آن مقدار نگه داری میشود
+ 
+ 
+ 
+ 
+ 
