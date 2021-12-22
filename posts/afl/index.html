@@ -54,9 +54,9 @@
       
       
       
-        2 min
+        3 min
       
-      24 s
+      34 s
       &nbsp;
     
     
@@ -182,7 +182,21 @@ ema( data , period )
 یک ارایه بر میگرداند که اگر شرط درست بود،مقدار یک در غیر اینصورت مقدار صفر</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> RSI(<span style="color:#ae81ff">14</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">70</span>;
 </code></pre></div><h1 id="valuewhen">ValueWhen</h1>
-<p><img src="/image/afl/valuewhen-1.gif" alt="slice in go"></p>
+<p>تکنیک های دیباگ <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<p>کد زیر را ذخیره کرده و از قسمت انالایز سپس explorer کرده</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Filter <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span> show all bars
+<span style="color:#f92672">//</span>
+m <span style="color:#f92672">=</span> MA( C, <span style="color:#ae81ff">10</span> );
+cond <span style="color:#f92672">=</span> Cross( C, m );
+bi <span style="color:#f92672">=</span> BarIndex();
+<span style="color:#f92672">//</span>
+AddColumn( C, <span style="color:#e6db74">&#34;Close&#34;</span> );
+AddColumn( m, <span style="color:#e6db74">&#34;Mov Avg&#34;</span> );
+AddColumn( cond, <span style="color:#e6db74">&#34;Condition&#34;</span>);
+AddColumn( bi, <span style="color:#e6db74">&#34;BarIndex&#34;</span> );
+AddColumn( ValueWhen( cond, bi ), <span style="color:#e6db74">&#34;ValueWhen( cond, BarIndex() )&#34;</span> );
+AddColumn( ValueWhen( cond, Close), <span style="color:#e6db74">&#34;ValueWhen( cond, Close )&#34;</span> )
+</code></pre></div><p><img src="/image/afl/valuewhen-1.gif" alt="slice in go"></p>
 <p>این تابع در صروتی که شرط بقرار باشد مقدار آرایه را برمیگرداند و آنرا حفظ میکند</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">/*</span>
 If you run above code you will clearly see how ValueWhen picks 
@@ -195,6 +209,40 @@ it <span style="color:#66d9ef">for</span> all other bars (when condition <span s
 </code></pre></div><p>مقدار EXPRESSION یک ارایه با مقادیر صحیح یا غلط هستن
 در جایی که EXPRESSION صحیح باشد، مقدار متناظر آن در array برگردانده میشود
 و تا مقدار بعدی که EXPRESSION صحیح باشد آن مقدار نگه داری میشود</p>
+<h1 id="addcolumn">AddColumn</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> AddColumn( array, name,
+   	format <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.2</span>, textColor <span style="color:#f92672">=</span> colorDefault,
+   	bkgndColor <span style="color:#f92672">=</span> colorDefault, width <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
+   	barchart <span style="color:#f92672">=</span> Null ) 
+</code></pre></div><p>یک ستون به قسمت انالایزر اضافه میکند که میتوانیم دیتاهای خود را در ان ببینیم <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>برای اینکه دیتاها روی تمامی کندل ها نمایش داده شود باید مقدار filter را در ابتدا یک کنیم <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Filter <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span> show all bars
+</code></pre></div><h1 id="barindex">BarIndex</h1>
+<p>شماره کندل را بر میگرداند <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<h1 id="lastvalue">LastValue</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> LastValue(ARRAY, lastmode <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span> ) 
+</code></pre></div><p>اخرین مقدار آرایه بر میگرداند <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<p>اگر اخرین مقداری وجود نداشته باشد صفر برمیگرداند</p>
+<p>آخرین مقدار محاسبه شده آرایه مشخص شده را برمی گرداند. نتیجه این تابع را می توان به جای ثابت (NUMBER) در هر آرگومان تابع استفاده کرد.</p>
+<p>اگر آخرین نوار آرایه تعریف نشده یا تهی باشد (به عنوان مثال، فقط 100 روز بارگیری شده است و آخرین مقدار میانگین متحرک 200 روزه را درخواست می کنید)، تابع lastvalue صفر را برمی گرداند.
+هشدار: از آنجایی که این تابع مقدار آخرین نوار آرایه را دریافت می کند، به فرمولی اجازه می دهد تا به آینده نگاه کند، اگر نوار فعلی آخرین مورد نباشد.</p>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="http://www.amibroker.com/kb/2014/09/29/debugging-techniques-part-1-exploration/">http://www.amibroker.com/kb/2014/09/29/debugging-techniques-part-1-exploration/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://www.amibroker.com/guide/afl/addcolumn.html">https://www.amibroker.com/guide/afl/addcolumn.html</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="http://www.amibroker.com/guide/afl/barindex.html">http://www.amibroker.com/guide/afl/barindex.html</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4" role="doc-endnote">
+<p><a href="http://www.amibroker.com/guide/afl/lastvalue.html">http://www.amibroker.com/guide/afl/lastvalue.html</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
 
   </div>
 
