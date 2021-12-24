@@ -265,9 +265,153 @@ _TRACE ("MSG")
  هر جا از این کد استفاده کنیم پیام مورد نظر ما در صفحه چاپ خواهد شد
  
  
+ # backTest
  
+ بک تست یعنی بررسی گذشته بازار، چه دستی و چه با فرمول،، در اینجا بک تست به معنی نوشتن فرمول هست که نرم افزار توسط اون خرید و فروش رو انجام میده
+ و از سود و ضرر هایی که کردیم گزارش تعیه میکنه
  
+ توسط متغیرهایی که داره میتونم تعیین کنیم چه پوزیشنی رو میخواییم انتخاب کنیم
  
+ ```python
+ Buy
+ Sell
+
+ Short
+ Cover
+ 
+buy - "true" or 1 value opens long trade
+sell - "true" or 1 value closes long trade
+short - "true" or 1 value opens short trade
+cover - "true" or 1 value closes short trade
+ ```
+
+از دوتای اولی برای خرید و فروش اسپات اسفتاده میشه
+
+و از دوتای بعدی برای پوزیشین شورت یا فروش یا فیوچر فرم طور
+
+```python
+buyprice
+sellprice
+shortprice
+coverprice
+```
+
+و چهار متغیر یا آرایه بالا هم برای تعیین قیمت خرید و فروش استفاده میشوند
+
+
+# positionsize
+
+```python
+PositionSize = <size array>
+
+Now you can control dollar amount or percentage of portfolio that is invested into the trade
+
+    positive number define (dollar) amount that is invested into the trade for example:
+
+    PositionSize = 1000; // invest $1000 in every trade
+
+    negative numbers -100..-1 define percentage:
+    -100 gives 100% of current portfolio size,
+    -33 gives 33% of available equity for example:
+
+    PositionSize = -50; /* always invest only half of the current equity */
+
+    dynamic sizing example:
+
+    PositionSize = - 100 + RSI();
+
+    as RSI varies from 0..100 this will result in position depending on RSI values -> low values of RSI will result in higher percentage invested
+```
+
+تغیین میکنه چند درصد از موجودیم رو میخواییم سرمایه گذاری کنیم
+
+
+---
+
+![Stop Settings](/image/afl/w_settings3.gif)
+
+## Trailing stops
+This kind of stop is used to protect profits as it tracks your trade so each time a position value reaches a new high, the trailing stop is placed at a higher level. When the profit drops below the trailing stop level the position is closed. This mechanism is illustrated in the picture below (10% trailing stop is shown):
+
+![Trailing stops](/image/afl/22trailstop.gif)
+
+در تنظمات مقدار تریلینگ استاپ رو مشخص میکنه،
+
+برای مثال در عکس به میزان 10 درصد از HH  قرار میگیره تا سودمون از دست نرده
+
+# ApplyStop 
+more: [^5]
+
+از طریق این تابع میتوانیم تمامی stop هایی که در تصویر قبلی نشان داده شده و در تنظظیمات است را پیاده سازی کنیم
+
+```python
+ ApplyStop(
+	type,
+	mode,
+	amount,
+	exitatstop,
+	volatile = False,
+	ReEntryDelay = 0,
+	ValidFrom = 0,
+	ValidTo = -1 
+) 
+
+
+
+type =
+0 = stopTypeLoss - maximum loss stop,
+1 = stopTypeProfit - profit target stop,
+2 = stopTypeTrailing - trailing stop,
+3 = stopTypeNBar - N-bar stop 
+
+mode =
+0 - disable stop (stopModeDisable),
+1 - amount in percent (stopModePercent), or number of bars for N-bar stop (stopModeBars),
+2 - amount in points (stopModePoint);
+3 - amount in percent of profit (risk)
+
+amount =
+percent/point loss/profit trigger/risk amount.
+This could be a number (static stop level) or an array (dynamic stop level)
+
+ExitAtStop
+
+ExitAtStop = 0 - means check stops using only trade price and exit at regular trade price(1)
+(if you are trading on close it means that only close price will be checked for exits and exit will be done at close price)
+ExitAtStop = 1 - check High-Low prices and exit intraday on price equal to stop level on the same bar when stop was triggered
+ExitAtStop = 2 - check High-Low prices but exit NEXT BAR on regular trade price.
+
+
+```
+
+# Ref
+```python
+Ref( Close, -1)
+```
+
+آرایه را یک واحد شیفت میدهد
+
+
+# hhv , llv
+```python
+HHV(H,no);
+LLV(L,no);
+```
+
+بیشترین مقدار و کمترین مقدار آرایه در یک دوره که تعیین میکنیم
+
+یعنی همان max و یا min در یک دوره rolling شده هست
+
+
+
+
+```python
+dayofweek()
+month()
+```
+
+ 
+ [^5]: https://www.amibroker.com/guide/afl/applystop.html
  [^4]: http://www.amibroker.com/guide/afl/lastvalue.html
  [^1]: http://www.amibroker.com/kb/2014/09/29/debugging-techniques-part-1-exploration/
  [^2]: https://www.amibroker.com/guide/afl/addcolumn.html
