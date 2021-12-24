@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.0" />
+  <meta name="generator" content="Hugo 0.91.1" />
   <title> Afl | Blog </title>
   <meta name="description" content="A simple and concise hugo theme.">
   <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
@@ -54,9 +54,9 @@
       
       
       
-        3 min
+        6 min
       
-      49 s
+      32 s
       &nbsp;
     
     
@@ -232,7 +232,106 @@ it <span style="color:#66d9ef">for</span> all other bars (when condition <span s
 <p>برای دیدم لاگ در خود امی بروکی از قیمت وسندوز لاگ را فعال کنید</p>
 <p>سپس در صفحه لاگ راست کلیلک کنید و مدل هدنترنال لاگ را انتخاب کنید</p>
 <p>هر جا از این کد استفاده کنیم پیام مورد نظر ما در صفحه چاپ خواهد شد</p>
-<section class="footnotes" role="doc-endnotes">
+<h1 id="backtest">backTest</h1>
+<p>بک تست یعنی بررسی گذشته بازار، چه دستی و چه با فرمول،، در اینجا بک تست به معنی نوشتن فرمول هست که نرم افزار توسط اون خرید و فروش رو انجام میده
+و از سود و ضرر هایی که کردیم گزارش تعیه میکنه</p>
+<p>توسط متغیرهایی که داره میتونم تعیین کنیم چه پوزیشنی رو میخواییم انتخاب کنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Buy
+Sell
+
+Short
+Cover
+
+buy <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value opens long trade
+sell <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value closes long trade
+short <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value opens short trade
+cover <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value closes short trade
+</code></pre></div><p>از دوتای اولی برای خرید و فروش اسپات اسفتاده میشه</p>
+<p>و از دوتای بعدی برای پوزیشین شورت یا فروش یا فیوچر فرم طور</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">buyprice
+sellprice
+shortprice
+coverprice
+</code></pre></div><p>و چهار متغیر یا آرایه بالا هم برای تعیین قیمت خرید و فروش استفاده میشوند</p>
+<h1 id="positionsize">positionsize</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">PositionSize <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span>size array<span style="color:#f92672">&gt;</span>
+
+Now you can control dollar amount <span style="color:#f92672">or</span> percentage of portfolio that <span style="color:#f92672">is</span> invested into the trade
+
+    positive number define (dollar) amount that <span style="color:#f92672">is</span> invested into the trade <span style="color:#66d9ef">for</span> example:
+
+    PositionSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>; <span style="color:#f92672">//</span> invest <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">1000</span> <span style="color:#f92672">in</span> every trade
+
+    negative numbers <span style="color:#f92672">-</span><span style="color:#ae81ff">100.</span><span style="color:#f92672">.-</span><span style="color:#ae81ff">1</span> define percentage:
+    <span style="color:#f92672">-</span><span style="color:#ae81ff">100</span> gives <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span> of current portfolio size,
+    <span style="color:#f92672">-</span><span style="color:#ae81ff">33</span> gives <span style="color:#ae81ff">33</span><span style="color:#f92672">%</span> of available equity <span style="color:#66d9ef">for</span> example:
+
+    PositionSize <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">50</span>; <span style="color:#f92672">/*</span> always invest only half of the current equity <span style="color:#f92672">*/</span>
+
+    dynamic sizing example:
+
+    PositionSize <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span> RSI();
+
+    <span style="color:#66d9ef">as</span> RSI varies <span style="color:#f92672">from</span> <span style="color:#ae81ff">0..100</span> this will result <span style="color:#f92672">in</span> position depending on RSI values <span style="color:#f92672">-&gt;</span> low values of RSI will result <span style="color:#f92672">in</span> higher percentage invested
+</code></pre></div><p>تغیین میکنه چند درصد از موجودیم رو میخواییم سرمایه گذاری کنیم</p>
+<hr>
+<p><img src="/image/afl/w_settings3.gif" alt="Stop Settings"></p>
+<h2 id="trailing-stops">Trailing stops</h2>
+<p>This kind of stop is used to protect profits as it tracks your trade so each time a position value reaches a new high, the trailing stop is placed at a higher level. When the profit drops below the trailing stop level the position is closed. This mechanism is illustrated in the picture below (10% trailing stop is shown):</p>
+<p><img src="/image/afl/22trailstop.gif" alt="Trailing stops"></p>
+<p>در تنظمات مقدار تریلینگ استاپ رو مشخص میکنه،</p>
+<p>برای مثال در عکس به میزان 10 درصد از HH  قرار میگیره تا سودمون از دست نرده</p>
+<h1 id="applystop">ApplyStop</h1>
+<p>more: <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
+<p>از طریق این تابع میتوانیم تمامی stop هایی که در تصویر قبلی نشان داده شده و در تنظظیمات است را پیاده سازی کنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> ApplyStop(
+	type,
+	mode,
+	amount,
+	exitatstop,
+	volatile <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>,
+	ReEntryDelay <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+	ValidFrom <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+	ValidTo <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> 
+) 
+
+
+
+type <span style="color:#f92672">=</span>
+<span style="color:#ae81ff">0</span> <span style="color:#f92672">=</span> stopTypeLoss <span style="color:#f92672">-</span> maximum loss stop,
+<span style="color:#ae81ff">1</span> <span style="color:#f92672">=</span> stopTypeProfit <span style="color:#f92672">-</span> profit target stop,
+<span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> stopTypeTrailing <span style="color:#f92672">-</span> trailing stop,
+<span style="color:#ae81ff">3</span> <span style="color:#f92672">=</span> stopTypeNBar <span style="color:#f92672">-</span> N<span style="color:#f92672">-</span>bar stop 
+
+mode <span style="color:#f92672">=</span>
+<span style="color:#ae81ff">0</span> <span style="color:#f92672">-</span> disable stop (stopModeDisable),
+<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> amount <span style="color:#f92672">in</span> percent (stopModePercent), <span style="color:#f92672">or</span> number of bars <span style="color:#66d9ef">for</span> N<span style="color:#f92672">-</span>bar stop (stopModeBars),
+<span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> amount <span style="color:#f92672">in</span> points (stopModePoint);
+<span style="color:#ae81ff">3</span> <span style="color:#f92672">-</span> amount <span style="color:#f92672">in</span> percent of profit (risk)
+
+amount <span style="color:#f92672">=</span>
+percent<span style="color:#f92672">/</span>point loss<span style="color:#f92672">/</span>profit trigger<span style="color:#f92672">/</span>risk amount<span style="color:#f92672">.</span>
+This could be a number (static stop level) <span style="color:#f92672">or</span> an array (dynamic stop level)
+
+ExitAtStop
+
+ExitAtStop <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">-</span> means check stops using only trade price <span style="color:#f92672">and</span> exit at regular trade price(<span style="color:#ae81ff">1</span>)
+(<span style="color:#66d9ef">if</span> you are trading on close it means that only close price will be checked <span style="color:#66d9ef">for</span> exits <span style="color:#f92672">and</span> exit will be done at close price)
+ExitAtStop <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> check High<span style="color:#f92672">-</span>Low prices <span style="color:#f92672">and</span> exit intraday on price equal to stop level on the same bar when stop was triggered
+ExitAtStop <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> check High<span style="color:#f92672">-</span>Low prices but exit NEXT BAR on regular trade price<span style="color:#f92672">.</span>
+
+
+</code></pre></div><h1 id="ref">Ref</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Ref( Close, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</code></pre></div><p>آرایه را یک واحد شیفت میدهد</p>
+<h1 id="hhv--llv">hhv , llv</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">HHV(H,no);
+LLV(L,no);
+</code></pre></div><p>بیشترین مقدار و کمترین مقدار آرایه در یک دوره که تعیین میکنیم</p>
+<p>یعنی همان max و یا min در یک دوره rolling شده هست</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dayofweek()
+month()
+</code></pre></div><section class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
@@ -246,6 +345,9 @@ it <span style="color:#66d9ef">for</span> all other bars (when condition <span s
 </li>
 <li id="fn:4" role="doc-endnote">
 <p><a href="http://www.amibroker.com/guide/afl/lastvalue.html">http://www.amibroker.com/guide/afl/lastvalue.html</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5" role="doc-endnote">
+<p><a href="https://www.amibroker.com/guide/afl/applystop.html">https://www.amibroker.com/guide/afl/applystop.html</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
 </section>
