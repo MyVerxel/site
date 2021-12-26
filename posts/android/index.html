@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.91.2" />
+  <title> android | Blog </title>
+  <meta name="description" content="A simple and concise hugo theme.">
+  <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
+  <link rel="canonical" href="https://f4.anthus.ir/posts/android/">
+  <link rel="alternate" type="application/rss+xml" href="" title="Blog">
+  
+  
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+  
+</head>
+<body class="container">
+  <nav class="navigation">
+  <div class="nav-left">
+    
+    <div class="nav-item nav-title">
+      <a href="https://f4.anthus.ir/"> Blog</a>
+    </div>
+    <div class="nav-item nav-menu">
+      
+      <a href="/"> Home</a>
+      
+      <a href="/about/"> About</a>
+      
+    </div>
+  </div>
+  <div class="nav-item nav-right fontawesome">
+    
+    
+    
+  </div>
+</nav>
+
+  <div style="direction: rtl;">
+  	
+<article class="post">
+  <header class="post-header">
+    <h1 style="text-align: center;" >android</h1>
+    <div class="post-metadata">
+    
+      <time datetime="1400-10-04T00:00:27Z">10 04, 1400</time> &nbsp; 
+    
+    
+    
+    
+    
+      <i class="far fa-clock"></i>
+      
+      
+      
+      
+      58 s
+      &nbsp;
+    
+    
+    </div>
+  </header>
+
+  
+
+  <div class="post-text">
+    <p>اکتیوی ها از کلاس AppCompatActivity ارث میبرند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    TextView tv <span style="color:#f92672">;</span>
+    Button bt<span style="color:#f92672">;</span>
+</code></pre></div><p>متغیر های tv و bt از نوه تکست و دکمه هستند،</p>
+<h1 id="setcontentview">setContentView</h1>
+<p>نحتوای layout رو نشون میده که در فایل های xml هستند</p>
+<h1 id="نحوه-دسترسی-به-ریسورس-ها">نحوه دسترسی به ریسورس ها</h1>
+<p>در جا وا از سریق کلاس R</p>
+<p>و در xml از طریق @ و میتونیم به ریسوسرس دسترسی پیدا کنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">setContentView<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity_main</span><span style="color:#f92672">);</span>
+<span style="color:#75715e">//...............
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@string</span><span style="color:#f92672">/</span>textText
+</code></pre></div><p>در مورد اول در کد جاوا میگیم که از layout اکتوتی اصلی رو میخواییم</p>
+<p>و در مورد دوم میگیم برو به فایل strings و امتن اونی که اسمش textText هست رو بیار واسمون</p>
+<h1 id="id">id</h1>
+<p>برای ست کردن id به المنت از این طریق عمیل میکنیم</p>
+<p>و بعدا برای اضافه کردن خاصیت جدید به این المنت از طریق همین id باید اقدام کنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">android:id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/button&#34;</span>
+</code></pre></div><h1 id="findviewbyid">findViewById</h1>
+<p>وقتی میخواییم به خصوصیات به شی دسترسی داشته باشیم با ایتن تابع و از طریق ایدی که در مرحله قبل ست کردیم
+میتوانیم یک instance از شی را برگدانیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> com.example.ali.myapplication2<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> android.support.v7.app.AppCompatActivity<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.os.Bundle<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.view.View<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.widget.Button<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.widget.TextView<span style="color:#f92672">;</span>
+
+<span style="color:#f92672">import</span> org.w3c.dom.Text<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MainActivity</span> <span style="color:#66d9ef">extends</span> AppCompatActivity <span style="color:#66d9ef">implements</span> View<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span> <span style="color:#f92672">{</span>
+    TextView tv <span style="color:#f92672">;</span>
+    Button bt<span style="color:#f92672">;</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>Bundle savedInstanceState<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreate</span><span style="color:#f92672">(</span>savedInstanceState<span style="color:#f92672">);</span>
+        setContentView<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity_main</span><span style="color:#f92672">);</span>
+        bt <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">button</span> <span style="color:#f92672">);</span>
+        bt<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnClickListener</span><span style="color:#f92672">(</span> <span style="color:#66d9ef">this</span> <span style="color:#f92672">);</span>
+        tv <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">textView</span> <span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>View view<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        tv<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;dsdsdsd&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
+  </div>
+
+  <footer class="post-footer">
+    
+
+    
+
+    
+    
+  </footer>
+  
+  <div class="comments">
+  <div class="comments">
+
+
+
+</div>
+  </div>
+</article>
+
+  </div>
+  <div class="foot">
+  
+  &copy; 2019 - 2021 &#183;
+  <a href="/"> Blog </a> &#183;
+</div>
+</body>
+  <script src="/js/lazyload.min.js"></script>
+<script>
+  var lazyImage = new LazyLoad({container: document.getElementById('article')});
+</script>
+
+
+
+
+</html>

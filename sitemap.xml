@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://f4.anthus.ir/posts/afl/</loc>
-    <lastmod>1400-09-30T10:30:27+00:00</lastmod>
+    <loc>https://f4.anthus.ir/posts/android/</loc>
+    <lastmod>1400-10-04T00:00:27+00:00</lastmod>
   </url><url>
     <loc>https://f4.anthus.ir/</loc>
-    <lastmod>1400-09-30T10:30:27+00:00</lastmod>
+    <lastmod>1400-10-04T00:00:27+00:00</lastmod>
   </url><url>
     <loc>https://f4.anthus.ir/posts/</loc>
+    <lastmod>1400-10-04T00:00:27+00:00</lastmod>
+  </url><url>
+    <loc>https://f4.anthus.ir/posts/afl/</loc>
     <lastmod>1400-09-30T10:30:27+00:00</lastmod>
   </url><url>
     <loc>https://f4.anthus.ir/posts/java/</loc>
