@@ -80,4 +80,21 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 }
 ```
 
+# Intetnt
 
+برای رفتن از یک اکتیویتی به یک اکتیویتی دیگر با ید از intetnt استفاده کنیم
+
+اول یک کلاس نمونه به همراه پاس دادن یک ابجکت از اون رو میسازیم؛
+
+و سپس استارت میکنیم
+
+```java
+Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+startActivityForResult(intent);
+```
+
+# lifeCircle
+
+چرخه اکتیوتی ها یک چرخه زندگی هست که نحوه اجرا شدن اکتیویتی و متد ها را به ترتیب نشون میده
+
+![life Circle](/image/android/lifeCircle.PNG)
