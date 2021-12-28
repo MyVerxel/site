@@ -25,6 +25,7 @@ draft: false
 
 ```java
 setContentView(R.layout.activity_main);
+... findViewById( R.id.textView );
 //...............
 @string/textText
 ```
@@ -98,3 +99,66 @@ startActivityForResult(intent);
 چرخه اکتیوتی ها یک چرخه زندگی هست که نحوه اجرا شدن اکتیویتی و متد ها را به ترتیب نشون میده
 
 ![life Circle](/image/android/lifeCircle.PNG)
+
+
+# menu (file D)
+
+دو نوع منو داریم یکی آپشن و یکی هم متریال؟! 
+
+برای ایجاد آپشن روی res کلیک راست میکنیم و ادد ریسوزس میزنیم و منو رو انتخاب میکنیم
+
+با اینکار یک افایل xml به ریسورس اضافه میشه که شامل منو هست و میتونیم منو و ساب منو و گروه اضافه کنیم
+
+
+بعد از ایجاد منو ها، در فایل جاوا برای اینکه این فایل منو رو به اکتیویتی اتچ کنیم، باید در تابع زیر برنامه بنویسیم
+
+```java
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        
+        return super.onCreateOptionsMenu(menu);
+    }
+```
+
+این تابع در هنگتم لود اکتیویتی فراخوانی میشه که باید در اون بگیم منو میخواییم 
+
+برای اینکار از دستور زیر استفاده میکنیم :
+
+```java
+getMenuInflater().inflate(R.menu.menu_main,menu);
+```
+
+که یه رفرنس به فایل ریسوسر منو و اسم منو میدیم که باعث میشه اون رو توی اکتیویتیمون لود کنه
+
+
+هر وقت هرکد.م از آیتم ها لکلیک بشن تابع زیر به صدا در میاد
+
+```java
+onOptionsItemSelected
+```
+
+توی این تابع باید آیدی هر Itam که اومده رو بگیریم، و به این متوجه میشیم روی کدوم Item کلیک شده
+
+```java    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if( item.getItemId() == R.id.alakiToast ){
+            Toast.makeText(this, "alaki!", Toast.LENGTH_LONG).show();
+        }else
+        {
+            Toast.makeText(this, "vaghei!", Toast.LENGTH_LONG).show();
+        }
+        return super.onOptionsItemSelected(item);
+    }
+```
+
+برای ادد کردم منو به شکل برنام نویسی :
+
+```java
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        menu.add("item1");
+		SubMent item2 = menu.addSubmenu("item2");
+		item2.add("sub item2");
+        return super.onCreateOptionsMenu(menu);
+    }
+```
