@@ -54,9 +54,9 @@
       
       
       
-        1 min
+        2 min
       
-      15 s
+      14 s
       &nbsp;
     
     
@@ -76,6 +76,7 @@
 <p>در جا وا از سریق کلاس R</p>
 <p>و در xml از طریق @ و میتونیم به ریسوسرس دسترسی پیدا کنیم</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">setContentView<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">activity_main</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">...</span> findViewById<span style="color:#f92672">(</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">textView</span> <span style="color:#f92672">);</span>
 <span style="color:#75715e">//...............
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">@string</span><span style="color:#f92672">/</span>textText
 </code></pre></div><p>در مورد اول در کد جاوا میگیم که از layout اکتوتی اصلی رو میخواییم</p>
@@ -123,7 +124,41 @@ startActivityForResult<span style="color:#f92672">(</span>intent<span style="col
 </code></pre></div><h1 id="lifecircle">lifeCircle</h1>
 <p>چرخه اکتیوتی ها یک چرخه زندگی هست که نحوه اجرا شدن اکتیویتی و متد ها را به ترتیب نشون میده</p>
 <p><img src="/image/android/lifeCircle.PNG" alt="life Circle"></p>
-
+<h1 id="menu-file-d">menu (file D)</h1>
+<p>دو نوع منو داریم یکی آپشن و یکی هم متریال؟!</p>
+<p>برای ایجاد آپشن روی res کلیک راست میکنیم و ادد ریسوزس میزنیم و منو رو انتخاب میکنیم</p>
+<p>با اینکار یک افایل xml به ریسورس اضافه میشه که شامل منو هست و میتونیم منو و ساب منو و گروه اضافه کنیم</p>
+<p>بعد از ایجاد منو ها، در فایل جاوا برای اینکه این فایل منو رو به اکتیویتی اتچ کنیم، باید در تابع زیر برنامه بنویسیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">onCreateOptionsMenu</span><span style="color:#f92672">(</span>Menu menu<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreateOptionsMenu</span><span style="color:#f92672">(</span>menu<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>این تابع در هنگتم لود اکتیویتی فراخوانی میشه که باید در اون بگیم منو میخواییم</p>
+<p>برای اینکار از دستور زیر استفاده میکنیم :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">getMenuInflater<span style="color:#f92672">().</span><span style="color:#a6e22e">inflate</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">menu</span><span style="color:#f92672">.</span><span style="color:#a6e22e">menu_main</span><span style="color:#f92672">,</span>menu<span style="color:#f92672">);</span>
+</code></pre></div><p>که یه رفرنس به فایل ریسوسر منو و اسم منو میدیم که باعث میشه اون رو توی اکتیویتیمون لود کنه</p>
+<p>هر وقت هرکد.م از آیتم ها لکلیک بشن تابع زیر به صدا در میاد</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">onOptionsItemSelected
+</code></pre></div><p>توی این تابع باید آیدی هر Itam که اومده رو بگیریم، و به این متوجه میشیم روی کدوم Item کلیک شده</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">onOptionsItemSelected</span><span style="color:#f92672">(</span>MenuItem item<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span> item<span style="color:#f92672">.</span><span style="color:#a6e22e">getItemId</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">alakiToast</span> <span style="color:#f92672">){</span>
+            Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;alaki!&#34;</span><span style="color:#f92672">,</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_LONG</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span><span style="color:#66d9ef">else</span>
+        <span style="color:#f92672">{</span>
+            Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;vaghei!&#34;</span><span style="color:#f92672">,</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_LONG</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onOptionsItemSelected</span><span style="color:#f92672">(</span>item<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>برای ادد کردم منو به شکل برنام نویسی :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">onCreateOptionsMenu</span><span style="color:#f92672">(</span>Menu menu<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        menu<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;item1&#34;</span><span style="color:#f92672">);</span>
+		SubMent item2 <span style="color:#f92672">=</span> menu<span style="color:#f92672">.</span><span style="color:#a6e22e">addSubmenu</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;item2&#34;</span><span style="color:#f92672">);</span>
+		item2<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sub item2&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreateOptionsMenu</span><span style="color:#f92672">(</span>menu<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div>
   </div>
 
   <footer class="post-footer">

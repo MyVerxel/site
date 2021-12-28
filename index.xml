@@ -19,7 +19,7 @@ TextView tv ; Button bt; متغیر های tv و bt از نوه تکست و دک
 setContentView نحتوای layout رو نشون میده که در فایل های xml هستند
 نحوه دسترسی به ریسورس ها در جا وا از سریق کلاس R
 و در xml از طریق @ و میتونیم به ریسوسرس دسترسی پیدا کنیم
-setContentView(R.layout.activity_main); //............... @string/textText در مورد اول در کد جاوا میگیم که از layout اکتوتی اصلی رو میخواییم</description>
+setContentView(R.layout.activity_main); ... findViewById( R.id.textView ); //............... @string/textText در مورد اول در کد جاوا میگیم که از layout اکتوتی اصلی رو میخواییم</description>
     </item>
     
     <item>
