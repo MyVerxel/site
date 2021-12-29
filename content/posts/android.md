@@ -101,7 +101,7 @@ startActivityForResult(intent);
 ![life Circle](/image/android/lifeCircle.PNG)
 
 
-# menu (file D)
+# menu (file E)
 
 دو نوع منو داریم یکی آپشن و یکی هم متریال؟! 
 
