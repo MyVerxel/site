@@ -56,7 +56,7 @@
       
         2 min
       
-      14 s
+      39 s
       &nbsp;
     
     
@@ -158,6 +158,44 @@ startActivityForResult<span style="color:#f92672">(</span>intent<span style="col
 		item2<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sub item2&#34;</span><span style="color:#f92672">);</span>
         <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">onCreateOptionsMenu</span><span style="color:#f92672">(</span>menu<span style="color:#f92672">);</span>
     <span style="color:#f92672">}</span>
+</code></pre></div><h1 id="edittext">editText</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">		<span style="color:#75715e">//global
+</span><span style="color:#75715e"></span>		EditText et <span style="color:#f92672">;</span>
+		<span style="color:#75715e">//main
+</span><span style="color:#75715e"></span>        et <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">etTest</span><span style="color:#f92672">);</span>
+        et<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnFocusChangeListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+        TextWatcher textWatcher <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TextWatcher<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">beforeTextChanged</span><span style="color:#f92672">(</span>CharSequence charSequence<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i1<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onTextChanged</span><span style="color:#f92672">(</span>CharSequence charSequence<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i1<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+                tv<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>  charSequence <span style="color:#f92672">);</span>
+            <span style="color:#f92672">}</span>
+
+            <span style="color:#a6e22e">@Override</span>
+            <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">afterTextChanged</span><span style="color:#f92672">(</span>Editable editable<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">};</span>
+        et<span style="color:#f92672">.</span><span style="color:#a6e22e">addTextChangedListener</span><span style="color:#f92672">(</span>textWatcher<span style="color:#f92672">);</span>
+		
+		
+		
+	<span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onFocusChange</span><span style="color:#f92672">(</span>View view<span style="color:#f92672">,</span> <span style="color:#66d9ef">boolean</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        String s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hii&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>view<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">etTest</span><span style="color:#f92672">){</span>
+            s <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Byyy&#34;</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>b<span style="color:#f92672">)</span> s<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;sick&#34;</span><span style="color:#f92672">;</span>
+        Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> s  <span style="color:#f92672">,</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p>دریافت متن و ست کردن متن</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> String s <span style="color:#f92672">=</span> et<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
+ et<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>TEXT<span style="color:#f92672">);</span>
 </code></pre></div>
   </div>
 
