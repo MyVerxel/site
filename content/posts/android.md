@@ -162,3 +162,50 @@ onOptionsItemSelected
         return super.onCreateOptionsMenu(menu);
     }
 ```
+
+
+# editText
+
+```java
+		//global
+		EditText et ;
+		//main
+        et = findViewById(R.id.etTest);
+        et.setOnFocusChangeListener(this);
+        TextWatcher textWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                tv.setText(  charSequence );
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        };
+        et.addTextChangedListener(textWatcher);
+		
+		
+		
+	@Override
+    public void onFocusChange(View view, boolean b) {
+        String s = "Hii";
+        if (view.getId() == R.id.etTest){
+            s = "Byyy";
+        }
+        if (b) s="sick";
+        Toast.makeText(this, s  , Toast.LENGTH_SHORT).show();
+    }
+```
+
+دریافت متن و ست کردن متن
+
+```java
+ String s = et.getText().toString();
+ et.setText(TEXT);
+```
