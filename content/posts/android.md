@@ -101,7 +101,7 @@ startActivityForResult(intent);
 و برای دیفات در یک اکتیویتی باید آنرا get کنیم
 
 
-(این دو فایل دیده شود)[https://github.com/pipitsong/androidPRJ/tree/15a795b6d7c16c82cf0852aa355ea5e6ae2577fa/app/src/main/java/com/example/myapplication]
+[این دو فایل دیده شود[(https://github.com/pipitsong/androidPRJ/tree/15a795b6d7c16c82cf0852aa355ea5e6ae2577fa/app/src/main/java/com/example/myapplication)
 
 
 
