@@ -211,3 +211,17 @@ onOptionsItemSelected
  String s = et.getText().toString();
  et.setText(TEXT);
 ```
+
+
+# xml (layout)
+
+بعد ازاینکه لایه ها رو ساختیم برای اکتیویتی میتوانیم یک لایه را در یک لایه دیگه Include کنیم
+
+برای اینکار در فیال xml از دستور include استفاده میکنیم
+
+```java
+<include layout="@layout/NAME_FILE_XML" 
+	android:id="@+id/id_layout"/>
+```
+
+
