@@ -28,6 +28,8 @@ setContentView(R.layout.activity_main);
 ... findViewById( R.id.textView );
 //...............
 @string/textText
+//...............
+@drawble/icon123 //<- file icon123.png tuye res/drawble hast
 ```
 
 در مورد اول در کد جاوا میگیم که از layout اکتوتی اصلی رو میخواییم
