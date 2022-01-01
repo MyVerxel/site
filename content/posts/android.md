@@ -96,6 +96,15 @@ Intent intent = new Intent(MainActivity.this, SecondActivity.class);
 startActivityForResult(intent);
 ```
 
+برای فرستادم مقادیر از یک اکتیویتی به یک اکتیویتی دیگر باید مقادر را putExtra کنیم
+
+و برای دیفات در یک اکتیویتی باید آنرا get کنیم
+
+
+(این دو فایل دیده شود)[https://github.com/pipitsong/androidPRJ/tree/15a795b6d7c16c82cf0852aa355ea5e6ae2577fa/app/src/main/java/com/example/myapplication]
+
+
+
 # lifeCircle
 
 چرخه اکتیوتی ها یک چرخه زندگی هست که نحوه اجرا شدن اکتیویتی و متد ها را به ترتیب نشون میده
