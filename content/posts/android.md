@@ -236,3 +236,6 @@ onOptionsItemSelected
 ```
 
 
+# handle activiti with class
+[See](https://github.com/pipitsong/androidPRJ/tree/576b460f250ea309bfe4e0adb64e1ce0d47aa029/app/src/main/java/com/example/myapplication)
+
