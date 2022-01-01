@@ -168,6 +168,8 @@ onOptionsItemSelected
 
 # editText
 
+[code](https://github.com/pipitsong/androidPRJ/blob/e7c1bf24de9a9ddc85913dcc85d8dd2a9d81e954/app/src/main/java/com/example/myapplication/MainActivity.java)
+
 ```java
 		//global
 		EditText et ;
