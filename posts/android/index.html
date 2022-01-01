@@ -56,7 +56,7 @@
       
         2 min
       
-      39 s
+      51 s
       &nbsp;
     
     
@@ -79,7 +79,9 @@
 <span style="color:#f92672">...</span> findViewById<span style="color:#f92672">(</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">textView</span> <span style="color:#f92672">);</span>
 <span style="color:#75715e">//...............
 </span><span style="color:#75715e"></span><span style="color:#a6e22e">@string</span><span style="color:#f92672">/</span>textText
-</code></pre></div><p>در مورد اول در کد جاوا میگیم که از layout اکتوتی اصلی رو میخواییم</p>
+<span style="color:#75715e">//...............
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@drawble</span><span style="color:#f92672">/</span>icon123 <span style="color:#75715e">//&lt;- file icon123.png tuye res/drawble hast
+</span></code></pre></div><p>در مورد اول در کد جاوا میگیم که از layout اکتوتی اصلی رو میخواییم</p>
 <p>و در مورد دوم میگیم برو به فایل strings و امتن اونی که اسمش textText هست رو بیار واسمون</p>
 <h1 id="id">id</h1>
 <p>برای ست کردن id به المنت از این طریق عمیل میکنیم</p>
@@ -196,6 +198,11 @@ startActivityForResult<span style="color:#f92672">(</span>intent<span style="col
 </code></pre></div><p>دریافت متن و ست کردن متن</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"> String s <span style="color:#f92672">=</span> et<span style="color:#f92672">.</span><span style="color:#a6e22e">getText</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">();</span>
  et<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>TEXT<span style="color:#f92672">);</span>
+</code></pre></div><h1 id="xml-layout">xml (layout)</h1>
+<p>بعد ازاینکه لایه ها رو ساختیم برای اکتیویتی میتوانیم یک لایه را در یک لایه دیگه Include کنیم</p>
+<p>برای اینکار در فیال xml از دستور include استفاده میکنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">&lt;</span>include layout<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@layout/NAME_FILE_XML&#34;</span> 
+	android<span style="color:#f92672">:</span>id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/id_layout&#34;</span><span style="color:#f92672">/&gt;</span>
 </code></pre></div>
   </div>
 
