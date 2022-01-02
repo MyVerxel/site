@@ -103,6 +103,15 @@ startActivityForResult(intent);
 
 [این دو فایل دیده شود](https://github.com/pipitsong/androidPRJ/tree/15a795b6d7c16c82cf0852aa355ea5e6ae2577fa/app/src/main/java/com/example/myapplication)
 
+همچنین برای چک کردن اینکه کلید همراه intent ارسال شده و وجود داره یا نه:
+
+```java
+Bundle extras = getIntent().getExtras()
+if( extras.containsKey("test") )
+{
+	extras.getString("phone");
+}
+```
 
 
 # lifeCircle
