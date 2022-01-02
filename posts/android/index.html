@@ -56,7 +56,7 @@
       
         3 min
       
-      0 s
+      7 s
       &nbsp;
     
     
@@ -126,7 +126,13 @@ startActivityForResult<span style="color:#f92672">(</span>intent<span style="col
 </code></pre></div><p>برای فرستادم مقادیر از یک اکتیویتی به یک اکتیویتی دیگر باید مقادر را putExtra کنیم</p>
 <p>و برای دیفات در یک اکتیویتی باید آنرا get کنیم</p>
 <p><a href="https://github.com/pipitsong/androidPRJ/tree/15a795b6d7c16c82cf0852aa355ea5e6ae2577fa/app/src/main/java/com/example/myapplication">این دو فایل دیده شود</a></p>
-<h1 id="lifecircle">lifeCircle</h1>
+<p>همچنین برای چک کردن اینکه کلید همراه intent ارسال شده و وجود داره یا نه:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Bundle extras <span style="color:#f92672">=</span> getIntent<span style="color:#f92672">().</span><span style="color:#a6e22e">getExtras</span><span style="color:#f92672">()</span>
+<span style="color:#66d9ef">if</span><span style="color:#f92672">(</span> extras<span style="color:#f92672">.</span><span style="color:#a6e22e">containsKey</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;test&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">)</span>
+<span style="color:#f92672">{</span>
+	extras<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;phone&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><h1 id="lifecircle">lifeCircle</h1>
 <p>چرخه اکتیوتی ها یک چرخه زندگی هست که نحوه اجرا شدن اکتیویتی و متد ها را به ترتیب نشون میده</p>
 <p><img src="/image/android/lifeCircle.PNG" alt="life Circle"></p>
 <h1 id="menu-file-e">menu (file E)</h1>
