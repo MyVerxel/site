@@ -56,7 +56,7 @@
       
         3 min
       
-      43 s
+      48 s
       &nbsp;
     
     
@@ -236,7 +236,11 @@ finish<span style="color:#f92672">();</span>
 <p>برای اینکه بتوانیم متدهای اجزای سازنده اکتیویتی را تحت کنترل در بیاوریم، باید از geter ها استفاده کنیم</p>
 <p><a href="https://github.com/pipitsong/androidPRJ/commit/1d8f2f24997ca1b0b87cb7e6e5dae419fc2831f9">See</a></p>
 <p>به وسیله آن میتوانیم رفتار اجزا را تعیین و یا overide کنیم</p>
-
+<h1 id="open-intent-smsphon-file-i">OPEN Intent (SMS,PHON) (FILE I)</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent<span style="color:#f92672">(</span> Intent<span style="color:#f92672">.</span><span style="color:#a6e22e">ACTION_VIEW</span> <span style="color:#f92672">);</span>
+intent<span style="color:#f92672">.</span><span style="color:#a6e22e">SetData</span><span style="color:#f92672">(</span> Uri<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sms:+1234456&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
+startActivity<span style="color:#f92672">(</span>intent<span style="color:#f92672">);</span>
+</code></pre></div>
   </div>
 
   <footer class="post-footer">
