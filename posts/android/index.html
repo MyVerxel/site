@@ -56,7 +56,7 @@
       
         3 min
       
-      7 s
+      43 s
       &nbsp;
     
     
@@ -132,6 +132,24 @@ startActivityForResult<span style="color:#f92672">(</span>intent<span style="col
 <span style="color:#f92672">{</span>
 	extras<span style="color:#f92672">.</span><span style="color:#a6e22e">getString</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;phone&#34;</span><span style="color:#f92672">);</span>
 <span style="color:#f92672">}</span>
+</code></pre></div><h1 id="iintent-call-activity-with-code">iintent call activity with code</h1>
+<p>برای فراخوانی یک اکتیویتی بطوری که قابل شناسایی باشد، یعنی برای یک کاری صدا کنیم
+و منتظر جواب بمانیم، باید یک کد به اکتیویتی ارسال کنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">--</span>	<span style="color:#75715e">//startActivity(intetnt);
+</span><span style="color:#75715e"></span><span style="color:#f92672">++</span>	startActivityForResult<span style="color:#f92672">(</span>intetnt<span style="color:#f92672">,</span>SUCCES_CODE<span style="color:#f92672">);</span>
+</code></pre></div><p>ودر اکتیویتی ای که فراخوانی میشود باید توسط setResult یک مقادر return کنیم
+و سپس اکتیوی را finish کنیم</p>
+<p><a href="https://github.com/pipitsong/androidPRJ/commit/b03267c25a2b74e560dac6467b4d8f31a38cc05d">SEE</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">setResult<span style="color:#f92672">(</span>50<span style="color:#f92672">);</span>
+finish<span style="color:#f92672">();</span>
+</code></pre></div><p>و جوابی که  اکتیویتی فراخوانی شده بر میگردانه در تابع onActivityResult  جاری قابل دریافت است
+<a href="https://github.com/pipitsong/androidPRJ/commit/b03267c25a2b74e560dac6467b4d8f31a38cc05d#diff-77f8c9ac65585f8b62bc934aafac99ec753920a06e879d0572ec739e93356fa5R61">این تابع</a></p>
+<p>همچنین میتوانیم دیتا و سایر اجزا را به اکتیویتی ای که اکتویتی جاری را فراخوانی کرده است برگردانیم</p>
+<p><a href="https://github.com/pipitsong/androidPRJ/commit/0e1588e989ccadc65519274821bb13366640627e">see</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent<span style="color:#f92672">();</span>
+intent<span style="color:#f92672">.</span><span style="color:#a6e22e">putExtra</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;DATA&#34;</span><span style="color:#f92672">,</span><span style="color:#e6db74">&#34;SALAM1&#34;</span><span style="color:#f92672">);</span>  
+setResult<span style="color:#f92672">(</span>50<span style="color:#f92672">,</span>intent<span style="color:#f92672">);</span>
+finish<span style="color:#f92672">();</span>
 </code></pre></div><h1 id="lifecircle">lifeCircle</h1>
 <p>چرخه اکتیوتی ها یک چرخه زندگی هست که نحوه اجرا شدن اکتیویتی و متد ها را به ترتیب نشون میده</p>
 <p><img src="/image/android/lifeCircle.PNG" alt="life Circle"></p>
@@ -215,6 +233,9 @@ startActivityForResult<span style="color:#f92672">(</span>intent<span style="col
 	android<span style="color:#f92672">:</span>id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/id_layout&#34;</span><span style="color:#f92672">/&gt;</span>
 </code></pre></div><h1 id="handle-activiti-with-class">handle activiti with class</h1>
 <p><a href="https://github.com/pipitsong/androidPRJ/tree/576b460f250ea309bfe4e0adb64e1ce0d47aa029/app/src/main/java/com/example/myapplication">See</a></p>
+<p>برای اینکه بتوانیم متدهای اجزای سازنده اکتیویتی را تحت کنترل در بیاوریم، باید از geter ها استفاده کنیم</p>
+<p><a href="https://github.com/pipitsong/androidPRJ/commit/1d8f2f24997ca1b0b87cb7e6e5dae419fc2831f9">See</a></p>
+<p>به وسیله آن میتوانیم رفتار اجزا را تعیین و یا overide کنیم</p>
 
   </div>
 
