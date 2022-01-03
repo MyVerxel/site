@@ -248,3 +248,11 @@ onOptionsItemSelected
 # handle activiti with class
 [See](https://github.com/pipitsong/androidPRJ/tree/576b460f250ea309bfe4e0adb64e1ce0d47aa029/app/src/main/java/com/example/myapplication)
 
+برای اینکه بتوانیم متدهای اجزای سازنده اکتیویتی را تحت کنترل در بیاوریم، باید از geter ها استفاده کنیم
+
+[See](https://github.com/pipitsong/androidPRJ/commit/1d8f2f24997ca1b0b87cb7e6e5dae419fc2831f9)
+
+به وسیله آن میتوانیم رفتار اجزا را تعیین و یا overide کنیم
+
+
+
