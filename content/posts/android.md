@@ -290,4 +290,11 @@ onOptionsItemSelected
 به وسیله آن میتوانیم رفتار اجزا را تعیین و یا overide کنیم
 
 
+# OPEN Intent (SMS,PHON) (FILE I)
+
+```java
+Intent intent = new Intent( Intent.ACTION_VIEW );
+intent.SetData( Uri.parse("sms:+1234456") );
+startActivity(intent);
+```
 
