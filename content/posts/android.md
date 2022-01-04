@@ -4,6 +4,12 @@ date: 1400-10-04T00:00:27
 draft: false
 ---
 
+# SEARCH 
+
+ - GRIDE LAYOUT (FILE J)
+ 
+ 
+
 اکتیوی ها از کلاس AppCompatActivity ارث میبرند
 
 ```java
@@ -247,4 +253,27 @@ onOptionsItemSelected
 
 # handle activiti with class
 [See](https://github.com/pipitsong/androidPRJ/tree/576b460f250ea309bfe4e0adb64e1ce0d47aa029/app/src/main/java/com/example/myapplication)
+
+# home
+
+دکمه back در بالای اکتیویتی برای بازگشت به اکتیویتی قبلی 
+و همچنین برنامه ننویسیبرا این دکمه
+
+[line25](https://github.com/pipitsong/androidPRJ/blob/6d2670747402c01f700cac013fe51fcd58be5bf8/app/src/main/java/com/example/myapplication/MainActivity2.java#L25)
+
+```java
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+```
+
+تابعی که بعد از کیلیک شدن به این دکمه فراخوانی مشود همان تابع onOptionsItemSelected هست
+که برای اسیر ایتم ها منو هم فراخوانی میشد
+
+[line 43](https://github.com/pipitsong/androidPRJ/blob/6d2670747402c01f700cac013fe51fcd58be5bf8/app/src/main/java/com/example/myapplication/MainActivity2.java#L43)
+
+```java
+if(item.getItemId() == android.R.id.home)
+{
+	finish();
+}
+```
 
