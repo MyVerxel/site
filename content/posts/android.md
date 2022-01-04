@@ -277,3 +277,16 @@ if(item.getItemId() == android.R.id.home)
 }
 ```
 
+# animation
+
+[code](https://github.com/pipitsong/androidPRJ/blob/15dde593fda934ede116503d2b20afb42c864fcb/app/src/main/java/com/example/myapplication/MainActivity3.java)
+
+برای اینکه آلفای یک تصویررا به صفر برسانیم و اینکار طی یک مدت زمانی انجام شود
+
+نکته اینکه عدد 0f به معنی 0 در مبنای float هست
+اگر 0.0 بزاریم double حساب میشود و خطا میدهد
+
+```java
+	iv.animate().alpha(0f).setDuration(2000);
+```
+
