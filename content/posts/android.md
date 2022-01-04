@@ -120,6 +120,41 @@ if( extras.containsKey("test") )
 ```
 
 
+# iintent call activity with code
+
+برای فراخوانی یک اکتیویتی بطوری که قابل شناسایی باشد، یعنی برای یک کاری صدا کنیم
+و منتظر جواب بمانیم، باید یک کد به اکتیویتی ارسال کنیم
+
+```java
+--	//startActivity(intetnt);
+++	startActivityForResult(intetnt,SUCCES_CODE);
+```
+
+ودر اکتیویتی ای که فراخوانی میشود باید توسط setResult یک مقادر return کنیم
+و سپس اکتیوی را finish کنیم
+
+[SEE](https://github.com/pipitsong/androidPRJ/commit/b03267c25a2b74e560dac6467b4d8f31a38cc05d)
+
+```java
+setResult(50);
+finish();
+```
+
+و جوابی که  اکتیویتی فراخوانی شده بر میگردانه در تابع onActivityResult  جاری قابل دریافت است
+[این تابع](https://github.com/pipitsong/androidPRJ/commit/b03267c25a2b74e560dac6467b4d8f31a38cc05d#diff-77f8c9ac65585f8b62bc934aafac99ec753920a06e879d0572ec739e93356fa5R61)
+
+همچنین میتوانیم دیتا و سایر اجزا را به اکتیویتی ای که اکتویتی جاری را فراخوانی کرده است برگردانیم
+
+[see](https://github.com/pipitsong/androidPRJ/commit/0e1588e989ccadc65519274821bb13366640627e)
+
+```java
+Intent intent = new Intent();
+intent.putExtra("DATA","SALAM1");  
+setResult(50,intent);
+finish();
+```
+
+
 # lifeCircle
 
 چرخه اکتیوتی ها یک چرخه زندگی هست که نحوه اجرا شدن اکتیویتی و متد ها را به ترتیب نشون میده
@@ -288,5 +323,19 @@ if(item.getItemId() == android.R.id.home)
 
 ```java
 	iv.animate().alpha(0f).setDuration(2000);
+=======
+برای اینکه بتوانیم متدهای اجزای سازنده اکتیویتی را تحت کنترل در بیاوریم، باید از geter ها استفاده کنیم
+
+[See](https://github.com/pipitsong/androidPRJ/commit/1d8f2f24997ca1b0b87cb7e6e5dae419fc2831f9)
+
+به وسیله آن میتوانیم رفتار اجزا را تعیین و یا overide کنیم
+
+
+# OPEN Intent (SMS,PHON) (FILE I)
+
+```java
+Intent intent = new Intent( Intent.ACTION_VIEW );
+intent.SetData( Uri.parse("sms:+1234456") );
+startActivity(intent);
 ```
 
