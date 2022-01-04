@@ -14,12 +14,12 @@
       <pubDate>Sat, 04 Oct 1400 00:00:27 +0000</pubDate>
       
       <guid>https://f4.anthus.ir/posts/android/</guid>
-      <description>اکتیوی ها از کلاس AppCompatActivity ارث میبرند
+      <description>SEARCH  GRIDE LAYOUT (FILE J)  اکتیوی ها از کلاس AppCompatActivity ارث میبرند
 TextView tv ; Button bt; متغیر های tv و bt از نوه تکست و دکمه هستند،
 setContentView نحتوای layout رو نشون میده که در فایل های xml هستند
 نحوه دسترسی به ریسورس ها در جا وا از سریق کلاس R
 و در xml از طریق @ و میتونیم به ریسوسرس دسترسی پیدا کنیم
-setContentView(R.layout.activity_main); ... findViewById( R.id.textView ); //............... @string/textText //............... @drawble/icon123 //&amp;lt;- file icon123.</description>
+setContentView(R.layout.activity_main); ... findViewById( R.</description>
     </item>
     
     <item>
