@@ -56,7 +56,7 @@
       
         4 min
       
-      14 s
+      13 s
       &nbsp;
     
     
@@ -237,7 +237,14 @@ finish<span style="color:#f92672">();</span>
 	android<span style="color:#f92672">:</span>id<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;@+id/id_layout&#34;</span><span style="color:#f92672">/&gt;</span>
 </code></pre></div><h1 id="handle-activiti-with-class">handle activiti with class</h1>
 <p><a href="https://github.com/pipitsong/androidPRJ/tree/576b460f250ea309bfe4e0adb64e1ce0d47aa029/app/src/main/java/com/example/myapplication">See</a></p>
-<h1 id="home">home</h1>
+<p>برای اینکه بتوانیم متدهای اجزای سازنده اکتیویتی را تحت کنترل در بیاوریم، باید از geter ها استفاده کنیم</p>
+<p><a href="https://github.com/pipitsong/androidPRJ/commit/1d8f2f24997ca1b0b87cb7e6e5dae419fc2831f9">See</a></p>
+<p>به وسیله آن میتوانیم رفتار اجزا را تعیین و یا overide کنیم</p>
+<h1 id="open-intent-smsphon-file-i">OPEN Intent (SMS,PHON) (FILE I)</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent<span style="color:#f92672">(</span> Intent<span style="color:#f92672">.</span><span style="color:#a6e22e">ACTION_VIEW</span> <span style="color:#f92672">);</span>
+intent<span style="color:#f92672">.</span><span style="color:#a6e22e">SetData</span><span style="color:#f92672">(</span> Uri<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sms:+1234456&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
+startActivity<span style="color:#f92672">(</span>intent<span style="color:#f92672">);</span>
+</code></pre></div><h1 id="home">home</h1>
 <p>دکمه back در بالای اکتیویتی برای بازگشت به اکتیویتی قبلی
 و همچنین برنامه ننویسیبرا این دکمه</p>
 <p><a href="https://github.com/pipitsong/androidPRJ/blob/6d2670747402c01f700cac013fe51fcd58be5bf8/app/src/main/java/com/example/myapplication/MainActivity2.java#L25">line25</a></p>
@@ -255,20 +262,6 @@ finish<span style="color:#f92672">();</span>
 <p>نکته اینکه عدد 0f به معنی 0 در مبنای float هست
 اگر 0.0 بزاریم double حساب میشود و خطا میدهد</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	iv<span style="color:#f92672">.</span><span style="color:#a6e22e">animate</span><span style="color:#f92672">().</span><span style="color:#a6e22e">alpha</span><span style="color:#f92672">(</span>0f<span style="color:#f92672">).</span><span style="color:#a6e22e">setDuration</span><span style="color:#f92672">(</span>2000<span style="color:#f92672">);</span>
-<span style="color:#f92672">=======</span>
-برای اینکه بتوانیم متدهای اجزای سازنده اکتیویتی را تحت کنترل در بیاوریم<span style="color:#960050;background-color:#1e0010">،</span> باید از geter ها استفاده کنیم
-
-<span style="color:#f92672">[</span>See<span style="color:#f92672">](</span>https<span style="color:#f92672">:</span><span style="color:#75715e">//github.com/pipitsong/androidPRJ/commit/1d8f2f24997ca1b0b87cb7e6e5dae419fc2831f9)
-</span><span style="color:#75715e"></span>
-به وسیله آن میتوانیم رفتار اجزا را تعیین و یا overide کنیم
-
-
-<span style="color:#960050;background-color:#1e0010">#</span> OPEN <span style="color:#a6e22e">Intent</span> <span style="color:#f92672">(</span>SMS<span style="color:#f92672">,</span>PHON<span style="color:#f92672">)</span> <span style="color:#f92672">(</span>FILE I<span style="color:#f92672">)</span>
-
-<span style="color:#960050;background-color:#1e0010">```</span>java
-Intent intent <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Intent<span style="color:#f92672">(</span> Intent<span style="color:#f92672">.</span><span style="color:#a6e22e">ACTION_VIEW</span> <span style="color:#f92672">);</span>
-intent<span style="color:#f92672">.</span><span style="color:#a6e22e">SetData</span><span style="color:#f92672">(</span> Uri<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sms:+1234456&#34;</span><span style="color:#f92672">)</span> <span style="color:#f92672">);</span>
-startActivity<span style="color:#f92672">(</span>intent<span style="color:#f92672">);</span>
 </code></pre></div>
   </div>
 
