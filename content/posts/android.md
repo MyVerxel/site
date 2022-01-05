@@ -342,3 +342,19 @@ if(item.getItemId() == android.R.id.home)
 	iv.animate().alpha(0f).setDuration(2000);
 ```
 
+حرکت افقی و عمودی
+؛ در کد اول حرکت در y نسبی است و در کد دوم میره دقیقا به 50
+
+```java
+	iv.animate().translationYBy(50).setDuration(2000);
+	//------
+	iv.animate().translationY(50).setDuration(2000);
+```
+
+چرخش
+
+```java
+	iv.animate().rotation(90f).setDuration(2000);
+	iv.animate().rotationBy(90f).setDuration(2000);
+```
+
