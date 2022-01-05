@@ -56,7 +56,7 @@
       
         4 min
       
-      13 s
+      21 s
       &nbsp;
     
     
@@ -262,6 +262,14 @@ startActivity<span style="color:#f92672">(</span>intent<span style="color:#f9267
 <p>نکته اینکه عدد 0f به معنی 0 در مبنای float هست
 اگر 0.0 بزاریم double حساب میشود و خطا میدهد</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	iv<span style="color:#f92672">.</span><span style="color:#a6e22e">animate</span><span style="color:#f92672">().</span><span style="color:#a6e22e">alpha</span><span style="color:#f92672">(</span>0f<span style="color:#f92672">).</span><span style="color:#a6e22e">setDuration</span><span style="color:#f92672">(</span>2000<span style="color:#f92672">);</span>
+</code></pre></div><p>حرکت افقی و عمودی
+؛ در کد اول حرکت در y نسبی است و در کد دوم میره دقیقا به 50</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	iv<span style="color:#f92672">.</span><span style="color:#a6e22e">animate</span><span style="color:#f92672">().</span><span style="color:#a6e22e">translationYBy</span><span style="color:#f92672">(</span>50<span style="color:#f92672">).</span><span style="color:#a6e22e">setDuration</span><span style="color:#f92672">(</span>2000<span style="color:#f92672">);</span>
+	<span style="color:#75715e">//------
+</span><span style="color:#75715e"></span>	iv<span style="color:#f92672">.</span><span style="color:#a6e22e">animate</span><span style="color:#f92672">().</span><span style="color:#a6e22e">translationY</span><span style="color:#f92672">(</span>50<span style="color:#f92672">).</span><span style="color:#a6e22e">setDuration</span><span style="color:#f92672">(</span>2000<span style="color:#f92672">);</span>
+</code></pre></div><p>چرخش</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	iv<span style="color:#f92672">.</span><span style="color:#a6e22e">animate</span><span style="color:#f92672">().</span><span style="color:#a6e22e">rotation</span><span style="color:#f92672">(</span>90f<span style="color:#f92672">).</span><span style="color:#a6e22e">setDuration</span><span style="color:#f92672">(</span>2000<span style="color:#f92672">);</span>
+	iv<span style="color:#f92672">.</span><span style="color:#a6e22e">animate</span><span style="color:#f92672">().</span><span style="color:#a6e22e">rotationBy</span><span style="color:#f92672">(</span>90f<span style="color:#f92672">).</span><span style="color:#a6e22e">setDuration</span><span style="color:#f92672">(</span>2000<span style="color:#f92672">);</span>
 </code></pre></div>
   </div>
 
