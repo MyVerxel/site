@@ -364,3 +364,11 @@ ImageView iv = findbyid(...)
 iv.SetImageResource(R.drawable.axname);
 ```
 
+# والد فرزند
+
+```java
+	LinearLayout L = findViewById(R.id.LID);
+	L.getChildCount(); // <-- tedad farzand
+	L.getChildAt( i ); // <--  farzand i'om
+```
+
