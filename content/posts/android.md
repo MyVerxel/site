@@ -358,3 +358,9 @@ if(item.getItemId() == android.R.id.home)
 	iv.animate().rotationBy(90f).setDuration(2000);
 ```
 
+# تغییر عکس
+```java
+ImageView iv = findbyid(...)
+iv.SetImageResource(R.drawable.axname);
+```
+
