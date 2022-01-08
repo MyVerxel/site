@@ -372,3 +372,75 @@ iv.SetImageResource(R.drawable.axname);
 	L.getChildAt( i ); // <--  farzand i'om
 ```
 
+# video view
+
+نشان دادن ویدو بدون گزینه های کنترلی
+
+```java
+	VideView vv = findById(R.id.videview);
+	vv.setVideoPath( "android.resource://"  + getPackageName() + R.raw.videofilename );
+	vv.start();
+```
+
+اضافه کردن دکمه های کنترلی
+
+```java
+	VideView vv = findById(R.id.videview);
+	vv.setVideoPath( "android.resource://"  + getPackageName() + R.raw.videofilename );
+	
+	MediaController c = new MediController(this);
+	
+	c.setAmchorView(vv);
+	vv.SetMediaController( c );	
+	
+	vv.start();
+```
+
+# audio
+
+```java
+	MediaPlayer mp = MediaPlayer.create( this, R.raw.audiofile );
+	mp.start();
+	mp.pause();
+	mp.isPlayeing();
+	mp.getDuration(); //<- modat zamane ahang 
+```
+
+خواندن volume دستگاه
+
+اول یک ابجکت ایجاد میکنیم و سپس بهش میگیم که بمیخواهیم وصل بشیم به volume سیستم
+
+```java
+	AudioManager audioManager;
+	audioManager = getSystemService(Context.AUDIO_SERVICE);
+	int maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
+	int curVolume = audioManager.getStreamVolume(AudioManager.STREAM_MUSIC);
+	
+	audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, NUMBER , 0); // <-set deviice volume
+	
+```
+
+# seekBar
+```java
+	SeekBar sb  = findById(...);
+	sb.setProgress(10);
+	sb.setMax(100);
+	
+	sb.setOnSeekBarChangeListener(this);
+	sb.setOnSeekBarChangeListener( new  SeekBar.OnSeekBarChangeListener(){
+		@Override
+		public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+			// change volume
+			//progress <- adade seek bar
+			
+			// audioManager da r bala tashrih shode
+			audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, progress, 0); 
+		}
+
+		@Override
+		public void onStartTrackingTouch(SeekBar seekBar) {}
+		@Override
+		public void onStopTrackingTouch(SeekBar seekBar) {}
+	});
+```
+
