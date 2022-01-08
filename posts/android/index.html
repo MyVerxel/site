@@ -54,9 +54,9 @@
       
       
       
-        4 min
+        5 min
       
-      28 s
+      10 s
       &nbsp;
     
     
@@ -277,7 +277,58 @@ iv<span style="color:#f92672">.</span><span style="color:#a6e22e">SetImageResour
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	LinearLayout L <span style="color:#f92672">=</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">LID</span><span style="color:#f92672">);</span>
 	L<span style="color:#f92672">.</span><span style="color:#a6e22e">getChildCount</span><span style="color:#f92672">();</span> <span style="color:#75715e">// &lt;-- tedad farzand
 </span><span style="color:#75715e"></span>	L<span style="color:#f92672">.</span><span style="color:#a6e22e">getChildAt</span><span style="color:#f92672">(</span> i <span style="color:#f92672">);</span> <span style="color:#75715e">// &lt;--  farzand i&#39;om
-</span></code></pre></div>
+</span></code></pre></div><h1 id="video-view">video view</h1>
+<p>نشان دادن ویدو بدون گزینه های کنترلی</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	VideView vv <span style="color:#f92672">=</span> findById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">videview</span><span style="color:#f92672">);</span>
+	vv<span style="color:#f92672">.</span><span style="color:#a6e22e">setVideoPath</span><span style="color:#f92672">(</span> <span style="color:#e6db74">&#34;android.resource://&#34;</span>  <span style="color:#f92672">+</span> getPackageName<span style="color:#f92672">()</span> <span style="color:#f92672">+</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">raw</span><span style="color:#f92672">.</span><span style="color:#a6e22e">videofilename</span> <span style="color:#f92672">);</span>
+	vv<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</code></pre></div><p>اضافه کردن دکمه های کنترلی</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	VideView vv <span style="color:#f92672">=</span> findById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">videview</span><span style="color:#f92672">);</span>
+	vv<span style="color:#f92672">.</span><span style="color:#a6e22e">setVideoPath</span><span style="color:#f92672">(</span> <span style="color:#e6db74">&#34;android.resource://&#34;</span>  <span style="color:#f92672">+</span> getPackageName<span style="color:#f92672">()</span> <span style="color:#f92672">+</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">raw</span><span style="color:#f92672">.</span><span style="color:#a6e22e">videofilename</span> <span style="color:#f92672">);</span>
+	
+	MediaController c <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> MediController<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+	
+	c<span style="color:#f92672">.</span><span style="color:#a6e22e">setAmchorView</span><span style="color:#f92672">(</span>vv<span style="color:#f92672">);</span>
+	vv<span style="color:#f92672">.</span><span style="color:#a6e22e">SetMediaController</span><span style="color:#f92672">(</span> c <span style="color:#f92672">);</span>	
+	
+	vv<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+</code></pre></div><h1 id="audio">audio</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	MediaPlayer mp <span style="color:#f92672">=</span> MediaPlayer<span style="color:#f92672">.</span><span style="color:#a6e22e">create</span><span style="color:#f92672">(</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> R<span style="color:#f92672">.</span><span style="color:#a6e22e">raw</span><span style="color:#f92672">.</span><span style="color:#a6e22e">audiofile</span> <span style="color:#f92672">);</span>
+	mp<span style="color:#f92672">.</span><span style="color:#a6e22e">start</span><span style="color:#f92672">();</span>
+	mp<span style="color:#f92672">.</span><span style="color:#a6e22e">pause</span><span style="color:#f92672">();</span>
+	mp<span style="color:#f92672">.</span><span style="color:#a6e22e">isPlayeing</span><span style="color:#f92672">();</span>
+	mp<span style="color:#f92672">.</span><span style="color:#a6e22e">getDuration</span><span style="color:#f92672">();</span> <span style="color:#75715e">//&lt;- modat zamane ahang 
+</span></code></pre></div><p>خواندن volume دستگاه</p>
+<p>اول یک ابجکت ایجاد میکنیم و سپس بهش میگیم که بمیخواهیم وصل بشیم به volume سیستم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	AudioManager audioManager<span style="color:#f92672">;</span>
+	audioManager <span style="color:#f92672">=</span> getSystemService<span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">AUDIO_SERVICE</span><span style="color:#f92672">);</span>
+	<span style="color:#66d9ef">int</span> maxVolume <span style="color:#f92672">=</span> audioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getStreamMaxVolume</span><span style="color:#f92672">(</span>AudioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">STREAM_MUSIC</span><span style="color:#f92672">);</span>
+	<span style="color:#66d9ef">int</span> curVolume <span style="color:#f92672">=</span> audioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">getStreamVolume</span><span style="color:#f92672">(</span>AudioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">STREAM_MUSIC</span><span style="color:#f92672">);</span>
+	
+	audioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">setStreamVolume</span><span style="color:#f92672">(</span>AudioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">STREAM_MUSIC</span><span style="color:#f92672">,</span> NUMBER <span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span> <span style="color:#75715e">// &lt;-set deviice volume
+</span><span style="color:#75715e"></span>	
+</code></pre></div><h1 id="seekbar">seekBar</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	SeekBar sb  <span style="color:#f92672">=</span> findById<span style="color:#f92672">(...);</span>
+	sb<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>
+	sb<span style="color:#f92672">.</span><span style="color:#a6e22e">setMax</span><span style="color:#f92672">(</span>100<span style="color:#f92672">);</span>
+	
+	sb<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnSeekBarChangeListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+	sb<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnSeekBarChangeListener</span><span style="color:#f92672">(</span> <span style="color:#66d9ef">new</span>  SeekBar<span style="color:#f92672">.</span><span style="color:#a6e22e">OnSeekBarChangeListener</span><span style="color:#f92672">(){</span>
+		<span style="color:#a6e22e">@Override</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onProgressChanged</span><span style="color:#f92672">(</span>SeekBar seekBar<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> progress<span style="color:#f92672">,</span> <span style="color:#66d9ef">boolean</span> fromUser<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			<span style="color:#75715e">// change volume
+</span><span style="color:#75715e"></span>			<span style="color:#75715e">//progress &lt;- adade seek bar
+</span><span style="color:#75715e"></span>			
+			<span style="color:#75715e">// audioManager da r bala tashrih shode
+</span><span style="color:#75715e"></span>			audioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">setStreamVolume</span><span style="color:#f92672">(</span>AudioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">STREAM_MUSIC</span><span style="color:#f92672">,</span> progress<span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span> 
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#a6e22e">@Override</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onStartTrackingTouch</span><span style="color:#f92672">(</span>SeekBar seekBar<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
+		<span style="color:#a6e22e">@Override</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onStopTrackingTouch</span><span style="color:#f92672">(</span>SeekBar seekBar<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
+	<span style="color:#f92672">});</span>
+</code></pre></div>
   </div>
 
   <footer class="post-footer">
