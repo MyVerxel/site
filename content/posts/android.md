@@ -514,6 +514,70 @@ pdialog.getSecondaryProgress();
 pdialog.incrementSecondaryProgressBy(1);
 ```
 
+## Alert
+
+برای نشان دادن یک هشدار 
+
+یک هشدار با دکمه های yes و no و cancel نشان میدهد که در صورتی که کاربر yes انتخاب کرد یک پیام نشان میدهد
+
+```java
+final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+builder.setTitle("AlertDialog")
+		.setMessage("MSG")
+		.setCancelable(false)
+		.setIcon(android.R.drawable.ic_dialog_info)
+		.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialogInterface, int i) {
+				Toast.makeText(DialogActivity.this, "File Deleted!", Toast.LENGTH_SHORT).show();
+			}
+		})
+		.setNegativeButton("No", null)
+		.setNeutralButton("Cancel", null);
+```
+
+چند گزینه ای که فقط میشه یک گزینه انتخاب کرد
+
+```java
+builder.setTitle("Question ?")
+		.setCancelable(false)
+		.setSingleChoiceItems(new String[]{"A", "B", "C", "D"}, -1, new DialogInterface.OnClickListener() {
+			@Override
+			public void onClick(DialogInterface dialogInterface, int i) {
+				Toast.makeText(DialogActivity.this, "i = " + i, Toast.LENGTH_SHORT).show();
+			}
+		})
+		.setPositiveButton("OK", null);
+```
+
+چند گزینه ای که میشه چندین گزینه انتخاب کرد
+
+```java
+builder.setTitle("")
+		.setCancelable(true)
+		.setMultiChoiceItems(new String[]{"item0", "item1", "item2", "item3", "item4", "item5"},
+				new boolean[]{false, true, false, true, true, false},
+				new DialogInterface.OnMultiChoiceClickListener() {
+					@Override
+					public void onClick(DialogInterface dialogInterface, int i, boolean b) {
+						Toast.makeText(DialogActivity.this, "item" + i + " : " + b, Toast.LENGTH_SHORT).show();
+					}
+				})
+		.setPositiveButton("Ok", null);
+
+
+
+builder.show();
+```
+
+و دیالوگی که خودمون طراحی مکنیم و یک اکتیویتی دیگر را نشون میدیم
+```java
+Dialog dialog = new Dialog(this);
+dialog.setContentView(R.layout.play_ground);
+dialog.show();
+```
+
+
 # handler && timer
 
 یک هندلر باز میکنیم که بعد از زمان مشخصی یه تسک را ران کند
