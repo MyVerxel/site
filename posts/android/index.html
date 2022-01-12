@@ -54,9 +54,9 @@
       
       
       
-        5 min
+        6 min
       
-      10 s
+      58 s
       &nbsp;
     
     
@@ -307,7 +307,9 @@ iv<span style="color:#f92672">.</span><span style="color:#a6e22e">SetImageResour
 	
 	audioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">setStreamVolume</span><span style="color:#f92672">(</span>AudioManager<span style="color:#f92672">.</span><span style="color:#a6e22e">STREAM_MUSIC</span><span style="color:#f92672">,</span> NUMBER <span style="color:#f92672">,</span> 0<span style="color:#f92672">);</span> <span style="color:#75715e">// &lt;-set deviice volume
 </span><span style="color:#75715e"></span>	
-</code></pre></div><h1 id="seekbar">seekBar</h1>
+</code></pre></div><p>در کد پایین از طریق fromUser میتونیم متوجه بشیم اندروید در حال دستکاری در سیک بار هست و یا یوزر داره باهاش بازی میکنه</p>
+<p>اگر مقدار true بود یعنی یوزر داره کار میکنه باهاش</p>
+<h1 id="seekbar">seekBar</h1>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">	SeekBar sb  <span style="color:#f92672">=</span> findById<span style="color:#f92672">(...);</span>
 	sb<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>10<span style="color:#f92672">);</span>
 	sb<span style="color:#f92672">.</span><span style="color:#a6e22e">setMax</span><span style="color:#f92672">(</span>100<span style="color:#f92672">);</span>
@@ -328,6 +330,96 @@ iv<span style="color:#f92672">.</span><span style="color:#a6e22e">SetImageResour
 		<span style="color:#a6e22e">@Override</span>
 		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onStopTrackingTouch</span><span style="color:#f92672">(</span>SeekBar seekBar<span style="color:#f92672">)</span> <span style="color:#f92672">{}</span>
 	<span style="color:#f92672">});</span>
+</code></pre></div><h1 id="dialog">DIALOG</h1>
+<h2 id="progress-bar">progress bar</h2>
+<p>میتوایم به کاربر دیالوگ ها رو نشان دهیم که کاربدهای مختلفی دارد</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ProgressDialog pd <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ProgressDialog<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+</code></pre></div><p>قابلیت کنسل کردن توسط کاربر را غیر فعال میکنیم،</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setCancelable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+</code></pre></div><p>ست کردن متن و عنوان</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;progress dialog example&#34;</span><span style="color:#f92672">);</span>
+pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setMessage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;please wait ...&#34;</span><span style="color:#f92672">);</span>
+</code></pre></div><p>ست کردن استایل</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgressStyle</span><span style="color:#f92672">(</span>ProgressDialog<span style="color:#f92672">.</span><span style="color:#a6e22e">STYLE_HORIZONTAL</span><span style="color:#f92672">);</span>
+</code></pre></div><p>نمایش دادن دیالوگ</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+</code></pre></div><p>بستن دیالوگ</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">dismiss</span><span style="color:#f92672">();</span>
+</code></pre></div><p>هنگامی که استایل بصورت افقی ست شده باشد، گزینه های زیر در دسترس هستند:</p>
+<p>که میتوانیم نوار پیمایش را کنترل کنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setProgress</span><span style="color:#f92672">(</span>0<span style="color:#f92672">);</span>
+pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">getMax</span><span style="color:#f92672">()</span>
+pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">incrementProgressBy</span><span style="color:#f92672">(</span>1<span style="color:#f92672">)</span>
+</code></pre></div><p>نوار هیچ پیشرفتی نمیکند و حالت نا مشخص میگیرد</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setIndeterminate</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+</code></pre></div><p>همچنین یک حالت دیگری هم داریم که بنام پروگرس بار دوم</p>
+<p>که میشه یک progressbar زیر اونیکی؛ مثلا برای مواقعی که فیلم در حال دانلود هست و بافر در حال پر شدن هست &hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">getSecondaryProgress</span><span style="color:#f92672">();</span>
+pdialog<span style="color:#f92672">.</span><span style="color:#a6e22e">incrementSecondaryProgressBy</span><span style="color:#f92672">(</span>1<span style="color:#f92672">);</span>
+</code></pre></div><h2 id="alert">Alert</h2>
+<p>برای نشان دادن یک هشدار</p>
+<p>یک هشدار با دکمه های yes و no و cancel نشان میدهد که در صورتی که کاربر yes انتخاب کرد یک پیام نشان میدهد</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">final</span> AlertDialog<span style="color:#f92672">.</span><span style="color:#a6e22e">Builder</span> builder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> AlertDialog<span style="color:#f92672">.</span><span style="color:#a6e22e">Builder</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+builder<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;AlertDialog&#34;</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setMessage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;MSG&#34;</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setCancelable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setIcon</span><span style="color:#f92672">(</span>android<span style="color:#f92672">.</span><span style="color:#a6e22e">R</span><span style="color:#f92672">.</span><span style="color:#a6e22e">drawable</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ic_dialog_info</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setPositiveButton</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Yes&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> DialogInterface<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+			<span style="color:#a6e22e">@Override</span>
+			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>DialogInterface dialogInterface<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span>DialogActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;File Deleted!&#34;</span><span style="color:#f92672">,</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">})</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setNegativeButton</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setNeutralButton</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Cancel&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+</code></pre></div><p>چند گزینه ای که فقط میشه یک گزینه انتخاب کرد</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">builder<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Question ?&#34;</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setCancelable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setSingleChoiceItems</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]{</span><span style="color:#e6db74">&#34;A&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;B&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;C&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;D&#34;</span><span style="color:#f92672">},</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">,</span> <span style="color:#66d9ef">new</span> DialogInterface<span style="color:#f92672">.</span><span style="color:#a6e22e">OnClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+			<span style="color:#a6e22e">@Override</span>
+			<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>DialogInterface dialogInterface<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+				Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span>DialogActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;i = &#34;</span> <span style="color:#f92672">+</span> i<span style="color:#f92672">,</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+			<span style="color:#f92672">}</span>
+		<span style="color:#f92672">})</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setPositiveButton</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;OK&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+</code></pre></div><p>چند گزینه ای که میشه چندین گزینه انتخاب کرد</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">builder<span style="color:#f92672">.</span><span style="color:#a6e22e">setTitle</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setCancelable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">)</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setMultiChoiceItems</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> String<span style="color:#f92672">[]{</span><span style="color:#e6db74">&#34;item0&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;item1&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;item2&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;item3&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;item4&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;item5&#34;</span><span style="color:#f92672">},</span>
+				<span style="color:#66d9ef">new</span> <span style="color:#66d9ef">boolean</span><span style="color:#f92672">[]{</span><span style="color:#66d9ef">false</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">},</span>
+				<span style="color:#66d9ef">new</span> DialogInterface<span style="color:#f92672">.</span><span style="color:#a6e22e">OnMultiChoiceClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+					<span style="color:#a6e22e">@Override</span>
+					<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">(</span>DialogInterface dialogInterface<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">,</span> <span style="color:#66d9ef">boolean</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+						Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span>DialogActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;item&#34;</span> <span style="color:#f92672">+</span> i <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; : &#34;</span> <span style="color:#f92672">+</span> b<span style="color:#f92672">,</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+					<span style="color:#f92672">}</span>
+				<span style="color:#f92672">})</span>
+		<span style="color:#f92672">.</span><span style="color:#a6e22e">setPositiveButton</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Ok&#34;</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+
+
+
+builder<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+</code></pre></div><p>و دیالوگی که خودمون طراحی مکنیم و یک اکتیویتی دیگر را نشون میدیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Dialog dialog <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Dialog<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
+dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setContentView</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">play_ground</span><span style="color:#f92672">);</span>
+dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+</code></pre></div><h1 id="handler--timer">handler &amp;&amp; timer</h1>
+<p>یک هندلر باز میکنیم که بعد از زمان مشخصی یه تسک را ران کند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">new</span> Handler<span style="color:#f92672">().</span><span style="color:#a6e22e">postDelayed</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">(){</span>
+
+	<span style="color:#a6e22e">@override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">(){</span>
+		<span style="color:#75715e">//process
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+
+<span style="color:#f92672">}</span> <span style="color:#f92672">,</span> 10000L <span style="color:#f92672">);</span>
+</code></pre></div><p>توسط تایمر یک فرایند را هی تکرار میکنیم</p>
+<p>گزینه Delay یعنی با تاخیر انجام بده</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">new</span> Timer<span style="color:#f92672">().</span><span style="color:#a6e22e">scheduleAtFixedRate</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> TimerTask<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#75715e">//process
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
+<span style="color:#f92672">},</span> <span style="color:#75715e">/*Delay:*/</span> 0<span style="color:#f92672">,</span>  <span style="color:#75715e">/*duration:*/</span> 200<span style="color:#f92672">);</span>
 </code></pre></div>
   </div>
 
