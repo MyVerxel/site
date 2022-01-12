@@ -448,3 +448,94 @@ iv.SetImageResource(R.drawable.axname);
 	});
 ```
 
+# dialog
+
+میتوایم به کاربر دیالوگ ها رو نشان دهیم که کاربدهای مختلفی دارد
+
+```java
+ProgressDialog pd = new ProgressDialog(this);
+```
+
+قابلیت کنسل کردن توسط کاربر را غیر فعال میکنیم، 
+
+```java
+pdialog.setCancelable(false);
+```
+
+ست کردن متن و عنوان
+
+```java
+pdialog.setTitle("progress dialog example");
+pdialog.setMessage("please wait ...");
+```
+
+ست کردن استایل
+
+```java
+pdialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+```
+
+نمایش دادن دیالوگ
+
+```java
+pdialog.show();
+```
+
+بستن دیالوگ
+
+```java
+pdialog.dismiss();
+```
+
+هنگامی که استایل بصورت افقی ست شده باشد، گزینه های زیر در دسترس هستند:
+
+که میتوانیم نوار پیمایش را کنترل کنیم
+
+```java
+pdialog.setProgress(0);
+pdialog.getMax()
+pdialog.incrementProgressBy(1)
+```
+
+نوار هیچ پیشرفتی نمیکند و حالت نا مشخص میگیرد
+
+```java
+pdialog.setIndeterminate(true);
+```
+
+همچنین یک حالت دیگری هم داریم که بنام پروگرس بار دوم 
+
+که میشه یک progressbar زیر اونیکی؛ مثلا برای مواقعی که فیلم در حال دانلود هست و بافر در حال پر شدن هست ...
+
+```java
+pdialog.getSecondaryProgress();
+pdialog.incrementSecondaryProgressBy(1);
+```
+
+# handler && timer
+
+یک هندلر باز میکنیم که بعد از زمان مشخصی یه تسک را ران کند
+
+```java
+new Handler().postDelayed(new Runnable(){
+
+	@override
+	public void run(){
+		//process
+	}
+
+} , 10000L );
+```
+
+توسط تایمر یک فرایند را هی تکرار میکنیم
+
+گزینه Delay یعنی با تاخیر انجام بده
+
+```java
+new Timer().scheduleAtFixedRate(new TimerTask() {
+	@Override
+	public void run() {
+		//process
+	}
+}, /*Delay:*/ 0,  /*duration:*/ 200);
+```
