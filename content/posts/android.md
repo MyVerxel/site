@@ -448,7 +448,9 @@ iv.SetImageResource(R.drawable.axname);
 	});
 ```
 
-# dialog
+# DIALOG
+
+## progress bar
 
 میتوایم به کاربر دیالوگ ها رو نشان دهیم که کاربدهای مختلفی دارد
 
