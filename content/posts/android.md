@@ -420,6 +420,10 @@ iv.SetImageResource(R.drawable.axname);
 	
 ```
 
+در کد پایین از طریق fromUser میتونیم متوجه بشیم اندروید در حال دستکاری در سیک بار هست و یا یوزر داره باهاش بازی میکنه
+
+اگر مقدار true بود یعنی یوزر داره کار میکنه باهاش
+
 # seekBar
 ```java
 	SeekBar sb  = findById(...);
