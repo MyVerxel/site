@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="generator" content="Hugo 0.92.0" />
   <title> java | Blog </title>
   <meta name="description" content="A simple and concise hugo theme.">
   <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
@@ -54,7 +54,9 @@
       
       
       
-      58 s
+        1 min
+      
+      12 s
       &nbsp;
     
     
@@ -145,7 +147,13 @@ a <span style="color:#f92672">==</span> b
   <span style="color:#66d9ef">else</span>
    bbbb
 </code></pre></div><p>در شرایط بالا else متعلق به if اولی خواهد شد! برای حل مشکل باید از اکولاد استفاده کنیم.</p>
-
+<h1 id="generic">Generic</h1>
+<p>نوعی بنام generic وجود دارد که میتوان به کلاس و implement ها پاس داد تا نوع ان پیاده سازی را مخض کند</p>
+<p>که در اینجا obj و integer همان generic هستند که نوع داده های لیست را مضخث میکنند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#f92672">&lt;</span>Obj<span style="color:#f92672">&gt;</span> list <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Obj<span style="color:#f92672">&gt;</span> <span style="color:#f92672">();</span> 
+<span style="color:#75715e">//--------------------------
+</span><span style="color:#75715e"></span>List<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;</span> l1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">&gt;();</span>
+</code></pre></div>
   </div>
 
   <footer class="post-footer">

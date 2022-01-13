@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.91.2" />
+  <meta name="generator" content="Hugo 0.92.0" />
   <title> android | Blog </title>
   <meta name="description" content="A simple and concise hugo theme.">
   <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
@@ -54,9 +54,9 @@
       
       
       
-        6 min
+        7 min
       
-      58 s
+      37 s
       &nbsp;
     
     
@@ -402,6 +402,44 @@ builder<span style="color:#f92672">.</span><span style="color:#a6e22e">show</spa
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Dialog dialog <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Dialog<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">);</span>
 dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">setContentView</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">play_ground</span><span style="color:#f92672">);</span>
 dialog<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+</code></pre></div><h1 id="list-view">List view</h1>
+<p>برای ساخت لیست یه 3 چیز نیازمندیم</p>
+<ul>
+<li>لیست آیتم ها</li>
+<li>لیست ویو اندروید</li>
+<li>و اداپتر</li>
+</ul>
+<p>اول باید لیست را بسیازیم و سپس یک لیست ویو به اکتیویتی اضافه کنیم</p>
+<p>در نهایت به وسیله اداپتر به اندروید بگوییم این لیست را به چه شکلی نمایش بده</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> items<span style="color:#f92672">;</span>
+
+items <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;&gt;();</span>
+items<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Tehran&#34;</span><span style="color:#f92672">);</span>
+items<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Mashhad&#34;</span><span style="color:#f92672">);</span>
+items<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Isfahan&#34;</span><span style="color:#f92672">);</span>
+items<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Shiraz&#34;</span><span style="color:#f92672">);</span>
+
+ListView listview<span style="color:#f92672">;</span>
+listview <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ListView<span style="color:#f92672">)</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">listview</span><span style="color:#f92672">);</span>
+
+
+ArrayAdapter<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> adapter<span style="color:#f92672">;</span>
+adapter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayAdapter<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> android<span style="color:#f92672">.</span><span style="color:#a6e22e">R</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">simple_list_item_1</span><span style="color:#f92672">,</span> items<span style="color:#f92672">);</span>
+
+listview<span style="color:#f92672">.</span><span style="color:#a6e22e">setAdapter</span><span style="color:#f92672">(</span>adapter<span style="color:#f92672">);</span>
+</code></pre></div><p>و همچنین میتوانیم برای کلیلک کردن روی هرکدام از آنها یک تابع تعریف کنیم&hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">listview<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnItemClickListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> AdapterView<span style="color:#f92672">.</span><span style="color:#a6e22e">OnItemClickListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	<span style="color:#a6e22e">@Override</span>
+	<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onItemClick</span><span style="color:#f92672">(</span>AdapterView<span style="color:#f92672">&lt;?&gt;</span> adapterView<span style="color:#f92672">,</span> View view<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> l<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+		Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span>SimpleListActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span> items<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>i<span style="color:#f92672">),</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+	<span style="color:#f92672">}</span>
+<span style="color:#f92672">});</span>
+</code></pre></div><p>برای اضافه کردن و حذف گزینه ها که بدن شکل میباید که عنصر مورد نظر را از ایتم ها حذف میکنیم و سپس اداپتر را به روز رسانی میکنیم تا ویو را دوباره بسازد</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">items<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;new item&#34;</span><span style="color:#f92672">);</span>
+adapter<span style="color:#f92672">.</span><span style="color:#a6e22e">notifyDataSetChanged</span><span style="color:#f92672">();</span>
+<span style="color:#75715e">//------------------------------------
+</span><span style="color:#75715e"></span>items<span style="color:#f92672">.</span><span style="color:#a6e22e">remove</span><span style="color:#f92672">(</span>items<span style="color:#f92672">.</span><span style="color:#a6e22e">size</span><span style="color:#f92672">()-</span>1<span style="color:#f92672">);</span>
+adapter<span style="color:#f92672">.</span><span style="color:#a6e22e">notifyDataSetChanged</span><span style="color:#f92672">();</span>
 </code></pre></div><h1 id="handler--timer">handler &amp;&amp; timer</h1>
 <p>یک هندلر باز میکنیم که بعد از زمان مشخصی یه تسک را ران کند</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">new</span> Handler<span style="color:#f92672">().</span><span style="color:#a6e22e">postDelayed</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">(){</span>
