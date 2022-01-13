@@ -93,5 +93,17 @@ fn main() { println(add(77, 33)) println(sub(100, 50)) } fn add(x int, y int) in
       <description>اولین پست من برای شروع کار</description>
     </item>
     
+    <item>
+      <title>ESP</title>
+      <link>https://f4.anthus.ir/posts/esp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/esp/</guid>
+      <description>منبع: SOURCE
+Setup Toolchain :  install tool chin  linux :
+sudo apt-get install gcc git wget make libncurses-dev flex bison gperf python python-serial wget https://dl.espressif.com/dl/xtensa-lx106-elf-gcc8_4_0-esp-2020r3-linux-amd64.tar.gz mkdir -p esp cd esp tar -xzf Downloads/xtensa-lx106-elf-linux64-1.22.0-100-ge567ec7-5.2.0.tar.gz #/home/ali/Desktop/esp/xtensa-lx106-elf/xtensa-lx106-elf/bin # add to .bashrc PATH=$PATH:/home/ali/Desktop/esp/xtensa-lx106-elf/xtensa-lx106-elf/bin alias get_lx106=&amp;#39;export PATH=&amp;#34;$PATH:/home/ali/Desktop/esp/xtensa-lx106-elf/xtensa-lx106-elf/bin&amp;#34;&amp;#39; set permition:
+sudo usermod -a -G dialout $USER sudo chmod -R 777 /dev/ttyUSB0 GET SDK  Get ESP8266_RTOS_SDK  cd esp git clone --recursive https://github.com/espressif/ESP8266_RTOS_SDK.git </description>
+    </item>
+    
   </channel>
 </rss>
