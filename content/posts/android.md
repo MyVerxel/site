@@ -577,6 +577,57 @@ dialog.setContentView(R.layout.play_ground);
 dialog.show();
 ```
 
+# List view
+
+برای ساخت لیست یه 3 چیز نیازمندیم
+
+ - لیست آیتم ها
+ - لیست ویو اندروید 
+ - و اداپتر
+ 
+اول باید لیست را بسیازیم و سپس یک لیست ویو به اکتیویتی اضافه کنیم
+
+در نهایت به وسیله اداپتر به اندروید بگوییم این لیست را به چه شکلی نمایش بده
+
+```java
+List<String> items;
+
+items = new ArrayList<>();
+items.add("Tehran");
+items.add("Mashhad");
+items.add("Isfahan");
+items.add("Shiraz");
+
+ListView listview;
+listview = (ListView) findViewById(R.id.listview);
+
+
+ArrayAdapter<String> adapter;
+adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+
+listview.setAdapter(adapter);
+```
+
+و همچنین میتوانیم برای کلیلک کردن روی هرکدام از آنها یک تابع تعریف کنیم...
+
+```java
+listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+	@Override
+	public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+		Toast.makeText(SimpleListActivity.this, items.get(i), Toast.LENGTH_SHORT).show();
+	}
+});
+```
+
+برای اضافه کردن و حذف گزینه ها که بدن شکل میباید که عنصر مورد نظر را از ایتم ها حذف میکنیم و سپس اداپتر را به روز رسانی میکنیم تا ویو را دوباره بسازد
+
+```java
+items.add("new item");
+adapter.notifyDataSetChanged();
+//------------------------------------
+items.remove(items.size()-1);
+adapter.notifyDataSetChanged();
+```
 
 # handler && timer
 
