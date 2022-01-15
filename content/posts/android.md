@@ -579,6 +579,8 @@ dialog.show();
 
 # List view
 
+[مثال](https://github.com/pipitsong/androidPRJ/blob/acb689b9b9e945a0fdcc596a2de404bcde7d2b25/app/src/main/java/com/example/myapplication/ListViewAvtivity.java#L22)
+
 برای ساخت لیست یه 3 چیز نیازمندیم
 
  - لیست آیتم ها
