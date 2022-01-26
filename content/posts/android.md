@@ -637,7 +637,8 @@ adapter.notifyDataSetChanged();
 
 [کد کلاس](https://github.com/pipitsong/androidPRJ/blob/30eccd5bccfb833c04c83db545a6fd8c59ca7c12/app/src/main/java/com/example/myapplication/MyContacts.java)
 
-```javapublic class MyContacts {
+```java
+public class MyContacts {
     private String name;
 
     public MyContacts(String name){
