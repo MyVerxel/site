@@ -631,6 +631,41 @@ items.remove(items.size()-1);
 adapter.notifyDataSetChanged();
 ```
 
+### استفاده از کلاس در لیست ویو
+
+یک کلاس تعریف میکنیم تا اجزای کلاس را بر اساس ان تعریف کنیم
+
+[کد کلاس](https://github.com/pipitsong/androidPRJ/blob/30eccd5bccfb833c04c83db545a6fd8c59ca7c12/app/src/main/java/com/example/myapplication/MyContacts.java)
+
+```javapublic class MyContacts {
+    private String name;
+
+    public MyContacts(String name){
+        setName(name);
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Hi: " + name;
+    }
+}
+```
+
+سپس لیست و اداپتور را از همین نوع کلاس تعریف میکنیم
+
+[کد](https://github.com/pipitsong/androidPRJ/blob/30eccd5bccfb833c04c83db545a6fd8c59ca7c12/app/src/main/java/com/example/myapplication/ListViewActivity_MyContacts.java#L14)
+
+
+نکته مهم در تعریف کلا متد toString هست که باید تعریف بشه
+
+[متد toString](https://github.com/pipitsong/androidPRJ/blob/30eccd5bccfb833c04c83db545a6fd8c59ca7c12/app/src/main/java/com/example/myapplication/MyContacts.java#L15)
+
+![listViewContacts-1](/image/android/listViewContacts-1.png)
+
 # handler && timer
 
 یک هندلر باز میکنیم که بعد از زمان مشخصی یه تسک را ران کند
