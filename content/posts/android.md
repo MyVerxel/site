@@ -667,6 +667,41 @@ public class MyContacts {
 
 ![listViewContacts-1](/image/android/listViewContacts-1.png)
 
+## ساختن لیست ویو اختصاصی
+
+[این کامیت دیده شود](https://github.com/pipitsong/androidPRJ/commit/8bfa6700c5a85c12019ad9263773c8a48ca88e6a)
+
+برای اینکار یک اکتیویتی جدید ایجاد مکنیم و تمام اجزایی که میخواهیم را ایجاد میکنیم
+
+[listviewdesgin](https://github.com/pipitsong/androidPRJ/blob/8bfa6700c5a85c12019ad9263773c8a48ca88e6a/app/src/main/res/layout/listviewdesgin.xml)
+
+سپس یک کلاس همانند ایحاد میکنیم تا از این اکتیوتی بعنوان لایه برای لیست ویو استفاده کند
+
+[کلاس مورد نظر](https://github.com/pipitsong/androidPRJ/blob/8bfa6700c5a85c12019ad9263773c8a48ca88e6a/app/src/main/java/com/example/myapplication/CreateListFromMyContactsWithLayout.java)
+
+این کلاس یک پیاده سازی کلاس اداپتر میباشد که لایه پیش فرض اون لایه خودمون هست
+
+
+در کلاس توسط متد getView باید یک ویو برگردانیم؛
+در ابتدا یک LayoutInflater ایجاد میکنیم و سپس به layout خودمون که ایجاد کرده بودیم متصل میکنیم
+
+[کد مورد نظر](https://github.com/pipitsong/androidPRJ/blob/8bfa6700c5a85c12019ad9263773c8a48ca88e6a/app/src/main/java/com/example/myapplication/CreateListFromMyContactsWithLayout.java#L24)
+
+```java
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+        LayoutInflater lif = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View v = lif.inflate(R.layout.listviewdesgin,parent,false);
+        ImageView I = v.findViewById(R.id.imageView2);
+        I.setImageResource(R.drawable.an);
+        return v;
+    }
+```
+
+![listViewContacts-2](/image/android/listViewContacts-2.png)
+
+
 # handler && timer
 
 یک هندلر باز میکنیم که بعد از زمان مشخصی یه تسک را ران کند
