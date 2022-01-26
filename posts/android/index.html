@@ -56,7 +56,7 @@
       
         8 min
       
-      0 s
+      32 s
       &nbsp;
     
     
@@ -465,6 +465,26 @@ adapter<span style="color:#f92672">.</span><span style="color:#a6e22e">notifyDat
 <p>نکته مهم در تعریف کلا متد toString هست که باید تعریف بشه</p>
 <p><a href="https://github.com/pipitsong/androidPRJ/blob/30eccd5bccfb833c04c83db545a6fd8c59ca7c12/app/src/main/java/com/example/myapplication/MyContacts.java#L15">متد toString</a></p>
 <p><img src="/image/android/listViewContacts-1.png" alt="listViewContacts-1"></p>
+<h2 id="ساختن-لیست-ویو-اختصاصی">ساختن لیست ویو اختصاصی</h2>
+<p><a href="https://github.com/pipitsong/androidPRJ/commit/8bfa6700c5a85c12019ad9263773c8a48ca88e6a">این کامیت دیده شود</a></p>
+<p>برای اینکار یک اکتیویتی جدید ایجاد مکنیم و تمام اجزایی که میخواهیم را ایجاد میکنیم</p>
+<p><a href="https://github.com/pipitsong/androidPRJ/blob/8bfa6700c5a85c12019ad9263773c8a48ca88e6a/app/src/main/res/layout/listviewdesgin.xml">listviewdesgin</a></p>
+<p>سپس یک کلاس همانند ایحاد میکنیم تا از این اکتیوتی بعنوان لایه برای لیست ویو استفاده کند</p>
+<p><a href="https://github.com/pipitsong/androidPRJ/blob/8bfa6700c5a85c12019ad9263773c8a48ca88e6a/app/src/main/java/com/example/myapplication/CreateListFromMyContactsWithLayout.java">کلاس مورد نظر</a></p>
+<p>این کلاس یک پیاده سازی کلاس اداپتر میباشد که لایه پیش فرض اون لایه خودمون هست</p>
+<p>در کلاس توسط متد getView باید یک ویو برگردانیم؛
+در ابتدا یک LayoutInflater ایجاد میکنیم و سپس به layout خودمون که ایجاد کرده بودیم متصل میکنیم</p>
+<p><a href="https://github.com/pipitsong/androidPRJ/blob/8bfa6700c5a85c12019ad9263773c8a48ca88e6a/app/src/main/java/com/example/myapplication/CreateListFromMyContactsWithLayout.java#L24">کد مورد نظر</a></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#a6e22e">@NonNull</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> View <span style="color:#a6e22e">getView</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> position<span style="color:#f92672">,</span> <span style="color:#a6e22e">@Nullable</span> View convertView<span style="color:#f92672">,</span> <span style="color:#a6e22e">@NonNull</span> ViewGroup parent<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        LayoutInflater lif <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>LayoutInflater<span style="color:#f92672">)</span> getContext<span style="color:#f92672">().</span><span style="color:#a6e22e">getSystemService</span><span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">LAYOUT_INFLATER_SERVICE</span><span style="color:#f92672">);</span>
+        View v <span style="color:#f92672">=</span> lif<span style="color:#f92672">.</span><span style="color:#a6e22e">inflate</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">listviewdesgin</span><span style="color:#f92672">,</span>parent<span style="color:#f92672">,</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+        ImageView I <span style="color:#f92672">=</span> v<span style="color:#f92672">.</span><span style="color:#a6e22e">findViewById</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">imageView2</span><span style="color:#f92672">);</span>
+        I<span style="color:#f92672">.</span><span style="color:#a6e22e">setImageResource</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">drawable</span><span style="color:#f92672">.</span><span style="color:#a6e22e">an</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> v<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+</code></pre></div><p><img src="/image/android/listViewContacts-2.png" alt="listViewContacts-2"></p>
 <h1 id="handler--timer">handler &amp;&amp; timer</h1>
 <p>یک هندلر باز میکنیم که بعد از زمان مشخصی یه تسک را ران کند</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">new</span> Handler<span style="color:#f92672">().</span><span style="color:#a6e22e">postDelayed</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> Runnable<span style="color:#f92672">(){</span>
