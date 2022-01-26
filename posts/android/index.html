@@ -54,9 +54,9 @@
       
       
       
-        7 min
+        8 min
       
-      58 s
+      0 s
       &nbsp;
     
     
@@ -444,22 +444,23 @@ adapter<span style="color:#f92672">.</span><span style="color:#a6e22e">notifyDat
 </code></pre></div><h3 id="استفاده-از-کلاس-در-لیست-ویو">استفاده از کلاس در لیست ویو</h3>
 <p>یک کلاس تعریف میکنیم تا اجزای کلاس را بر اساس ان تعریف کنیم</p>
 <p><a href="https://github.com/pipitsong/androidPRJ/blob/30eccd5bccfb833c04c83db545a6fd8c59ca7c12/app/src/main/java/com/example/myapplication/MyContacts.java">کد کلاس</a></p>
-<pre tabindex="0"><code class="language-javapublic" data-lang="javapublic">    private String name;
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyContacts</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> String name<span style="color:#f92672">;</span>
 
-    public MyContacts(String name){
-        setName(name);
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">MyContacts</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">){</span>
+        setName<span style="color:#f92672">(</span>name<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span>String name<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
 
-    @Override
-    public String toString() {
-        return &quot;Hi: &quot; + name;
-    }
-}
-</code></pre><p>سپس لیست و اداپتور را از همین نوع کلاس تعریف میکنیم</p>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">toString</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;Hi: &#34;</span> <span style="color:#f92672">+</span> name<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>سپس لیست و اداپتور را از همین نوع کلاس تعریف میکنیم</p>
 <p><a href="https://github.com/pipitsong/androidPRJ/blob/30eccd5bccfb833c04c83db545a6fd8c59ca7c12/app/src/main/java/com/example/myapplication/ListViewActivity_MyContacts.java#L14">کد</a></p>
 <p>نکته مهم در تعریف کلا متد toString هست که باید تعریف بشه</p>
 <p><a href="https://github.com/pipitsong/androidPRJ/blob/30eccd5bccfb833c04c83db545a6fd8c59ca7c12/app/src/main/java/com/example/myapplication/MyContacts.java#L15">متد toString</a></p>
