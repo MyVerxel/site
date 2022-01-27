@@ -701,6 +701,11 @@ public class MyContacts {
 
 ![listViewContacts-2](/image/android/listViewContacts-2.png)
 
+#### LayoutInflater
+
+فایل o دقیقه 1:16 دیده شود
+
+از چیزی که جنس جاوا هست یک ویو از جنس inflater تحویل میدهد
 
 # handler && timer
 
