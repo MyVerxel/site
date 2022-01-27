@@ -56,7 +56,7 @@
       
         8 min
       
-      37 s
+      59 s
       &nbsp;
     
     
@@ -484,7 +484,12 @@ adapter<span style="color:#f92672">.</span><span style="color:#a6e22e">notifyDat
         I<span style="color:#f92672">.</span><span style="color:#a6e22e">setImageResource</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">drawable</span><span style="color:#f92672">.</span><span style="color:#a6e22e">an</span><span style="color:#f92672">);</span>
         <span style="color:#66d9ef">return</span> v<span style="color:#f92672">;</span>
     <span style="color:#f92672">}</span>
-</code></pre></div><p><img src="/image/android/listViewContacts-2.png" alt="listViewContacts-2"></p>
+</code></pre></div><p>پارامتر convertView در تابع getView به ویو ها اشاره میکند</p>
+<p>برای مثال اگر قبلا یک ویو دسرت کرده باشیم و return کرده باشیم، در بار بعدی که اسن تابع برای همون شی
+فراخوانی میشه، مقدار convertView به همان شی اشاره میکند</p>
+<p>در نتیجه لازم نیست دوباره اون ویو رو بسازیم میتوانیم چک کنیم که اگر در حافظه وجود داشته باشه، از همون استفاده کنیم</p>
+<p>اگر خالی باشد Null برمیگردونه در غیر اینصورت میفهمیم که ویو قبلا ساخته شده</p>
+<p><img src="/image/android/listViewContacts-2.png" alt="listViewContacts-2"></p>
 <h4 id="layoutinflater">LayoutInflater</h4>
 <p>فایل o دقیقه 1:16 دیده شود</p>
 <p>از چیزی که جنس جاوا هست یک ویو از جنس inflater تحویل میدهد</p>
