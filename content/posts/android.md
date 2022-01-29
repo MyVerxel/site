@@ -743,3 +743,14 @@ new Timer().scheduleAtFixedRate(new TimerTask() {
 	}
 }, /*Delay:*/ 0,  /*duration:*/ 200);
 ```
+
+
+# Toast
+
+میتوانیم toast ها را شبیه کانفیگ کنیم
+
+```java
+Toast toast = Toast.makeText(this, "Test Color For Toast", Toast.LENGTH_LONG);
+toast.getView().setBackgroundColor(0x7ff44436);
+toast.show();
+```
