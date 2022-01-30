@@ -754,3 +754,18 @@ Toast toast = Toast.makeText(this, "Test Color For Toast", Toast.LENGTH_LONG);
 toast.getView().setBackgroundColor(0x7ff44436);
 toast.show();
 ```
+
+
+برای ایجاد از روی لایه ها باید یک Inflat بسازیم
+
+```java
+this.context = context;
+this.toast = new Toast(context);
+LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+this.view = inflater.inflate(R.layout.colored_toast_layout, null);
+toast.setView(view);
+```
+
+سپس به اجزای اون لایه از طریق view دسترسی داریم
+و در نهایت tast را show میکنیم
+
