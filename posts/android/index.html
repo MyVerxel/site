@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.92.0" />
+  <meta name="generator" content="Hugo 0.92.1" />
   <title> android | Blog </title>
   <meta name="description" content="A simple and concise hugo theme.">
   <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
@@ -54,9 +54,9 @@
       
       
       
-        8 min
+        9 min
       
-      59 s
+      16 s
       &nbsp;
     
     
@@ -511,7 +511,20 @@ adapter<span style="color:#f92672">.</span><span style="color:#a6e22e">notifyDat
 		<span style="color:#75715e">//process
 </span><span style="color:#75715e"></span>	<span style="color:#f92672">}</span>
 <span style="color:#f92672">},</span> <span style="color:#75715e">/*Delay:*/</span> 0<span style="color:#f92672">,</span>  <span style="color:#75715e">/*duration:*/</span> 200<span style="color:#f92672">);</span>
-</code></pre></div>
+</code></pre></div><h1 id="toast">Toast</h1>
+<p>میتوانیم toast ها را شبیه کانفیگ کنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Toast toast <span style="color:#f92672">=</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Test Color For Toast&#34;</span><span style="color:#f92672">,</span> Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_LONG</span><span style="color:#f92672">);</span>
+toast<span style="color:#f92672">.</span><span style="color:#a6e22e">getView</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setBackgroundColor</span><span style="color:#f92672">(</span>0x7ff44436<span style="color:#f92672">);</span>
+toast<span style="color:#f92672">.</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+</code></pre></div><p>برای ایجاد از روی لایه ها باید یک Inflat بسازیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">context</span> <span style="color:#f92672">=</span> context<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">toast</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Toast<span style="color:#f92672">(</span>context<span style="color:#f92672">);</span>
+LayoutInflater inflater <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>LayoutInflater<span style="color:#f92672">)</span> context<span style="color:#f92672">.</span><span style="color:#a6e22e">getSystemService</span><span style="color:#f92672">(</span>Context<span style="color:#f92672">.</span><span style="color:#a6e22e">LAYOUT_INFLATER_SERVICE</span><span style="color:#f92672">);</span>
+<span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">view</span> <span style="color:#f92672">=</span> inflater<span style="color:#f92672">.</span><span style="color:#a6e22e">inflate</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">colored_toast_layout</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+toast<span style="color:#f92672">.</span><span style="color:#a6e22e">setView</span><span style="color:#f92672">(</span>view<span style="color:#f92672">);</span>
+</code></pre></div><p>سپس به اجزای اون لایه از طریق view دسترسی داریم
+و در نهایت tast را show میکنیم</p>
+
   </div>
 
   <footer class="post-footer">
