@@ -769,3 +769,110 @@ toast.setView(view);
 سپس به اجزای اون لایه از طریق view دسترسی داریم
 و در نهایت tast را show میکنیم
 
+# Spinner
+
+برای نشان دادن یک لیست DropDown است
+
+```java
+simpleSpinner = (Spinner) findViewById(R.id.simple_spinner);
+simpleItems = getResources().getStringArray(R.array.tours);
+ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, simpleItems);
+adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+simpleSpinner.setAdapter(adapter);
+```
+
+که میتوانیم توسط Inflater هم انزا کاستومایز کنیم
+
+```java
+package org.faradars.firstproject;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+
+public class CountrySpinnerAdapter extends BaseAdapter {
+
+    private Context context;
+    private int[] flags;
+    private String[] names;
+    private LayoutInflater inflater;
+    public CountrySpinnerAdapter(Context context, int[] countryFlagIds, String[] countryNames){
+        this.context = context;
+        this.flags = countryFlagIds;
+        this.names = countryNames;
+        inflater = LayoutInflater.from(context);
+    }
+
+
+    @Override
+    public int getCount() {
+        return flags.length;
+    }
+
+    @Override
+    public Object getItem(int i) {
+        return names[i];
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return 0;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup viewGroup) {
+        ViewHolder holder;
+        if(convertView == null){
+            convertView = inflater.inflate(R.layout.custom_spinner_item, viewGroup, false);
+            holder = new ViewHolder();
+            holder.country_flag = (ImageView) convertView.findViewById(R.id.country_flag);
+            holder.country_name = (TextView) convertView.findViewById(R.id.country_name);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
+        }
+
+        holder.fill(position);
+        return convertView;
+    }
+
+
+    public class ViewHolder{
+        public ImageView country_flag;
+        public TextView country_name;
+
+        public void fill(int position){
+            country_flag.setImageResource(flags[position]);
+            country_name.setText(names[position]);
+        }
+    }
+}
+```
+
+و یک ایجاد کننده میسازیم
+
+```java
+private void initCustomSpinner() {
+	customSpinner = (Spinner) findViewById(R.id.custom_spinner);
+	final CountrySpinnerAdapter adapter = new CountrySpinnerAdapter(this, countryFlags, countryNames);
+	customSpinner.setAdapter(adapter);
+	customSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+		@Override
+		public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+			Toast.makeText(SpinnerActivity.this,
+					(String) adapterView.getSelectedItem(),
+					Toast.LENGTH_SHORT).show();
+		}
+
+		@Override
+		public void onNothingSelected(AdapterView<?> adapterView) {
+
+		}
+	});
+}
+```
