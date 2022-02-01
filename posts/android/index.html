@@ -54,9 +54,9 @@
       
       
       
-        9 min
+        10 min
       
-      16 s
+      18 s
       &nbsp;
     
     
@@ -524,7 +524,102 @@ LayoutInflater inflater <span style="color:#f92672">=</span> <span style="color:
 toast<span style="color:#f92672">.</span><span style="color:#a6e22e">setView</span><span style="color:#f92672">(</span>view<span style="color:#f92672">);</span>
 </code></pre></div><p>سپس به اجزای اون لایه از طریق view دسترسی داریم
 و در نهایت tast را show میکنیم</p>
+<h1 id="spinner">Spinner</h1>
+<p>برای نشان دادن یک لیست DropDown است</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">simpleSpinner <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Spinner<span style="color:#f92672">)</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">simple_spinner</span><span style="color:#f92672">);</span>
+simpleItems <span style="color:#f92672">=</span> getResources<span style="color:#f92672">().</span><span style="color:#a6e22e">getStringArray</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">array</span><span style="color:#f92672">.</span><span style="color:#a6e22e">tours</span><span style="color:#f92672">);</span>
+ArrayAdapter<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> adapter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayAdapter<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> android<span style="color:#f92672">.</span><span style="color:#a6e22e">R</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">simple_spinner_item</span><span style="color:#f92672">,</span> simpleItems<span style="color:#f92672">);</span>
+adapter<span style="color:#f92672">.</span><span style="color:#a6e22e">setDropDownViewResource</span><span style="color:#f92672">(</span>android<span style="color:#f92672">.</span><span style="color:#a6e22e">R</span><span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">simple_spinner_dropdown_item</span><span style="color:#f92672">);</span>
+simpleSpinner<span style="color:#f92672">.</span><span style="color:#a6e22e">setAdapter</span><span style="color:#f92672">(</span>adapter<span style="color:#f92672">);</span>
+</code></pre></div><p>که میتوانیم توسط Inflater هم انزا کاستومایز کنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> org.faradars.firstproject<span style="color:#f92672">;</span>
 
+<span style="color:#f92672">import</span> android.content.Context<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.view.LayoutInflater<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.view.View<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.view.ViewGroup<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.widget.BaseAdapter<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.widget.ImageView<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> android.widget.TextView<span style="color:#f92672">;</span>
+
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CountrySpinnerAdapter</span> <span style="color:#66d9ef">extends</span> BaseAdapter <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> Context context<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> flags<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String<span style="color:#f92672">[]</span> names<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> LayoutInflater inflater<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">CountrySpinnerAdapter</span><span style="color:#f92672">(</span>Context context<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> countryFlagIds<span style="color:#f92672">,</span> String<span style="color:#f92672">[]</span> countryNames<span style="color:#f92672">){</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">context</span> <span style="color:#f92672">=</span> context<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">flags</span> <span style="color:#f92672">=</span> countryFlagIds<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">names</span> <span style="color:#f92672">=</span> countryNames<span style="color:#f92672">;</span>
+        inflater <span style="color:#f92672">=</span> LayoutInflater<span style="color:#f92672">.</span><span style="color:#a6e22e">from</span><span style="color:#f92672">(</span>context<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getCount</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> flags<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">getItem</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> names<span style="color:#f92672">[</span>i<span style="color:#f92672">];</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">getItemId</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> View <span style="color:#a6e22e">getView</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> position<span style="color:#f92672">,</span> View convertView<span style="color:#f92672">,</span> ViewGroup viewGroup<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        ViewHolder holder<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>convertView <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">){</span>
+            convertView <span style="color:#f92672">=</span> inflater<span style="color:#f92672">.</span><span style="color:#a6e22e">inflate</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">layout</span><span style="color:#f92672">.</span><span style="color:#a6e22e">custom_spinner_item</span><span style="color:#f92672">,</span> viewGroup<span style="color:#f92672">,</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+            holder <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ViewHolder<span style="color:#f92672">();</span>
+            holder<span style="color:#f92672">.</span><span style="color:#a6e22e">country_flag</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ImageView<span style="color:#f92672">)</span> convertView<span style="color:#f92672">.</span><span style="color:#a6e22e">findViewById</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">country_flag</span><span style="color:#f92672">);</span>
+            holder<span style="color:#f92672">.</span><span style="color:#a6e22e">country_name</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>TextView<span style="color:#f92672">)</span> convertView<span style="color:#f92672">.</span><span style="color:#a6e22e">findViewById</span><span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">country_name</span><span style="color:#f92672">);</span>
+            convertView<span style="color:#f92672">.</span><span style="color:#a6e22e">setTag</span><span style="color:#f92672">(</span>holder<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+            holder <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>ViewHolder<span style="color:#f92672">)</span> convertView<span style="color:#f92672">.</span><span style="color:#a6e22e">getTag</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+
+        holder<span style="color:#f92672">.</span><span style="color:#a6e22e">fill</span><span style="color:#f92672">(</span>position<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> convertView<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ViewHolder</span><span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">public</span> ImageView country_flag<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">public</span> TextView country_name<span style="color:#f92672">;</span>
+
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">fill</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> position<span style="color:#f92672">){</span>
+            country_flag<span style="color:#f92672">.</span><span style="color:#a6e22e">setImageResource</span><span style="color:#f92672">(</span>flags<span style="color:#f92672">[</span>position<span style="color:#f92672">]);</span>
+            country_name<span style="color:#f92672">.</span><span style="color:#a6e22e">setText</span><span style="color:#f92672">(</span>names<span style="color:#f92672">[</span>position<span style="color:#f92672">]);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>و یک ایجاد کننده میسازیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initCustomSpinner</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+	customSpinner <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Spinner<span style="color:#f92672">)</span> findViewById<span style="color:#f92672">(</span>R<span style="color:#f92672">.</span><span style="color:#a6e22e">id</span><span style="color:#f92672">.</span><span style="color:#a6e22e">custom_spinner</span><span style="color:#f92672">);</span>
+	<span style="color:#66d9ef">final</span> CountrySpinnerAdapter adapter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> CountrySpinnerAdapter<span style="color:#f92672">(</span><span style="color:#66d9ef">this</span><span style="color:#f92672">,</span> countryFlags<span style="color:#f92672">,</span> countryNames<span style="color:#f92672">);</span>
+	customSpinner<span style="color:#f92672">.</span><span style="color:#a6e22e">setAdapter</span><span style="color:#f92672">(</span>adapter<span style="color:#f92672">);</span>
+	customSpinner<span style="color:#f92672">.</span><span style="color:#a6e22e">setOnItemSelectedListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> AdapterView<span style="color:#f92672">.</span><span style="color:#a6e22e">OnItemSelectedListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+		<span style="color:#a6e22e">@Override</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onItemSelected</span><span style="color:#f92672">(</span>AdapterView<span style="color:#f92672">&lt;?&gt;</span> adapterView<span style="color:#f92672">,</span> View view<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> i<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> l<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+			Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">makeText</span><span style="color:#f92672">(</span>SpinnerActivity<span style="color:#f92672">.</span><span style="color:#a6e22e">this</span><span style="color:#f92672">,</span>
+					<span style="color:#f92672">(</span>String<span style="color:#f92672">)</span> adapterView<span style="color:#f92672">.</span><span style="color:#a6e22e">getSelectedItem</span><span style="color:#f92672">(),</span>
+					Toast<span style="color:#f92672">.</span><span style="color:#a6e22e">LENGTH_SHORT</span><span style="color:#f92672">).</span><span style="color:#a6e22e">show</span><span style="color:#f92672">();</span>
+		<span style="color:#f92672">}</span>
+
+		<span style="color:#a6e22e">@Override</span>
+		<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">onNothingSelected</span><span style="color:#f92672">(</span>AdapterView<span style="color:#f92672">&lt;?&gt;</span> adapterView<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+		<span style="color:#f92672">}</span>
+	<span style="color:#f92672">});</span>
+<span style="color:#f92672">}</span>
+</code></pre></div>
   </div>
 
   <footer class="post-footer">
