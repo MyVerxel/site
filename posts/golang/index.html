@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.92.1" />
+  <meta name="generator" content="Hugo 0.100.1" />
   <title> Golang | Blog </title>
   <meta name="description" content="A simple and concise hugo theme.">
   <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
@@ -68,72 +68,71 @@
   <div class="post-text">
     <h3 id="package">package:</h3>
 <p>هر برنامه باید دارای یک پکیچ باشد :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;math/rand&#34;</span>
-)
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;My favorite number is&#34;</span>, <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#ae81ff">10</span>))
-}
-</code></pre></div><h3 id="exported-names-">Exported names :</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math/rand&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;My favorite number is&#34;</span>, <span style="color:#a6e22e">rand</span>.<span style="color:#a6e22e">Intn</span>(<span style="color:#ae81ff">10</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="exported-names-">Exported names :</h3>
 <ul>
 <li>نامهای اکسپورت شده فقط با حروف بزرگ شروع میشوند</li>
 <li>در غیر اینصورت اکسپورت نخواهند شد</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#e6db74">`fmt.Println(math.pi)`</span> <span style="color:#75715e">// error
-</span><span style="color:#75715e"></span><span style="color:#e6db74">`fmt.Println(math.Pi)`</span> <span style="color:#75715e">// correct
-</span><span style="color:#75715e"></span>
-</code></pre></div><h3 id="functions">Functions:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#e6db74">`fmt.Println(math.pi)`</span> <span style="color:#75715e">// error
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#e6db74">`fmt.Println(math.Pi)`</span> <span style="color:#75715e">// correct
+</span></span></span></code></pre></div><h3 id="functions">Functions:</h3>
 <p>برای تعریف آرایه باید حتما براکت باز شدن در همان خز اول باشد</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NAME</span> ( [<span style="color:#a6e22e">ARGs</span>] ) [<span style="color:#a6e22e">TYPE</span>[,<span style="color:#f92672">...</span>] ] { <span style="color:#75715e">// &lt;-mohem
-</span><span style="color:#75715e"></span>
-}
-
-
-<span style="color:#75715e">// ERROR:
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NAME</span> ( [<span style="color:#a6e22e">ARGs</span>] ) [<span style="color:#a6e22e">TYPE</span>[,<span style="color:#f92672">...</span>] ]
-{
-
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">x</span>    , <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>
-}
-</code></pre></div><p>بازگشت چند متغیری:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">swap</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">string</span>) (<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">string</span>) {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">swap</span>(<span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#e6db74">&#34;world&#34;</span>)
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>)
-}
-</code></pre></div><p>میتوانیم برای مقادیری که میخواهیم برگردانیم اسم تعریف کنمی:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">split</span>(<span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) {
-	<span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">sum</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">9</span>
-	<span style="color:#a6e22e">y</span> = <span style="color:#a6e22e">sum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">x</span>
-	<span style="color:#66d9ef">return</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">split</span>(<span style="color:#ae81ff">17</span>))
-}
-
-<span style="color:#75715e">// OUTPUT:
-</span><span style="color:#75715e">// 7 10
-</span></code></pre></div><h3 id="variables">Variables:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NAME</span> ( [<span style="color:#a6e22e">ARGs</span>] ) [<span style="color:#a6e22e">TYPE</span>[,<span style="color:#f92672">...</span>] ] { <span style="color:#75715e">// &lt;-mohem
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ERROR:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NAME</span> ( [<span style="color:#a6e22e">ARGs</span>] ) [<span style="color:#a6e22e">TYPE</span>[,<span style="color:#f92672">...</span>] ]
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">add</span>(<span style="color:#a6e22e">x</span>    , <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>بازگشت چند متغیری:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span> <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">swap</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">string</span>) (<span style="color:#66d9ef">string</span>, <span style="color:#66d9ef">string</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">y</span>, <span style="color:#a6e22e">x</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">swap</span>(<span style="color:#e6db74">&#34;hello&#34;</span>, <span style="color:#e6db74">&#34;world&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>میتوانیم برای مقادیری که میخواهیم برگردانیم اسم تعریف کنمی:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">split</span>(<span style="color:#a6e22e">sum</span> <span style="color:#66d9ef">int</span>) (<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">int</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">x</span> = <span style="color:#a6e22e">sum</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">4</span> <span style="color:#f92672">/</span> <span style="color:#ae81ff">9</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">y</span> = <span style="color:#a6e22e">sum</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">x</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">split</span>(<span style="color:#ae81ff">17</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// OUTPUT:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">// 7 10
+</span></span></span></code></pre></div><h3 id="variables">Variables:</h3>
 <ul>
 <li>متغیر ها توسط کلیمه کلیدی <code>var</code> تعریف میشوند</li>
 <li>میتوانند در ابتدا دارای مقدار باشند</li>
@@ -142,64 +141,61 @@
 <li>اگر از <code>:=</code> استفاده کنیم به صورت خودکار با توجه به مقدار سمت راست نوع متغیر هم تعریف میشود</li>
 <li>در خارج از توابع حتما باید از <code>var</code> استفاده نماییم</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#75715e">//−−−−−−−−−−
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> <span style="color:#66d9ef">bool</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
-}
-
-<span style="color:#75715e">//−−−−−−−−−−
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> = <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;no!&#34;</span>
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
-}
-
-<span style="color:#75715e">//−−−−−−−−
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
-	<span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3</span>
-	<span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;no!&#34;</span>
-
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
-}
-
-<span style="color:#75715e">//−−−−−−−
-</span><span style="color:#75715e"></span>
-
-
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//−−−−−−−−−−
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//−−−−−−−−−−
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> = <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;no!&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//−−−−−−−−
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">k</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#e6db74">&#34;no!&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">j</span>, <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">c</span>, <span style="color:#a6e22e">python</span>, <span style="color:#a6e22e">java</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//−−−−−−−
+</span></span></span></code></pre></div><ul>
 <li>برای اعداد مقدار پیش فرض ۰ است</li>
 <li>برای نوع بولی false</li>
 <li>برای رشته ها؛ رشته خالی</li>
 </ul>
 <h3 id="basic-types">Basic types</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">bool</span>
-
-<span style="color:#66d9ef">string</span>
-
-<span style="color:#66d9ef">int</span>  <span style="color:#66d9ef">int8</span>  <span style="color:#66d9ef">int16</span>  <span style="color:#66d9ef">int32</span>  <span style="color:#66d9ef">int64</span>
-<span style="color:#66d9ef">uint</span> <span style="color:#66d9ef">uint8</span> <span style="color:#66d9ef">uint16</span> <span style="color:#66d9ef">uint32</span> <span style="color:#66d9ef">uint64</span> <span style="color:#66d9ef">uintptr</span>
-
-<span style="color:#66d9ef">byte</span> <span style="color:#75715e">// alias for uint8
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">rune</span> <span style="color:#75715e">// alias for int32
-</span><span style="color:#75715e"></span>     <span style="color:#75715e">// represents a Unicode code point
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">float32</span> <span style="color:#66d9ef">float64</span>
-
-<span style="color:#66d9ef">complex64</span> <span style="color:#66d9ef">complex128</span>
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">int</span>  <span style="color:#66d9ef">int8</span>  <span style="color:#66d9ef">int16</span>  <span style="color:#66d9ef">int32</span>  <span style="color:#66d9ef">int64</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">uint</span> <span style="color:#66d9ef">uint8</span> <span style="color:#66d9ef">uint16</span> <span style="color:#66d9ef">uint32</span> <span style="color:#66d9ef">uint64</span> <span style="color:#66d9ef">uintptr</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">byte</span> <span style="color:#75715e">// alias for uint8
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">rune</span> <span style="color:#75715e">// alias for int32
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>     <span style="color:#75715e">// represents a Unicode code point
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">float32</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">complex64</span> <span style="color:#66d9ef">complex128</span>
+</span></span></code></pre></div><ul>
 <li>موع ‍<code>int</code> در سیستم های ۳۲ بیتی ۳۲ بیت و درسیتم های ۶۴ بیتی ۶۴ بیت است</li>
 </ul>
 <blockquote>
@@ -209,97 +205,95 @@
 <blockquote>
 <p>The expression T(v) converts the value v to the type T.</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">42</span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span> = float64(<span style="color:#a6e22e">i</span>)
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">u</span> <span style="color:#66d9ef">uint</span> = uint(<span style="color:#a6e22e">f</span>)
-
-<span style="color:#75715e">// Or, put more simply:
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">42</span>
-<span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> float64(<span style="color:#a6e22e">i</span>)
-<span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> uint(<span style="color:#a6e22e">f</span>)
-</code></pre></div><h3 id="const">CONST</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span> = <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">f</span> <span style="color:#66d9ef">float64</span> = float64(<span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">u</span> <span style="color:#66d9ef">uint</span> = uint(<span style="color:#a6e22e">f</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Or, put more simply:
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">42</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">f</span> <span style="color:#f92672">:=</span> float64(<span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> uint(<span style="color:#a6e22e">f</span>)
+</span></span></code></pre></div><h3 id="const">CONST</h3>
 <ul>
 <li>نمیتواند توسط <code>:=</code> اعلان شود</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Pi</span> = <span style="color:#ae81ff">3.14</span>
-</code></pre></div><h3 id="for">FOR:</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">i</span>
-}
-
-<span style="color:#75715e">//---------
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">sum</span> &lt; <span style="color:#ae81ff">1000</span>; {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">sum</span>
-}
-
-<span style="color:#75715e">//---------
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">//WHILE
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">sum</span> &lt; <span style="color:#ae81ff">1000</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">sum</span>
-}
-
-<span style="color:#75715e">//--------
-</span><span style="color:#75715e"></span>
-<span style="color:#75715e">// Forever
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">for</span> {
-}	
-
-</code></pre></div><h3 id="if--else">if / ELSE:</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">x</span> &lt; <span style="color:#ae81ff">0</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sqrt</span>(<span style="color:#f92672">-</span><span style="color:#a6e22e">x</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;i&#34;</span>
-}
-
-<span style="color:#75715e">/// ELSE
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">x</span> {
-	<span style="color:#75715e">//
-</span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
-	<span style="color:#75715e">//
-</span><span style="color:#75715e"></span>}
-
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">Pi</span> = <span style="color:#ae81ff">3.14</span>
+</span></span></code></pre></div><h3 id="for">FOR:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">i</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//---------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> ; <span style="color:#a6e22e">sum</span> &lt; <span style="color:#ae81ff">1000</span>; {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//---------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//WHILE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">sum</span> &lt; <span style="color:#ae81ff">1000</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//--------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// Forever
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> {
+</span></span><span style="display:flex;"><span>}	
+</span></span></code></pre></div><h3 id="if--else">if / ELSE:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">x</span> &lt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sqrt</span>(<span style="color:#f92672">-</span><span style="color:#a6e22e">x</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;i&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// ELSE
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">x</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>} <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">//
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+</span></span></code></pre></div><ul>
 <li>میشود ار خود if متغیر تعریف کرد و سپس چک کرد</li>
 <li>متغیر تعریف شده فقط در داخل if قابلیت دسترسی دارد</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">n</span>); <span style="color:#a6e22e">v</span> &lt; <span style="color:#a6e22e">lim</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">v</span>
-}
-</code></pre></div><h3 id="switch">Switch:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">n</span>); <span style="color:#a6e22e">v</span> &lt; <span style="color:#a6e22e">lim</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="switch">Switch:</h3>
 <ul>
 <li>ایحتیاج به <code>break</code> ندارد</li>
 </ul>
 <blockquote>
 <p>Switch cases evaluate cases from top to bottom, stopping when a case succeeds.</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34;Go runs on &#34;</span>)
-<span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">os</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">GOOS</span>; <span style="color:#a6e22e">os</span> {
-<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;darwin&#34;</span>:
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;OS X.&#34;</span>)
-<span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;linux&#34;</span>:
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Linux.&#34;</span>)
-<span style="color:#66d9ef">default</span>:
-	<span style="color:#75715e">// freebsd, openbsd,
-</span><span style="color:#75715e"></span>	<span style="color:#75715e">// plan9, windows...
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%s.\n&#34;</span>, <span style="color:#a6e22e">os</span>)
-}
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#e6db74">&#34;Go runs on &#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">os</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">runtime</span>.<span style="color:#a6e22e">GOOS</span>; <span style="color:#a6e22e">os</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;darwin&#34;</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;OS X.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;linux&#34;</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Linux.&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">default</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e">// freebsd, openbsd,
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#75715e">// plan9, windows...
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;%s.\n&#34;</span>, <span style="color:#a6e22e">os</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>اگر i برابر با 1 باید تابع f هیچوقت فراخوانی نمیشود</li>
 <li>چون به صورت پیش فرض <code>break</code> را پیاده سازی میکنید ..</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">i</span> {
-<span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span>:
-<span style="color:#66d9ef">case</span> <span style="color:#a6e22e">f</span>():
-}
-
-<span style="color:#75715e">// does not call f if i==0.) 
-</span></code></pre></div><h3 id="مهم">مهم:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">switch</span> <span style="color:#a6e22e">i</span> {
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">case</span> <span style="color:#a6e22e">f</span>():
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// does not call f if i==0.) 
+</span></span></span></code></pre></div><h3 id="مهم">مهم:</h3>
 <blockquote>
 <p>Note: Time in the Go playground always appears to start at 2009-11-10 23:00:00 UTC, a value whose significance is left as an exercise for the reade</p>
 </blockquote>
@@ -312,99 +306,96 @@
 <p>به صورت lifo هست؛ یعنی در استک پوش میشه و وقتی return شد به همون صورت از اخر به اول پاپ و اجرا میشه</p>
 </li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;world&#34;</span>)
-
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;hello&#34;</span>)
-}
-
-<span style="color:#75715e">//−−−−−−−
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>)
-}
-<span style="color:#75715e">// ۹ ۸ ۷ ۶ ۵ ۴ ....
-</span></code></pre></div><h3 id="pointer">Pointer:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;world&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;hello&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//−−−−−−−
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">defer</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">i</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// ۹ ۸ ۷ ۶ ۵ ۴ ....
+</span></span></span></code></pre></div><h3 id="pointer">Pointer:</h3>
 <ul>
 <li>توسط <code>&amp;</code> میتوانیم ادرس اشاگر را بدست بیاوریم</li>
 <li>توسط <code>*</code> به محل ان اشاگره اشاره میکتیم</li>
 <li>در تعریف اشارگرها باید در کنار نوع متغیر <code>*</code> قرار داد</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">u</span> <span style="color:#66d9ef">int</span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span>
-
-<span style="color:#a6e22e">j</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">u</span>
-<span style="color:#f92672">*</span><span style="color:#a6e22e">j</span> = <span style="color:#ae81ff">12</span>
-
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(  <span style="color:#a6e22e">u</span> ) <span style="color:#75715e">// 12
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>( <span style="color:#f92672">*</span><span style="color:#a6e22e">j</span> ) <span style="color:#75715e">// 12
-</span><span style="color:#75715e"></span>
-</code></pre></div><h3 id="struct">struct:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">u</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">j</span> <span style="color:#f92672">*</span><span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">j</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">u</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span><span style="color:#a6e22e">j</span> = <span style="color:#ae81ff">12</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(  <span style="color:#a6e22e">u</span> ) <span style="color:#75715e">// 12
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>( <span style="color:#f92672">*</span><span style="color:#a6e22e">j</span> ) <span style="color:#75715e">// 12
+</span></span></span></code></pre></div><h3 id="struct">struct:</h3>
 <ul>
 <li>شامل مقادیر مختلفی از متغیر ها است</li>
 <li>متغیر هایش میتوانند در همان لحظه اولیه مقدار دهی شودند و یا بعدا مقدرا دهی شودند</li>
 <li>چون متغیر های <code>go</code> دارای مقادیر پیش فرض هستند پس بعد از تعریف اولیه تمامی متغیرهایش دارای مقدار میباشند</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">X</span> <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
-}
-
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}) <span style="color:#75715e">// {1 2}
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}
-<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#ae81ff">4</span>
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>) <span style="color:#75715e">// {4 2}
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">b</span> <span style="color:#66d9ef">bool</span>
-}
-
-</code></pre></div><h3 id="pointers-to-structs">Pointers to structs</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">X</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}) <span style="color:#75715e">// {1 2}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">X</span> = <span style="color:#ae81ff">4</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>) <span style="color:#75715e">// {4 2}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">b</span> <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="pointers-to-structs">Pointers to structs</h3>
 <ul>
 <li>در اشاگر های ساختار هنگام دسترسی به یک فیلد باید بنویسم <code>(*p).X</code> اما به علت دست و پا گیر بودن زبان به ما این اجازه را میدهد که بنویسم <code>p.X</code></li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">X</span> <span style="color:#66d9ef">int</span>
-	<span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}
-	<span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
-	<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">X</span> = <span style="color:#ae81ff">1e9</span> <span style="color:#75715e">// &lt;= (*p).X
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>)
-}
-
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">X</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">p</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">v</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">p</span>.<span style="color:#a6e22e">X</span> = <span style="color:#ae81ff">1e9</span> <span style="color:#75715e">// &lt;= (*p).X
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>میشود در هنگام ساخت یک نمونه جدید توسط نام فیلد به آن مقدار داد</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
-}
-
-<span style="color:#66d9ef">var</span> (
-	<span style="color:#a6e22e">v1</span> = <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}  <span style="color:#75715e">// has type Vertex
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">v2</span> = <span style="color:#a6e22e">Vertex</span>{<span style="color:#a6e22e">X</span>: <span style="color:#ae81ff">1</span>}  <span style="color:#75715e">// Y:0 is implicit
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">v3</span> = <span style="color:#a6e22e">Vertex</span>{}      <span style="color:#75715e">// X:0 and Y:0
-</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">p</span>  = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>} <span style="color:#75715e">// has type *Vertex
-</span><span style="color:#75715e"></span>)
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v1</span>, <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">v2</span>, <span style="color:#a6e22e">v3</span>)
-}
-<span style="color:#75715e">//{1 2} &amp;{1 2} {1 0} {0 0}
-</span></code></pre></div><h3 id="arrays">Arrays:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">X</span>, <span style="color:#a6e22e">Y</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">v1</span> = <span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>}  <span style="color:#75715e">// has type Vertex
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">v2</span> = <span style="color:#a6e22e">Vertex</span>{<span style="color:#a6e22e">X</span>: <span style="color:#ae81ff">1</span>}  <span style="color:#75715e">// Y:0 is implicit
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">v3</span> = <span style="color:#a6e22e">Vertex</span>{}      <span style="color:#75715e">// X:0 and Y:0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>	<span style="color:#a6e22e">p</span>  = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Vertex</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>} <span style="color:#75715e">// has type *Vertex
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">v1</span>, <span style="color:#a6e22e">p</span>, <span style="color:#a6e22e">v2</span>, <span style="color:#a6e22e">v3</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//{1 2} &amp;{1 2} {1 0} {0 0}
+</span></span></span></code></pre></div><h3 id="arrays">Arrays:</h3>
 <ul>
 <li>توسط عبارت <code>[]T</code> تعریف میشود</li>
 <li>تعداد خانه های آرایه جطیی از نوع ان محسوب میشود</li>
@@ -412,77 +403,75 @@
 <li>راه حل جزایگزین استفاده از <code>make</code> هست که در آینده میرسیم بهش</li>
 </ul>
 <p>بک آرایه اعداد صحیح با طول ۱۰ و انواع تعریف های دیگر:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> [<span style="color:#ae81ff">10</span>]<span style="color:#66d9ef">int</span>
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">string</span>
-<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#34;Hello&#34;</span>
-<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#34;World&#34;</span>
-
-<span style="color:#a6e22e">primes</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">6</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
-
-</code></pre></div><h3 id="slices">Slices:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> [<span style="color:#ae81ff">10</span>]<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span> [<span style="color:#ae81ff">2</span>]<span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#34;Hello&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#e6db74">&#34;World&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">primes</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">6</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
+</span></span></code></pre></div><h3 id="slices">Slices:</h3>
 <ul>
 <li>ایره ها طول های ثابتی دارند</li>
 <li>برای ایجاد ارایه های با طورهای متغیراز <code>slice</code> استفاده میکنیم</li>
 <li>کاربرد <code>slice</code> ها از ارایه ها بیشتر است</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">primes</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">6</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
-
-	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span> = <span style="color:#a6e22e">primes</span>[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">4</span>]
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
-}
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">primes</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">6</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span> = <span style="color:#a6e22e">primes</span>[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">4</span>]
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>میتوانیم توسظ درستور زیر یک بخشی از یک آرایه را جدا کنیم و در <code>slice</code>بریزیم</li>
 <li>از و از خود <strong>low</strong> شروع و تا و نه خود <strong>high</strong> را شامل میشود</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">low</span> : <span style="color:#a6e22e">high</span>]
-</code></pre></div><h2 id="مهم-1">مهم</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">a</span>[<span style="color:#a6e22e">low</span> : <span style="color:#a6e22e">high</span>]
+</span></span></code></pre></div><h2 id="مهم-1">مهم</h2>
 <ul>
 <li>تغییر بخشی از آرایه اسلایس شده در آرایه اصلی هم تاثیر گذار است</li>
 <li>اسلایس ها هیچ داده رو ذخیره نمیکنند وفقط به عنوان یک زیر لابه و یا یک ارجاع به ارایه ها استفاده میشود</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">primes</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">6</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span> = <span style="color:#a6e22e">primes</span>[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">4</span>]
-<span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">120</span> <span style="color:#75715e">// change prime
-</span></code></pre></div><h3 id="slice-literals">Slice literals</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">primes</span> <span style="color:#f92672">:=</span> [<span style="color:#ae81ff">6</span>]<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span> = <span style="color:#a6e22e">primes</span>[<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">4</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">s</span>[<span style="color:#ae81ff">1</span>] = <span style="color:#ae81ff">120</span> <span style="color:#75715e">// change prime
+</span></span></span></code></pre></div><h3 id="slice-literals">Slice literals</h3>
 <p>میتوانند همانند آرایه های بدون ذکر طول استفاده شوند</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">q</span>)
-
-	<span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">bool</span>{<span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#66d9ef">true</span>}
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">r</span>)
-
-	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">struct</span> {
-		<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
-		<span style="color:#a6e22e">b</span> <span style="color:#66d9ef">bool</span>
-	}{
-		{<span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">true</span>},
-		{<span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">false</span>},
-		{<span style="color:#ae81ff">5</span>, <span style="color:#66d9ef">true</span>},
-		{<span style="color:#ae81ff">7</span>, <span style="color:#66d9ef">true</span>},
-		{<span style="color:#ae81ff">11</span>, <span style="color:#66d9ef">false</span>},
-		{<span style="color:#ae81ff">13</span>, <span style="color:#66d9ef">true</span>},
-	}
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
-}
-
-</code></pre></div><p>این نوع استفاده از اسلایس مجاز است:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span>]
-<span style="color:#a6e22e">a</span>[:<span style="color:#ae81ff">10</span>]
-<span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>:]
-<span style="color:#a6e22e">a</span>[:]
-</code></pre></div><h3 id="slice-length-and-capacity-2">Slice length and capacity <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>, <span style="color:#ae81ff">11</span>, <span style="color:#ae81ff">13</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">q</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">bool</span>{<span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">true</span>, <span style="color:#66d9ef">false</span>, <span style="color:#66d9ef">true</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">r</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">s</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">b</span> <span style="color:#66d9ef">bool</span>
+</span></span><span style="display:flex;"><span>	}{
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">2</span>, <span style="color:#66d9ef">true</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">3</span>, <span style="color:#66d9ef">false</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">5</span>, <span style="color:#66d9ef">true</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">7</span>, <span style="color:#66d9ef">true</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">11</span>, <span style="color:#66d9ef">false</span>},
+</span></span><span style="display:flex;"><span>		{<span style="color:#ae81ff">13</span>, <span style="color:#66d9ef">true</span>},
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">s</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>این نوع استفاده از اسلایس مجاز است:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">10</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span>[:<span style="color:#ae81ff">10</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span>[<span style="color:#ae81ff">0</span>:]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">a</span>[:]
+</span></span></code></pre></div><h3 id="slice-length-and-capacity-2">Slice length and capacity <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></h3>
 <blockquote>
 <p>The length of a slice is the number of elements it contains.</p>
 </blockquote>
@@ -501,79 +490,78 @@
 </ul>
 <p>اسلایس زیر دارای مقدار ‍<code>nil</code> میباشد
 گخ به این معنا میباشد که هم <code>len</code>  و هم  <code>cap</code> ان صفر هستند</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span>
-</code></pre></div><p>منبع <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span>
+</span></span></code></pre></div><p>منبع <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p>در خط 6 کد بالا، ما یک آرایه به طول 11 کاراکتر ایجاد کرده ایم. یعنی تعداد عناصر آرایه 11 می باشد. در خط 8 یک برش یا Slice از این آرایه ایجاد کرده ایم. [4:7] در خط 11 بدین معنی است که از عنصری که دارای اندیس 6 تا عنصری که دارای اندیس 7 است را برش بزن. یعنی کاراکتر های t و h را جدا کن و در داخل یک Slice به نام sliceOfCharacter قرار بده. حال در خطوط 14-10 با استفاده از دو متد ()len و ()cap طول و ظرفیت آرایه و Slice را به دست آورده ایم. طول و ظرفیت آرایه به هم برابرند. یعنی تعداد عناصر آرایه مشخص کننده طول و ظرفیت آرایه است. اما در Slice وضع بدین منوال نیست. طول Slice تعداد عناصر Slice، که در مثال بالا 2 عنصر هستند، ولی ظرفیت Slice از جاییکه برش آرایه شروع شده است تا پایان آرایه می باشد یعنی 5. برای درک بهتر به شکل زیر توجه کنید:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
- <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-
- <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-
-     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arrayOfCharacter</span> = [<span style="color:#ae81ff">11</span>] <span style="color:#66d9ef">string</span> { <span style="color:#e6db74">&#34;s&#34;</span>,<span style="color:#e6db74">&#34;l&#34;</span>,<span style="color:#e6db74">&#34;i&#34;</span>,<span style="color:#e6db74">&#34;c&#34;</span>,<span style="color:#e6db74">&#34;e&#34;</span>,<span style="color:#e6db74">&#34; &#34;</span>,<span style="color:#e6db74">&#34;t&#34;</span>,<span style="color:#e6db74">&#34;h&#34;</span>,<span style="color:#e6db74">&#34;i&#34;</span>,<span style="color:#e6db74">&#34;s&#34;</span>,<span style="color:#e6db74">&#34;!&#34;</span> }
-
- 
-
-     <span style="color:#a6e22e">sliceOfCharacter</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">arrayOfCharacter</span>[<span style="color:#ae81ff">6</span>:<span style="color:#ae81ff">8</span>]
-
- 
-
-     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Capacity of array :&#34;</span>, cap(<span style="color:#a6e22e">arrayOfCharacter</span>))
-
-     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Lenght   of array :&#34;</span>, cap(<span style="color:#a6e22e">arrayOfCharacter</span>))
-
-     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>()
-
-     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Capacity of slice :&#34;</span>, cap(<span style="color:#a6e22e">sliceOfCharacter</span>))
-
-     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Lenght   of slice :&#34;</span>, len(<span style="color:#a6e22e">sliceOfCharacter</span>))
-
- }
-</code></pre></div><p><img src="/image/slice-in-golang-01.png" alt="slice in go"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span> <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">arrayOfCharacter</span> = [<span style="color:#ae81ff">11</span>] <span style="color:#66d9ef">string</span> { <span style="color:#e6db74">&#34;s&#34;</span>,<span style="color:#e6db74">&#34;l&#34;</span>,<span style="color:#e6db74">&#34;i&#34;</span>,<span style="color:#e6db74">&#34;c&#34;</span>,<span style="color:#e6db74">&#34;e&#34;</span>,<span style="color:#e6db74">&#34; &#34;</span>,<span style="color:#e6db74">&#34;t&#34;</span>,<span style="color:#e6db74">&#34;h&#34;</span>,<span style="color:#e6db74">&#34;i&#34;</span>,<span style="color:#e6db74">&#34;s&#34;</span>,<span style="color:#e6db74">&#34;!&#34;</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">sliceOfCharacter</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">arrayOfCharacter</span>[<span style="color:#ae81ff">6</span>:<span style="color:#ae81ff">8</span>]
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Capacity of array :&#34;</span>, cap(<span style="color:#a6e22e">arrayOfCharacter</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Lenght   of array :&#34;</span>, cap(<span style="color:#a6e22e">arrayOfCharacter</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Capacity of slice :&#34;</span>, cap(<span style="color:#a6e22e">sliceOfCharacter</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>     <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Lenght   of slice :&#34;</span>, len(<span style="color:#a6e22e">sliceOfCharacter</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> }
+</span></span></code></pre></div><p><img src="/image/slice-in-golang-01.png" alt="slice in go"></p>
 <h3 id="creating-a-slice-with-make">Creating a slice with make</h3>
 <p>توسط تابع <code>make</code> هم میشود اسلایس ایحاد کرد</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// len(b)=0, cap(b)=5
-</span></code></pre></div><h3 id="slices-of-slice">slices of slice</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">board</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">string</span>{
-	[]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>},
-	[]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>},
-	[]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>},
-}
-
-<span style="color:#75715e">// The players take turns.
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#34;X&#34;</span>
-<span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#34;O&#34;</span>
-<span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#34;X&#34;</span>
-<span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#34;O&#34;</span>
-<span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#34;X&#34;</span>
-</code></pre></div><h3 id="appending-to-a-slice">Appending to a slice</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span>
-<span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">0</span>)
-
-</code></pre></div><h3 id="range">Range</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">b</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">5</span>) <span style="color:#75715e">// len(b)=0, cap(b)=5
+</span></span></span></code></pre></div><h3 id="slices-of-slice">slices of slice</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">board</span> <span style="color:#f92672">:=</span> [][]<span style="color:#66d9ef">string</span>{
+</span></span><span style="display:flex;"><span>	[]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>},
+</span></span><span style="display:flex;"><span>	[]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>},
+</span></span><span style="display:flex;"><span>	[]<span style="color:#66d9ef">string</span>{<span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>, <span style="color:#e6db74">&#34;_&#34;</span>},
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">// The players take turns.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#34;X&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">2</span>][<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#34;O&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#34;X&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">1</span>][<span style="color:#ae81ff">0</span>] = <span style="color:#e6db74">&#34;O&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">board</span>[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">2</span>] = <span style="color:#e6db74">&#34;X&#34;</span>
+</span></span></code></pre></div><h3 id="appending-to-a-slice">Appending to a slice</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">s</span> []<span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">s</span> = append(<span style="color:#a6e22e">s</span>, <span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><h3 id="range">Range</h3>
 <ul>
 <li>کار همان <code>foreach</code> را میکند</li>
 <li>در مورد اسلایس ها دو مقدار ایندکس و مقدار را برمیگرداند</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pow</span> = []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">128</span>}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">pow</span> {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;2**%d = %d\n&#34;</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span>)
-	}
-}
-</code></pre></div><p>اگر احتیاج به مقداری نداریم میتوانیم از <code>_</code> استفاده کنمی</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">pow</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">10</span>)
-
-<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">pow</span>
-<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">pow</span>
-<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">pow</span>
-</code></pre></div><h3 id="maps">Maps</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">pow</span> = []<span style="color:#66d9ef">int</span>{<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">8</span>, <span style="color:#ae81ff">16</span>, <span style="color:#ae81ff">32</span>, <span style="color:#ae81ff">64</span>, <span style="color:#ae81ff">128</span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">pow</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;2**%d = %d\n&#34;</span>, <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">v</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>اگر احتیاج به مقداری نداریم میتوانیم از <code>_</code> استفاده کنمی</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">pow</span> <span style="color:#f92672">:=</span> make([]<span style="color:#66d9ef">int</span>, <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span>, <span style="color:#a6e22e">_</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">pow</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">value</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">pow</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">pow</span>
+</span></span></code></pre></div><h3 id="maps">Maps</h3>
 <ul>
 <li>
 <p>همان دیکشنری در پایتون</p>
@@ -594,140 +582,137 @@
 <blockquote>
 <p>Map types are reference types, like pointers or slices, and so the value of m above is nil; it doesn’t point to an initialized map. A nil map behaves like an empty map when reading, but attempts to write to a nil map will cause a runtime panic; don’t do that. To initialize a map, use the built in make function</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
-<span style="color:#66d9ef">map</span>[ <span style="color:#a6e22e">KEY_TYPE</span> ] <span style="color:#a6e22e">VALUE_TYPE</span>
-
-
-<span style="color:#75715e">/// ERROR
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>
-<span style="color:#75715e">//m = make(map[string]Vertex)
-</span><span style="color:#75715e"></span><span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Bell Labs&#34;</span>] = <span style="color:#a6e22e">Vertex</span>{
-	<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>,
-}
-
-<span style="color:#75715e">/// CORRECT
-</span><span style="color:#75715e"></span>
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>
-<span style="color:#a6e22e">m</span> = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>)
-<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Bell Labs&#34;</span>] = <span style="color:#a6e22e">Vertex</span>{
-	<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>,
-}
-
-<span style="color:#75715e">/// CORRECT (without use var)
-</span><span style="color:#75715e"></span>
-<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>)
-<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Bell Labs&#34;</span>] = <span style="color:#a6e22e">Vertex</span>{
-	<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>,
-}
-
-</code></pre></div><h3 id="map-literals">Map literals</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">map</span>[ <span style="color:#a6e22e">KEY_TYPE</span> ] <span style="color:#a6e22e">VALUE_TYPE</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// ERROR
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//m = make(map[string]Vertex)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Bell Labs&#34;</span>] = <span style="color:#a6e22e">Vertex</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// CORRECT
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">m</span> = make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Bell Labs&#34;</span>] = <span style="color:#a6e22e">Vertex</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/// CORRECT (without use var)
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Bell Labs&#34;</span>] = <span style="color:#a6e22e">Vertex</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>,
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="map-literals">Map literals</h3>
 <p>ترکیب انواع مختلف داده ای</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">Lat</span>, <span style="color:#a6e22e">Long</span> <span style="color:#66d9ef">float64</span>
-}
-
-<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>{
-	<span style="color:#e6db74">&#34;Bell Labs&#34;</span>: <span style="color:#a6e22e">Vertex</span>{
-		<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>,
-	},
-	<span style="color:#e6db74">&#34;Google&#34;</span>: <span style="color:#a6e22e">Vertex</span>{
-		<span style="color:#ae81ff">37.42202</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">122.08408</span>,
-	},
-}
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">If the top-level type is just a type name, you can omit it from the elements of the literal. 
-</span><span style="color:#75715e">
-</span><span style="color:#75715e">var m = map[string]Vertex{
-</span><span style="color:#75715e">	&#34;Bell Labs&#34;: {40.68433, -74.39967},
-</span><span style="color:#75715e">	&#34;Google&#34;:    {37.42202, -122.08408},
-</span><span style="color:#75715e">}
-</span><span style="color:#75715e">*/</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">m</span>)
-}
-
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Vertex</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">Lat</span>, <span style="color:#a6e22e">Long</span> <span style="color:#66d9ef">float64</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">m</span> = <span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#a6e22e">Vertex</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;Bell Labs&#34;</span>: <span style="color:#a6e22e">Vertex</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">40.68433</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">74.39967</span>,
+</span></span><span style="display:flex;"><span>	},
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;Google&#34;</span>: <span style="color:#a6e22e">Vertex</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#ae81ff">37.42202</span>, <span style="color:#f92672">-</span><span style="color:#ae81ff">122.08408</span>,
+</span></span><span style="display:flex;"><span>	},
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">If the top-level type is just a type name, you can omit it from the elements of the literal. 
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">var m = map[string]Vertex{
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	&#34;Bell Labs&#34;: {40.68433, -74.39967},
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">	&#34;Google&#34;:    {37.42202, -122.08408},
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">}
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">m</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><ul>
 <li>هر عضو <code>map</code> دو مقدرا برمیگرداند؛ اولی مقدار و دیگیری وضعیت</li>
 <li>اگر <code>key</code> موجود بود که <code>elem</code> مثدار و در <code>ok</code> مثدار صحیح قرار میگیرد</li>
 <li>در غیر این صورت مقدار <code>ok</code> برابر با <code>false</code> میشود</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#a6e22e">elem</span>, <span style="color:#a6e22e">ok</span> = <span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span>]
-</code></pre></div><p>مثال:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">
-delete(<span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;Answer&#34;</span>)
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>])
-
-<span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>]
-<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#e6db74">&#34;Present?&#34;</span>, <span style="color:#a6e22e">ok</span>)
-
-<span style="color:#75715e">/*
-</span><span style="color:#75715e">The value: 0
-</span><span style="color:#75715e">The value: 0 Present? false
-</span><span style="color:#75715e">*/</span>
-
-</code></pre></div><h3 id="function-values">Function values</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"> <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;math&#34;</span>
-)
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">compute</span>(<span style="color:#a6e22e">fn</span> <span style="color:#66d9ef">func</span>(<span style="color:#66d9ef">float64</span>, <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fn</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>)
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">hypot</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span> {
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">*</span><span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">y</span>)
-	}
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">hypot</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">12</span>))
-
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">compute</span>(<span style="color:#a6e22e">hypot</span>))
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">compute</span>(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>))
-}
-
-<span style="color:#75715e">//--------------
-</span><span style="color:#75715e"></span>
-<span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
-
-<span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">adder</span>() <span style="color:#66d9ef">func</span>(<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">x</span>
-		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
-	}
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
-	<span style="color:#a6e22e">pos</span>, <span style="color:#a6e22e">neg</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">adder</span>(), <span style="color:#a6e22e">adder</span>()
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(
-			<span style="color:#a6e22e">pos</span>(<span style="color:#a6e22e">i</span>),
-			<span style="color:#a6e22e">neg</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span>),
-		)
-	}
-}
-</code></pre></div><section class="footnotes" role="doc-endnotes">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#a6e22e">elem</span>, <span style="color:#a6e22e">ok</span> = <span style="color:#a6e22e">m</span>[<span style="color:#a6e22e">key</span>]
+</span></span></code></pre></div><p>مثال:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>delete(<span style="color:#a6e22e">m</span>, <span style="color:#e6db74">&#34;Answer&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>])
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">v</span>, <span style="color:#a6e22e">ok</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;Answer&#34;</span>]
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;The value:&#34;</span>, <span style="color:#a6e22e">v</span>, <span style="color:#e6db74">&#34;Present?&#34;</span>, <span style="color:#a6e22e">ok</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">The value: 0
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">The value: 0 Present? false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><h3 id="function-values">Function values</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span> <span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;math&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">compute</span>(<span style="color:#a6e22e">fn</span> <span style="color:#66d9ef">func</span>(<span style="color:#66d9ef">float64</span>, <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fn</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">4</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">hypot</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#66d9ef">float64</span>) <span style="color:#66d9ef">float64</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Sqrt</span>(<span style="color:#a6e22e">x</span><span style="color:#f92672">*</span><span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">y</span><span style="color:#f92672">*</span><span style="color:#a6e22e">y</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">hypot</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">12</span>))
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">compute</span>(<span style="color:#a6e22e">hypot</span>))
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">compute</span>(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Pow</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">//--------------
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">adder</span>() <span style="color:#66d9ef">func</span>(<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">x</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">x</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">pos</span>, <span style="color:#a6e22e">neg</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">adder</span>(), <span style="color:#a6e22e">adder</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10</span>; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">pos</span>(<span style="color:#a6e22e">i</span>),
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">neg</span>(<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#a6e22e">i</span>),
+</span></span><span style="display:flex;"><span>		)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p><a href="https://tour.golang.org/moretypes/11">https://tour.golang.org/moretypes/11</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p><a href="https://www.w3-farsi.com/posts/62895/slice-in-golang/">https://www.w3-farsi.com/posts/62895/slice-in-golang/</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
   </div>
 

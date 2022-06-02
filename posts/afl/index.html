@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.92.1" />
+  <meta name="generator" content="Hugo 0.100.1" />
   <title> Afl | Blog </title>
   <meta name="description" content="A simple and concise hugo theme.">
   <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
@@ -72,163 +72,161 @@
 </ol>
 <h2 id="به-بزرگی-کوچکی-حروف-حساسیت-نیستند">به بزرگی کوچکی حروف حساسیت نیستند</h2>
 <p>امکان اینها ارایه هستند</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">o open
-c close
-h high
-l low
-v volume
-</code></pre></div><h1 id="آرایه-ها">آرایه ها</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>o open
+</span></span><span style="display:flex;"><span>c close
+</span></span><span style="display:flex;"><span>h high
+</span></span><span style="display:flex;"><span>l low
+</span></span><span style="display:flex;"><span>v volume
+</span></span></code></pre></div><h1 id="آرایه-ها">آرایه ها</h1>
 <p>از طریق براکت می‌توان مقداری را ست کرد ویا صدا زد</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">33</span> <span style="color:#f92672">//</span>set
-
-a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">//</span>get
-</code></pre></div><h2 id="مثال">مثال</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">MA( Close, <span style="color:#ae81ff">10</span> );
- IIf( H <span style="color:#f92672">&gt;</span> Ref(H,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), MA(H,<span style="color:#ae81ff">20</span>), MA(C,<span style="color:#ae81ff">20</span>) );
-</code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">relational ( <span style="color:#f92672">&lt;</span>, <span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;=</span>, <span style="color:#f92672">&gt;=</span> )
-equality ( <span style="color:#f92672">==</span>, <span style="color:#f92672">!=</span> )
-
- bit<span style="color:#f92672">-</span>wise
-<span style="color:#f92672">|</span> 
-<span style="color:#f92672">&amp;</span>
- 
- 
-Logical operators:
-NOT
-AND
-OR
-</code></pre></div><p>عبارت زیر ولید است</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> j <span style="color:#f92672">=</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-</code></pre></div><h1 id="محاسبات">محاسبات</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">+</span>
-<span style="color:#f92672">-</span>
-<span style="color:#f92672">/</span>
-<span style="color:#f92672">*</span>
-<span style="color:#f92672">%</span>
-<span style="color:#f92672">^</span>
-<span style="color:#f92672">+=</span>
-<span style="color:#f92672">-=</span>
-<span style="color:#f92672">/=</span>
-<span style="color:#f92672">*=</span>
-<span style="color:#f92672">%=</span>
-<span style="color:#f92672">^=</span>
-<span style="color:#f92672">&amp;=</span>
-<span style="color:#f92672">|=</span>
-</code></pre></div><p>ساختار</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> ( CONDITION )
-{
-
-}
-
-<span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span> )
-{
-}
-</code></pre></div><hr>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">typeof() operator
-
-The typeof operator <span style="color:#f92672">is</span> used <span style="color:#f92672">in</span> the following way:
-typeof (operand)
-The typeof operator returns a string indicating the type of the <span style="color:#f92672">*</span>unevaluated<span style="color:#f92672">*</span> operand<span style="color:#f92672">.</span>
-
-Possible <span style="color:#66d9ef">return</span> values are:
-
-<span style="color:#e6db74">&#34;undefined&#34;</span> <span style="color:#f92672">-</span> identifier <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> defined
-
-<span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#f92672">-</span> operand represents a number (scalar)
-
-<span style="color:#e6db74">&#34;array&#34;</span> <span style="color:#f92672">-</span> operand represents an array
-
-<span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#f92672">-</span> operand represents a string
-
-<span style="color:#e6db74">&#34;function&#34;</span> <span style="color:#f92672">-</span> operand <span style="color:#f92672">is</span> a built<span style="color:#f92672">-</span><span style="color:#f92672">in</span> function identifier
-
-<span style="color:#e6db74">&#34;user function&#34;</span> <span style="color:#f92672">-</span> operand <span style="color:#f92672">is</span> a user<span style="color:#f92672">-</span>defined function
-
-<span style="color:#e6db74">&#34;object&#34;</span> <span style="color:#f92672">-</span> operand represents COM object
-
-<span style="color:#e6db74">&#34;member&#34;</span> <span style="color:#f92672">-</span> operand represents member function <span style="color:#f92672">or</span> property of COM object
-
-<span style="color:#e6db74">&#34;handle&#34;</span> <span style="color:#f92672">-</span> operand represents Windows handle
-
-<span style="color:#e6db74">&#34;unknown&#34;</span> <span style="color:#f92672">-</span> type of operand <span style="color:#f92672">is</span> unknown (should <span style="color:#f92672">not</span> happen)typeof operator allows among other things to detect undefined variables <span style="color:#f92672">in</span> the following way
-</code></pre></div><hr>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">The unary operators (<span style="color:#f92672">++</span> <span style="color:#f92672">and</span> <span style="color:#f92672">--</span>) are called <span style="color:#960050;background-color:#1e0010">“</span>prefix<span style="color:#960050;background-color:#1e0010">”</span> increment <span style="color:#f92672">or</span> decrement operators
-<span style="color:#f92672">++</span>
-<span style="color:#f92672">--</span>
-[] array element operator
-</code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">33</span> <span style="color:#f92672">//</span>set
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">//</span>get
+</span></span></code></pre></div><h2 id="مثال">مثال</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>MA( Close, <span style="color:#ae81ff">10</span> );
+</span></span><span style="display:flex;"><span> IIf( H <span style="color:#f92672">&gt;</span> Ref(H,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), MA(H,<span style="color:#ae81ff">20</span>), MA(C,<span style="color:#ae81ff">20</span>) );
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>relational ( <span style="color:#f92672">&lt;</span>, <span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;=</span>, <span style="color:#f92672">&gt;=</span> )
+</span></span><span style="display:flex;"><span>equality ( <span style="color:#f92672">==</span>, <span style="color:#f92672">!=</span> )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> bit<span style="color:#f92672">-</span>wise
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;</span>
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span> 
+</span></span><span style="display:flex;"><span>Logical operators:
+</span></span><span style="display:flex;"><span>NOT
+</span></span><span style="display:flex;"><span>AND
+</span></span><span style="display:flex;"><span>OR
+</span></span></code></pre></div><p>عبارت زیر ولید است</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>i <span style="color:#f92672">=</span> j <span style="color:#f92672">=</span> k <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span></code></pre></div><h1 id="محاسبات">محاسبات</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">+</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">/</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">^</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">+=</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">-=</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">/=</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*=</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">%=</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">^=</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&amp;=</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">|=</span>
+</span></span></code></pre></div><p>ساختار</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">if</span> ( CONDITION )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span> )
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>typeof() operator
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>The typeof operator <span style="color:#f92672">is</span> used <span style="color:#f92672">in</span> the following way:
+</span></span><span style="display:flex;"><span>typeof (operand)
+</span></span><span style="display:flex;"><span>The typeof operator returns a string indicating the type of the <span style="color:#f92672">*</span>unevaluated<span style="color:#f92672">*</span> operand<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Possible <span style="color:#66d9ef">return</span> values are:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;undefined&#34;</span> <span style="color:#f92672">-</span> identifier <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> defined
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;number&#34;</span> <span style="color:#f92672">-</span> operand represents a number (scalar)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;array&#34;</span> <span style="color:#f92672">-</span> operand represents an array
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;string&#34;</span> <span style="color:#f92672">-</span> operand represents a string
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;function&#34;</span> <span style="color:#f92672">-</span> operand <span style="color:#f92672">is</span> a built<span style="color:#f92672">-</span><span style="color:#f92672">in</span> function identifier
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;user function&#34;</span> <span style="color:#f92672">-</span> operand <span style="color:#f92672">is</span> a user<span style="color:#f92672">-</span>defined function
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;object&#34;</span> <span style="color:#f92672">-</span> operand represents COM object
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;member&#34;</span> <span style="color:#f92672">-</span> operand represents member function <span style="color:#f92672">or</span> property of COM object
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;handle&#34;</span> <span style="color:#f92672">-</span> operand represents Windows handle
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;unknown&#34;</span> <span style="color:#f92672">-</span> type of operand <span style="color:#f92672">is</span> unknown (should <span style="color:#f92672">not</span> happen)typeof operator allows among other things to detect undefined variables <span style="color:#f92672">in</span> the following way
+</span></span></code></pre></div><hr>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>The unary operators (<span style="color:#f92672">++</span> <span style="color:#f92672">and</span> <span style="color:#f92672">--</span>) are called <span style="color:#960050;background-color:#1e0010">“</span>prefix<span style="color:#960050;background-color:#1e0010">”</span> increment <span style="color:#f92672">or</span> decrement operators
+</span></span><span style="display:flex;"><span><span style="color:#f92672">++</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">--</span>
+</span></span><span style="display:flex;"><span>[] array element operator
+</span></span></code></pre></div><hr>
 <h3 id="ثابت-barcount-تعداد-نهایی-کندلهایی-که-در-دسترس-داریم-را-بر-میگرداند">ثابت BarCount تعداد نهایی کندلهایی که در دسترس داریم را بر میگرداند</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">BarCount constant gives the number of bars <span style="color:#f92672">in</span> array (such <span style="color:#66d9ef">as</span> Close, High, Low, Open, Volume, etc)<span style="color:#f92672">.</span> Array elements are numbered <span style="color:#f92672">from</span> <span style="color:#ae81ff">0</span> (zero) to BarCount<span style="color:#f92672">-</span><span style="color:#ae81ff">1.</span> BarCount does NOT change <span style="color:#66d9ef">as</span> long <span style="color:#66d9ef">as</span> your formula continues execution, but it may change between executions when new bars are added, zoom factor <span style="color:#f92672">is</span> changed <span style="color:#f92672">or</span> symbol <span style="color:#f92672">is</span> changed<span style="color:#f92672">.</span>
-</code></pre></div><h1 id="matrix">matrix</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BarCount constant gives the number of bars <span style="color:#f92672">in</span> array (such <span style="color:#66d9ef">as</span> Close, High, Low, Open, Volume, etc)<span style="color:#f92672">.</span> Array elements are numbered <span style="color:#f92672">from</span> <span style="color:#ae81ff">0</span> (zero) to BarCount<span style="color:#f92672">-</span><span style="color:#ae81ff">1.</span> BarCount does NOT change <span style="color:#66d9ef">as</span> long <span style="color:#66d9ef">as</span> your formula continues execution, but it may change between executions when new bars are added, zoom factor <span style="color:#f92672">is</span> changed <span style="color:#f92672">or</span> symbol <span style="color:#f92672">is</span> changed<span style="color:#f92672">.</span>
+</span></span></code></pre></div><h1 id="matrix">matrix</h1>
 <p>یه ارایه دو بعدی است</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">my_var_name <span style="color:#f92672">=</span> Matrix( rows, cols, initvalue);
-
-To access matrix elements, use:
-my_var_name[ row ][ col ];
-
-where
-row <span style="color:#f92672">is</span> a row index (<span style="color:#ae81ff">0.</span><span style="color:#f92672">..</span> number of rows<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-<span style="color:#f92672">and</span>
-col <span style="color:#f92672">is</span> a column index (<span style="color:#ae81ff">0.</span><span style="color:#f92672">..</span> number of columns<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><h1 id="توابع">توابع</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sqrt()
-rsi( period )
-macd()
-ema( data , period )
-
-</code></pre></div><p>تابع iif یک تابع شرطی است که بر روی ارایه کار می‌کند</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dynamicrsi <span style="color:#f92672">=</span> IIf( Close <span style="color:#f92672">&gt;</span> MA(C,<span style="color:#ae81ff">10</span>), RSI(<span style="color:#ae81ff">9</span>), RSI(<span style="color:#ae81ff">14</span>) );
-</code></pre></div><p>همچنین بدون iif من می‌توانیم شروط را پیاده سازی کنیم
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_var_name <span style="color:#f92672">=</span> Matrix( rows, cols, initvalue);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>To access matrix elements, use:
+</span></span><span style="display:flex;"><span>my_var_name[ row ][ col ];
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>where
+</span></span><span style="display:flex;"><span>row <span style="color:#f92672">is</span> a row index (<span style="color:#ae81ff">0.</span><span style="color:#f92672">..</span> number of rows<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span><span style="color:#f92672">and</span>
+</span></span><span style="display:flex;"><span>col <span style="color:#f92672">is</span> a column index (<span style="color:#ae81ff">0.</span><span style="color:#f92672">..</span> number of columns<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><h1 id="توابع">توابع</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>sqrt()
+</span></span><span style="display:flex;"><span>rsi( period )
+</span></span><span style="display:flex;"><span>macd()
+</span></span><span style="display:flex;"><span>ema( data , period )
+</span></span></code></pre></div><p>تابع iif یک تابع شرطی است که بر روی ارایه کار می‌کند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dynamicrsi <span style="color:#f92672">=</span> IIf( Close <span style="color:#f92672">&gt;</span> MA(C,<span style="color:#ae81ff">10</span>), RSI(<span style="color:#ae81ff">9</span>), RSI(<span style="color:#ae81ff">14</span>) );
+</span></span></code></pre></div><p>همچنین بدون iif من می‌توانیم شروط را پیاده سازی کنیم
 یک ارایه بر میگرداند که اگر شرط درست بود،مقدار یک در غیر اینصورت مقدار صفر</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> RSI(<span style="color:#ae81ff">14</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">70</span>;
-</code></pre></div><h1 id="valuewhen">ValueWhen</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>result <span style="color:#f92672">=</span> RSI(<span style="color:#ae81ff">14</span>) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">70</span>;
+</span></span></code></pre></div><h1 id="valuewhen">ValueWhen</h1>
 <p>تکنیک های دیباگ <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
 <p>کد زیر را ذخیره کرده و از قسمت انالایز سپس explorer کرده</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Filter <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span> show all bars
-<span style="color:#f92672">//</span>
-m <span style="color:#f92672">=</span> MA( C, <span style="color:#ae81ff">10</span> );
-cond <span style="color:#f92672">=</span> Cross( C, m );
-bi <span style="color:#f92672">=</span> BarIndex();
-<span style="color:#f92672">//</span>
-AddColumn( C, <span style="color:#e6db74">&#34;Close&#34;</span> );
-AddColumn( m, <span style="color:#e6db74">&#34;Mov Avg&#34;</span> );
-AddColumn( cond, <span style="color:#e6db74">&#34;Condition&#34;</span>);
-AddColumn( bi, <span style="color:#e6db74">&#34;BarIndex&#34;</span> );
-AddColumn( ValueWhen( cond, bi ), <span style="color:#e6db74">&#34;ValueWhen( cond, BarIndex() )&#34;</span> );
-AddColumn( ValueWhen( cond, Close), <span style="color:#e6db74">&#34;ValueWhen( cond, Close )&#34;</span> )
-</code></pre></div><p><img src="/image/afl/valuewhen-1.gif" alt="slice in go"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Filter <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span> show all bars
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span>
+</span></span><span style="display:flex;"><span>m <span style="color:#f92672">=</span> MA( C, <span style="color:#ae81ff">10</span> );
+</span></span><span style="display:flex;"><span>cond <span style="color:#f92672">=</span> Cross( C, m );
+</span></span><span style="display:flex;"><span>bi <span style="color:#f92672">=</span> BarIndex();
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span>
+</span></span><span style="display:flex;"><span>AddColumn( C, <span style="color:#e6db74">&#34;Close&#34;</span> );
+</span></span><span style="display:flex;"><span>AddColumn( m, <span style="color:#e6db74">&#34;Mov Avg&#34;</span> );
+</span></span><span style="display:flex;"><span>AddColumn( cond, <span style="color:#e6db74">&#34;Condition&#34;</span>);
+</span></span><span style="display:flex;"><span>AddColumn( bi, <span style="color:#e6db74">&#34;BarIndex&#34;</span> );
+</span></span><span style="display:flex;"><span>AddColumn( ValueWhen( cond, bi ), <span style="color:#e6db74">&#34;ValueWhen( cond, BarIndex() )&#34;</span> );
+</span></span><span style="display:flex;"><span>AddColumn( ValueWhen( cond, Close), <span style="color:#e6db74">&#34;ValueWhen( cond, Close )&#34;</span> )
+</span></span></code></pre></div><p><img src="/image/afl/valuewhen-1.gif" alt="slice in go"></p>
 <p>این تابع در صروتی که شرط بقرار باشد مقدار آرایه را برمیگرداند و آنرا حفظ میکند</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">/*</span>
-If you run above code you will clearly see how ValueWhen picks 
-the value when condition <span style="color:#f92672">is</span> true <span style="color:#f92672">and</span> <span style="color:#960050;background-color:#1e0010">“</span>holds<span style="color:#960050;background-color:#1e0010">”</span> 
-it <span style="color:#66d9ef">for</span> all other bars (when condition <span style="color:#f92672">is</span> false)<span style="color:#f92672">.</span>
-<span style="color:#f92672">*/</span>
-
- ValueWhen(EXPRESSION, ARRAY, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) 
-
-</code></pre></div><p>مقدار EXPRESSION یک ارایه با مقادیر صحیح یا غلط هستن
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">/*</span>
+</span></span><span style="display:flex;"><span>If you run above code you will clearly see how ValueWhen picks 
+</span></span><span style="display:flex;"><span>the value when condition <span style="color:#f92672">is</span> true <span style="color:#f92672">and</span> <span style="color:#960050;background-color:#1e0010">“</span>holds<span style="color:#960050;background-color:#1e0010">”</span> 
+</span></span><span style="display:flex;"><span>it <span style="color:#66d9ef">for</span> all other bars (when condition <span style="color:#f92672">is</span> false)<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span> ValueWhen(EXPRESSION, ARRAY, n <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>) 
+</span></span></code></pre></div><p>مقدار EXPRESSION یک ارایه با مقادیر صحیح یا غلط هستن
 در جایی که EXPRESSION صحیح باشد، مقدار متناظر آن در array برگردانده میشود
 و تا مقدار بعدی که EXPRESSION صحیح باشد آن مقدار نگه داری میشود</p>
 <h1 id="addcolumn">AddColumn</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> AddColumn( array, name,
-   	format <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.2</span>, textColor <span style="color:#f92672">=</span> colorDefault,
-   	bkgndColor <span style="color:#f92672">=</span> colorDefault, width <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
-   	barchart <span style="color:#f92672">=</span> Null ) 
-</code></pre></div><p>یک ستون به قسمت انالایزر اضافه میکند که میتوانیم دیتاهای خود را در ان ببینیم <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
-<p>برای اینکه دیتاها روی تمامی کندل ها نمایش داده شود باید مقدار filter را در ابتدا یک کنیم <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Filter <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span> show all bars
-</code></pre></div><h1 id="barindex">BarIndex</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> AddColumn( array, name,
+</span></span><span style="display:flex;"><span>   	format <span style="color:#f92672">=</span> <span style="color:#ae81ff">1.2</span>, textColor <span style="color:#f92672">=</span> colorDefault,
+</span></span><span style="display:flex;"><span>   	bkgndColor <span style="color:#f92672">=</span> colorDefault, width <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>   	barchart <span style="color:#f92672">=</span> Null ) 
+</span></span></code></pre></div><p>یک ستون به قسمت انالایزر اضافه میکند که میتوانیم دیتاهای خود را در ان ببینیم <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p>برای اینکه دیتاها روی تمامی کندل ها نمایش داده شود باید مقدار filter را در ابتدا یک کنیم <sup id="fnref1:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Filter <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>; <span style="color:#f92672">//</span> show all bars
+</span></span></code></pre></div><h1 id="barindex">BarIndex</h1>
 <p>شماره کندل را بر میگرداند <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
 <h1 id="lastvalue">LastValue</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> LastValue(ARRAY, lastmode <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span> ) 
-</code></pre></div><p>اخرین مقدار آرایه بر میگرداند <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> LastValue(ARRAY, lastmode <span style="color:#f92672">=</span> <span style="color:#66d9ef">True</span> ) 
+</span></span></code></pre></div><p>اخرین مقدار آرایه بر میگرداند <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></p>
 <p>اگر اخرین مقداری وجود نداشته باشد صفر برمیگرداند</p>
 <p>آخرین مقدار محاسبه شده آرایه مشخص شده را برمی گرداند. نتیجه این تابع را می توان به جای ثابت (NUMBER) در هر آرگومان تابع استفاده کرد.</p>
 <p>اگر آخرین نوار آرایه تعریف نشده یا تهی باشد (به عنوان مثال، فقط 100 روز بارگیری شده است و آخرین مقدار میانگین متحرک 200 روزه را درخواست می کنید)، تابع lastvalue صفر را برمی گرداند.
 هشدار: از آنجایی که این تابع مقدار آخرین نوار آرایه را دریافت می کند، به فرمولی اجازه می دهد تا به آینده نگاه کند، اگر نوار فعلی آخرین مورد نباشد.</p>
 <h1 id="trace">trace</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">_TRACE (<span style="color:#e6db74">&#34;MSG&#34;</span>)
-</code></pre></div><p>یک پیام در سیستم لاگ ویندوز ثبت میکند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>_TRACE (<span style="color:#e6db74">&#34;MSG&#34;</span>)
+</span></span></code></pre></div><p>یک پیام در سیستم لاگ ویندوز ثبت میکند</p>
 <p>برای دیدم لاگ در خود امی بروکی از قیمت وسندوز لاگ را فعال کنید</p>
 <p>سپس در صفحه لاگ راست کلیلک کنید و مدل هدنترنال لاگ را انتخاب کنید</p>
 <p>هر جا از این کد استفاده کنیم پیام مورد نظر ما در صفحه چاپ خواهد شد</p>
@@ -236,44 +234,44 @@ it <span style="color:#66d9ef">for</span> all other bars (when condition <span s
 <p>بک تست یعنی بررسی گذشته بازار، چه دستی و چه با فرمول،، در اینجا بک تست به معنی نوشتن فرمول هست که نرم افزار توسط اون خرید و فروش رو انجام میده
 و از سود و ضرر هایی که کردیم گزارش تعیه میکنه</p>
 <p>توسط متغیرهایی که داره میتونم تعیین کنیم چه پوزیشنی رو میخواییم انتخاب کنیم</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Buy
-Sell
-
-Short
-Cover
-
-buy <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value opens long trade
-sell <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value closes long trade
-short <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value opens short trade
-cover <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value closes short trade
-</code></pre></div><p>از دوتای اولی برای خرید و فروش اسپات اسفتاده میشه</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Buy
+</span></span><span style="display:flex;"><span>Sell
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Short
+</span></span><span style="display:flex;"><span>Cover
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>buy <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value opens long trade
+</span></span><span style="display:flex;"><span>sell <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value closes long trade
+</span></span><span style="display:flex;"><span>short <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value opens short trade
+</span></span><span style="display:flex;"><span>cover <span style="color:#f92672">-</span> <span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span> value closes short trade
+</span></span></code></pre></div><p>از دوتای اولی برای خرید و فروش اسپات اسفتاده میشه</p>
 <p>و از دوتای بعدی برای پوزیشین شورت یا فروش یا فیوچر فرم طور</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">buyprice
-sellprice
-shortprice
-coverprice
-</code></pre></div><p>و چهار متغیر یا آرایه بالا هم برای تعیین قیمت خرید و فروش استفاده میشوند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>buyprice
+</span></span><span style="display:flex;"><span>sellprice
+</span></span><span style="display:flex;"><span>shortprice
+</span></span><span style="display:flex;"><span>coverprice
+</span></span></code></pre></div><p>و چهار متغیر یا آرایه بالا هم برای تعیین قیمت خرید و فروش استفاده میشوند</p>
 <h1 id="positionsize">positionsize</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">PositionSize <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span>size array<span style="color:#f92672">&gt;</span>
-
-Now you can control dollar amount <span style="color:#f92672">or</span> percentage of portfolio that <span style="color:#f92672">is</span> invested into the trade
-
-    positive number define (dollar) amount that <span style="color:#f92672">is</span> invested into the trade <span style="color:#66d9ef">for</span> example:
-
-    PositionSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>; <span style="color:#f92672">//</span> invest <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">1000</span> <span style="color:#f92672">in</span> every trade
-
-    negative numbers <span style="color:#f92672">-</span><span style="color:#ae81ff">100.</span><span style="color:#f92672">.-</span><span style="color:#ae81ff">1</span> define percentage:
-    <span style="color:#f92672">-</span><span style="color:#ae81ff">100</span> gives <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span> of current portfolio size,
-    <span style="color:#f92672">-</span><span style="color:#ae81ff">33</span> gives <span style="color:#ae81ff">33</span><span style="color:#f92672">%</span> of available equity <span style="color:#66d9ef">for</span> example:
-
-    PositionSize <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">50</span>; <span style="color:#f92672">/*</span> always invest only half of the current equity <span style="color:#f92672">*/</span>
-
-    dynamic sizing example:
-
-    PositionSize <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span> RSI();
-
-    <span style="color:#66d9ef">as</span> RSI varies <span style="color:#f92672">from</span> <span style="color:#ae81ff">0..100</span> this will result <span style="color:#f92672">in</span> position depending on RSI values <span style="color:#f92672">-&gt;</span> low values of RSI will result <span style="color:#f92672">in</span> higher percentage invested
-</code></pre></div><p>تغیین میکنه چند درصد از موجودیم رو میخواییم سرمایه گذاری کنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>PositionSize <span style="color:#f92672">=</span> <span style="color:#f92672">&lt;</span>size array<span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Now you can control dollar amount <span style="color:#f92672">or</span> percentage of portfolio that <span style="color:#f92672">is</span> invested into the trade
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    positive number define (dollar) amount that <span style="color:#f92672">is</span> invested into the trade <span style="color:#66d9ef">for</span> example:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    PositionSize <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>; <span style="color:#f92672">//</span> invest <span style="color:#960050;background-color:#1e0010">$</span><span style="color:#ae81ff">1000</span> <span style="color:#f92672">in</span> every trade
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    negative numbers <span style="color:#f92672">-</span><span style="color:#ae81ff">100.</span><span style="color:#f92672">.-</span><span style="color:#ae81ff">1</span> define percentage:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">-</span><span style="color:#ae81ff">100</span> gives <span style="color:#ae81ff">100</span><span style="color:#f92672">%</span> of current portfolio size,
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">-</span><span style="color:#ae81ff">33</span> gives <span style="color:#ae81ff">33</span><span style="color:#f92672">%</span> of available equity <span style="color:#66d9ef">for</span> example:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    PositionSize <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">50</span>; <span style="color:#f92672">/*</span> always invest only half of the current equity <span style="color:#f92672">*/</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    dynamic sizing example:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    PositionSize <span style="color:#f92672">=</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">100</span> <span style="color:#f92672">+</span> RSI();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">as</span> RSI varies <span style="color:#f92672">from</span> <span style="color:#ae81ff">0..100</span> this will result <span style="color:#f92672">in</span> position depending on RSI values <span style="color:#f92672">-&gt;</span> low values of RSI will result <span style="color:#f92672">in</span> higher percentage invested
+</span></span></code></pre></div><p>تغیین میکنه چند درصد از موجودیم رو میخواییم سرمایه گذاری کنیم</p>
 <hr>
 <p><img src="/image/afl/w_settings3.gif" alt="Stop Settings"></p>
 <h2 id="trailing-stops">Trailing stops</h2>
@@ -284,73 +282,71 @@ Now you can control dollar amount <span style="color:#f92672">or</span> percenta
 <h1 id="applystop">ApplyStop</h1>
 <p>more: <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></p>
 <p>از طریق این تابع میتوانیم تمامی stop هایی که در تصویر قبلی نشان داده شده و در تنظظیمات است را پیاده سازی کنیم</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"> ApplyStop(
-	type,
-	mode,
-	amount,
-	exitatstop,
-	volatile <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>,
-	ReEntryDelay <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
-	ValidFrom <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
-	ValidTo <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> 
-) 
-
-
-
-type <span style="color:#f92672">=</span>
-<span style="color:#ae81ff">0</span> <span style="color:#f92672">=</span> stopTypeLoss <span style="color:#f92672">-</span> maximum loss stop,
-<span style="color:#ae81ff">1</span> <span style="color:#f92672">=</span> stopTypeProfit <span style="color:#f92672">-</span> profit target stop,
-<span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> stopTypeTrailing <span style="color:#f92672">-</span> trailing stop,
-<span style="color:#ae81ff">3</span> <span style="color:#f92672">=</span> stopTypeNBar <span style="color:#f92672">-</span> N<span style="color:#f92672">-</span>bar stop 
-
-mode <span style="color:#f92672">=</span>
-<span style="color:#ae81ff">0</span> <span style="color:#f92672">-</span> disable stop (stopModeDisable),
-<span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> amount <span style="color:#f92672">in</span> percent (stopModePercent), <span style="color:#f92672">or</span> number of bars <span style="color:#66d9ef">for</span> N<span style="color:#f92672">-</span>bar stop (stopModeBars),
-<span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> amount <span style="color:#f92672">in</span> points (stopModePoint);
-<span style="color:#ae81ff">3</span> <span style="color:#f92672">-</span> amount <span style="color:#f92672">in</span> percent of profit (risk)
-
-amount <span style="color:#f92672">=</span>
-percent<span style="color:#f92672">/</span>point loss<span style="color:#f92672">/</span>profit trigger<span style="color:#f92672">/</span>risk amount<span style="color:#f92672">.</span>
-This could be a number (static stop level) <span style="color:#f92672">or</span> an array (dynamic stop level)
-
-ExitAtStop
-
-ExitAtStop <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">-</span> means check stops using only trade price <span style="color:#f92672">and</span> exit at regular trade price(<span style="color:#ae81ff">1</span>)
-(<span style="color:#66d9ef">if</span> you are trading on close it means that only close price will be checked <span style="color:#66d9ef">for</span> exits <span style="color:#f92672">and</span> exit will be done at close price)
-ExitAtStop <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> check High<span style="color:#f92672">-</span>Low prices <span style="color:#f92672">and</span> exit intraday on price equal to stop level on the same bar when stop was triggered
-ExitAtStop <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> check High<span style="color:#f92672">-</span>Low prices but exit NEXT BAR on regular trade price<span style="color:#f92672">.</span>
-
-
-</code></pre></div><h1 id="ref">Ref</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">Ref( Close, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><p>آرایه را یک واحد شیفت میدهد</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span> ApplyStop(
+</span></span><span style="display:flex;"><span>	type,
+</span></span><span style="display:flex;"><span>	mode,
+</span></span><span style="display:flex;"><span>	amount,
+</span></span><span style="display:flex;"><span>	exitatstop,
+</span></span><span style="display:flex;"><span>	volatile <span style="color:#f92672">=</span> <span style="color:#66d9ef">False</span>,
+</span></span><span style="display:flex;"><span>	ReEntryDelay <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>	ValidFrom <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,
+</span></span><span style="display:flex;"><span>	ValidTo <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> 
+</span></span><span style="display:flex;"><span>) 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>type <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">=</span> stopTypeLoss <span style="color:#f92672">-</span> maximum loss stop,
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">=</span> stopTypeProfit <span style="color:#f92672">-</span> profit target stop,
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span> <span style="color:#f92672">=</span> stopTypeTrailing <span style="color:#f92672">-</span> trailing stop,
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> <span style="color:#f92672">=</span> stopTypeNBar <span style="color:#f92672">-</span> N<span style="color:#f92672">-</span>bar stop 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>mode <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#f92672">-</span> disable stop (stopModeDisable),
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> amount <span style="color:#f92672">in</span> percent (stopModePercent), <span style="color:#f92672">or</span> number of bars <span style="color:#66d9ef">for</span> N<span style="color:#f92672">-</span>bar stop (stopModeBars),
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> amount <span style="color:#f92672">in</span> points (stopModePoint);
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">3</span> <span style="color:#f92672">-</span> amount <span style="color:#f92672">in</span> percent of profit (risk)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>amount <span style="color:#f92672">=</span>
+</span></span><span style="display:flex;"><span>percent<span style="color:#f92672">/</span>point loss<span style="color:#f92672">/</span>profit trigger<span style="color:#f92672">/</span>risk amount<span style="color:#f92672">.</span>
+</span></span><span style="display:flex;"><span>This could be a number (static stop level) <span style="color:#f92672">or</span> an array (dynamic stop level)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ExitAtStop
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ExitAtStop <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> <span style="color:#f92672">-</span> means check stops using only trade price <span style="color:#f92672">and</span> exit at regular trade price(<span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>(<span style="color:#66d9ef">if</span> you are trading on close it means that only close price will be checked <span style="color:#66d9ef">for</span> exits <span style="color:#f92672">and</span> exit will be done at close price)
+</span></span><span style="display:flex;"><span>ExitAtStop <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> check High<span style="color:#f92672">-</span>Low prices <span style="color:#f92672">and</span> exit intraday on price equal to stop level on the same bar when stop was triggered
+</span></span><span style="display:flex;"><span>ExitAtStop <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> check High<span style="color:#f92672">-</span>Low prices but exit NEXT BAR on regular trade price<span style="color:#f92672">.</span>
+</span></span></code></pre></div><h1 id="ref">Ref</h1>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>Ref( Close, <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
+</span></span></code></pre></div><p>آرایه را یک واحد شیفت میدهد</p>
 <h1 id="hhv--llv">hhv , llv</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">HHV(H,no);
-LLV(L,no);
-</code></pre></div><p>بیشترین مقدار و کمترین مقدار آرایه در یک دوره که تعیین میکنیم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>HHV(H,no);
+</span></span><span style="display:flex;"><span>LLV(L,no);
+</span></span></code></pre></div><p>بیشترین مقدار و کمترین مقدار آرایه در یک دوره که تعیین میکنیم</p>
 <p>یعنی همان max و یا min در یک دوره rolling شده هست</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dayofweek()
-month()
-</code></pre></div><section class="footnotes" role="doc-endnotes">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dayofweek()
+</span></span><span style="display:flex;"><span>month()
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
-<p><a href="http://www.amibroker.com/kb/2014/09/29/debugging-techniques-part-1-exploration/">http://www.amibroker.com/kb/2014/09/29/debugging-techniques-part-1-exploration/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<li id="fn:1">
+<p><a href="http://www.amibroker.com/kb/2014/09/29/debugging-techniques-part-1-exploration/">http://www.amibroker.com/kb/2014/09/29/debugging-techniques-part-1-exploration/</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p><a href="https://www.amibroker.com/guide/afl/addcolumn.html">https://www.amibroker.com/guide/afl/addcolumn.html</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p><a href="http://www.amibroker.com/guide/afl/barindex.html">http://www.amibroker.com/guide/afl/barindex.html</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p><a href="http://www.amibroker.com/guide/afl/lastvalue.html">http://www.amibroker.com/guide/afl/lastvalue.html</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:5" role="doc-endnote">
+<li id="fn:5">
 <p><a href="https://www.amibroker.com/guide/afl/applystop.html">https://www.amibroker.com/guide/afl/applystop.html</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
   </div>
 

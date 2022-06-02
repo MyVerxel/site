@@ -7,19 +7,29 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;3</copyright>
-    <lastBuildDate>Sat, 04 Oct 1400 00:00:27 +0000</lastBuildDate><atom:link href="https://f4.anthus.ir/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 11 Mar 1401 16:14:59 +0000</lastBuildDate><atom:link href="https://f4.anthus.ir/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pandas</title>
+      <link>https://f4.anthus.ir/posts/pandas/</link>
+      <pubDate>Wed, 11 Mar 1401 16:14:59 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/pandas/</guid>
+      <description>Start ایمپورت کردن :
+import pandas as pd تمامی دیتا فریم ها رو با d نشون خواهم داد</description>
+    </item>
+    
     <item>
       <title>android</title>
       <link>https://f4.anthus.ir/posts/android/</link>
       <pubDate>Sat, 04 Oct 1400 00:00:27 +0000</pubDate>
       
       <guid>https://f4.anthus.ir/posts/android/</guid>
-      <description>SEARCH  GRIDE LAYOUT (FILE J)  اکتیوی ها از کلاس AppCompatActivity ارث میبرند
+      <description>SEARCH GRIDE LAYOUT (FILE J) اکتیوی ها از کلاس AppCompatActivity ارث میبرند
 TextView tv ; Button bt; متغیر های tv و bt از نوه تکست و دکمه هستند،
 setContentView نحتوای layout رو نشون میده که در فایل های xml هستند
 نحوه دسترسی به ریسورس ها در جا وا از سریق کلاس R
 و در xml از طریق @ و میتونیم به ریسوسرس دسترسی پیدا کنیم
-setContentView(R.layout.activity_main); ... findViewById( R.</description>
+setContentView(R.layout.activity_main); ... findViewById( R.id.textView ); //.</description>
     </item>
     
     <item>
@@ -28,7 +38,7 @@ setContentView(R.layout.activity_main); ... findViewById( R.</description>
       <pubDate>Tue, 30 Sep 1400 10:30:27 +0000</pubDate>
       
       <guid>https://f4.anthus.ir/posts/afl/</guid>
-      <description>تمامی عبارت ها به سمی‌کالن بسته می‌شود از نقطه برای دسترسی به ابجکت مورد نظر استفاده میشود  به بزرگی کوچکی حروف حساسیت نیستند امکان اینها ارایه هستند
+      <description>تمامی عبارت ها به سمی‌کالن بسته می‌شود از نقطه برای دسترسی به ابجکت مورد نظر استفاده میشود به بزرگی کوچکی حروف حساسیت نیستند امکان اینها ارایه هستند
 o open c close h high l low v volume آرایه ها از طریق براکت می‌توان مقداری را ست کرد ویا صدا زد
 a[0] = 33 //set a[0] //get مثال MA( Close, 10 ); IIf( H &amp;gt; Ref(H,-1), MA(H,20), MA(C,20) ); relational ( &amp;lt;, &amp;gt;, &amp;lt;=, &amp;gt;= ) equality ( ==, !</description>
     </item>
@@ -40,7 +50,7 @@ a[0] = 33 //set a[0] //get مثال MA( Close, 10 ); IIf( H &amp;gt; Ref(H
       
       <guid>https://f4.anthus.ir/posts/java/</guid>
       <description>شروع: //filename Gg.java public class Gg{ public static void main ( String[] args ) { ... } } خواندن از ورودی import java.util.Scanner; // program uses class Scanner Scanner input new Scanner(System.in); number1= input.nextInt (); نوشتن در خروجی System.out.print() System.out.println() System.out.printf( format , ...) تعریف متغیر int number1; اینها نوع اصلی هستند که باید به حروف کوچک نوشته شوند
- int float double char boolean byte short long  محاسبات حرف ٪ به معنی باقیمانده است</description>
+int float double char boolean byte short long محاسبات حرف ٪ به معنی باقیمانده است</description>
     </item>
     
     <item>
@@ -50,8 +60,8 @@ a[0] = 33 //set a[0] //get مثال MA( Close, 10 ); IIf( H &amp;gt; Ref(H
       
       <guid>https://f4.anthus.ir/posts/golang/</guid>
       <description>package: هر برنامه باید دارای یک پکیچ باشد :
-package main import ( &amp;#34;fmt&amp;#34; &amp;#34;math/rand&amp;#34; ) func main() { fmt.Println(&amp;#34;My favorite number is&amp;#34;, rand.Intn(10)) } Exported names :  نامهای اکسپورت شده فقط با حروف بزرگ شروع میشوند در غیر اینصورت اکسپورت نخواهند شد  `fmt.Println(math.pi)` // error `fmt.Println(math.Pi)` // correct  Functions: برای تعریف آرایه باید حتما براکت باز شدن در همان خز اول باشد
-func NAME ( [ARGs] ) [TYPE[,.</description>
+package main import ( &amp;#34;fmt&amp;#34; &amp;#34;math/rand&amp;#34; ) func main() { fmt.Println(&amp;#34;My favorite number is&amp;#34;, rand.Intn(10)) } Exported names : نامهای اکسپورت شده فقط با حروف بزرگ شروع میشوند در غیر اینصورت اکسپورت نخواهند شد `fmt.Println(math.pi)` // error `fmt.Println(math.Pi)` // correct Functions: برای تعریف آرایه باید حتما براکت باز شدن در همان خز اول باشد
+func NAME ( [ARGs] ) [TYPE[,...] ] { // &amp;lt;-mohem } // ERROR: func NAME ( [ARGs] ) [TYPE[,.</description>
     </item>
     
     <item>
@@ -109,9 +119,9 @@ fn main() { println(add(77, 33)) println(sub(100, 50)) } fn add(x int, y int) in
       
       <guid>https://f4.anthus.ir/posts/esp/</guid>
       <description>منبع: SOURCE
-Setup Toolchain :  install tool chin  linux :
+Setup Toolchain : install tool chin linux :
 sudo apt-get install gcc git wget make libncurses-dev flex bison gperf python python-serial wget https://dl.espressif.com/dl/xtensa-lx106-elf-gcc8_4_0-esp-2020r3-linux-amd64.tar.gz mkdir -p esp cd esp tar -xzf Downloads/xtensa-lx106-elf-linux64-1.22.0-100-ge567ec7-5.2.0.tar.gz #/home/ali/Desktop/esp/xtensa-lx106-elf/xtensa-lx106-elf/bin # add to .bashrc PATH=$PATH:/home/ali/Desktop/esp/xtensa-lx106-elf/xtensa-lx106-elf/bin alias get_lx106=&amp;#39;export PATH=&amp;#34;$PATH:/home/ali/Desktop/esp/xtensa-lx106-elf/xtensa-lx106-elf/bin&amp;#34;&amp;#39; set permition:
-sudo usermod -a -G dialout $USER sudo chmod -R 777 /dev/ttyUSB0 GET SDK  Get ESP8266_RTOS_SDK  cd esp git clone --recursive https://github.com/espressif/ESP8266_RTOS_SDK.git </description>
+sudo usermod -a -G dialout $USER sudo chmod -R 777 /dev/ttyUSB0 GET SDK Get ESP8266_RTOS_SDK cd esp git clone --recursive https://github.com/espressif/ESP8266_RTOS_SDK.git </description>
     </item>
     
   </channel>

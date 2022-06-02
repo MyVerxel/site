@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.92.1" />
+  <meta name="generator" content="Hugo 0.100.1" />
   <title> Vlang | Blog </title>
   <meta name="description" content="A simple and concise hugo theme.">
   <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
@@ -67,55 +67,55 @@
 
   <div class="post-text">
     <h1 id="نصب-">نصب :</h1>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">git clone https:<span style="color:#f92672">//</span>github<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>vlang<span style="color:#f92672">/</span>v
-cd v
-make
-</code></pre></div><h3 id="ساختار-برنامه-">ساختار برنامه :</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fn main() {
-	println(<span style="color:#e6db74">&#39;hello world&#39;</span>)
-}
-</code></pre></div><h3 id="comment">comment:</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">//</span> <span style="color:#f92672">...</span>
-<span style="color:#f92672">/*</span>
-	<span style="color:#f92672">.....</span>
-<span style="color:#f92672">*/</span>
-</code></pre></div><h3 id="functions-1-">functions <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> :</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>git clone https:<span style="color:#f92672">//</span>github<span style="color:#f92672">.</span>com<span style="color:#f92672">/</span>vlang<span style="color:#f92672">/</span>v
+</span></span><span style="display:flex;"><span>cd v
+</span></span><span style="display:flex;"><span>make
+</span></span></code></pre></div><h3 id="ساختار-برنامه-">ساختار برنامه :</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fn main() {
+</span></span><span style="display:flex;"><span>	println(<span style="color:#e6db74">&#39;hello world&#39;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="comment">comment:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">//</span> <span style="color:#f92672">...</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">/*</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">.....</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*/</span>
+</span></span></code></pre></div><h3 id="functions-1-">functions <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> :</h3>
 <p>نوع متغیر بعد از اسم آن میآید</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fn NAME ( var TYPE ) TYPE {
-
-}
-</code></pre></div><p>توابع میتوانند اول فراخونی شوند و در ادامه تعریف شوند &hellip;</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fn main() {
-	println(add(<span style="color:#ae81ff">77</span>, <span style="color:#ae81ff">33</span>))
-	println(sub(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">50</span>))
-}
-
-fn add(x int, y int) int {
-	<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y
-}
-
-fn sub(x int, y int) int {
-	<span style="color:#66d9ef">return</span> x <span style="color:#f92672">-</span> y
-}
-</code></pre></div><p>برگشت چند متغیری:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fn foo() (int, int) {
-	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>
-}
-
-a, b <span style="color:#f92672">:=</span> foo()
-println(a) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
-println(b) <span style="color:#f92672">//</span> <span style="color:#ae81ff">3</span>
-c, _ <span style="color:#f92672">:=</span> foo() <span style="color:#f92672">//</span> ignore values using <span style="color:#960050;background-color:#1e0010">`</span>_<span style="color:#960050;background-color:#1e0010">`</span>
-</code></pre></div><p>نمامی توابع خصوصی هستند مگر اینکه اعلام شوند <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fn NAME ( var TYPE ) TYPE {
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>توابع میتوانند اول فراخونی شوند و در ادامه تعریف شوند &hellip;</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fn main() {
+</span></span><span style="display:flex;"><span>	println(add(<span style="color:#ae81ff">77</span>, <span style="color:#ae81ff">33</span>))
+</span></span><span style="display:flex;"><span>	println(sub(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">50</span>))
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fn add(x int, y int) int {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> x <span style="color:#f92672">+</span> y
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fn sub(x int, y int) int {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> x <span style="color:#f92672">-</span> y
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>برگشت چند متغیری:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>fn foo() (int, int) {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#ae81ff">2</span>, <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a, b <span style="color:#f92672">:=</span> foo()
+</span></span><span style="display:flex;"><span>println(a) <span style="color:#f92672">//</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>println(b) <span style="color:#f92672">//</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>c, _ <span style="color:#f92672">:=</span> foo() <span style="color:#f92672">//</span> ignore values using <span style="color:#960050;background-color:#1e0010">`</span>_<span style="color:#960050;background-color:#1e0010">`</span>
+</span></span></code></pre></div><p>نمامی توابع خصوصی هستند مگر اینکه اعلام شوند <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <blockquote>
 <p>Functions are private (not exported) by default. To allow other modules to use them, prepend pub. The same applies to constants and types.</p>
 </blockquote>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pub fn public_function() {
-}
-
-fn private_function() {
-}
-</code></pre></div><h3 id="متغیر-ها-">متغیر ها :</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>pub fn public_function() {
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>fn private_function() {
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="متغیر-ها-">متغیر ها :</h3>
 <ul>
 <li>متغیر ها اول باید اعلان شوند و سپس استفاده شوند</li>
 <li>تمامی متغیر ها از نوع تغییر ناپذیر یا immutable هستند</li>
@@ -123,136 +123,135 @@ fn private_function() {
 <li>بر خلاف سایر زبانها در v متغیر ها فقط میتوانند درون توابع تعریف شوند و چیزی به نام متغیر سراسری نداریم</li>
 </ul>
 <h5 id="نحوه-اعلان-">نحوه اعلان :</h5>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">name <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
-age <span style="color:#f92672">:=</span> <span style="color:#ae81ff">20</span>
-large_number <span style="color:#f92672">:=</span> i64(<span style="color:#ae81ff">9999999999</span>)
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>name <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
+</span></span><span style="display:flex;"><span>age <span style="color:#f92672">:=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>large_number <span style="color:#f92672">:=</span> i64(<span style="color:#ae81ff">9999999999</span>)
+</span></span></code></pre></div><blockquote>
 <p>The variable&rsquo;s type is inferred from the value on the right hand side. To choose a different type, use type conversion: the expression <code>T(v)</code> converts the value <code>v</code> to the type <code>T</code>.</p>
 </blockquote>
 <p>نحوه اعلان متغیر تغییر پذیر:
 توسط کلمه <code>mut</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mut age <span style="color:#f92672">:=</span> <span style="color:#ae81ff">20</span>
-println(age)
-age <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>
-println(age)
-</code></pre></div><p>جابجایی متغیر ها در یک خط بدون تعریف متغیر دیگر:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">mut a <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-mut b <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
-println(<span style="color:#e6db74">&#39;$a, $b&#39;</span>) <span style="color:#f92672">//</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>
-a, b <span style="color:#f92672">=</span> b, a
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mut age <span style="color:#f92672">:=</span> <span style="color:#ae81ff">20</span>
+</span></span><span style="display:flex;"><span>println(age)
+</span></span><span style="display:flex;"><span>age <span style="color:#f92672">=</span> <span style="color:#ae81ff">21</span>
+</span></span><span style="display:flex;"><span>println(age)
+</span></span></code></pre></div><p>جابجایی متغیر ها در یک خط بدون تعریف متغیر دیگر:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>mut a <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>mut b <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>println(<span style="color:#e6db74">&#39;$a, $b&#39;</span>) <span style="color:#f92672">//</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>a, b <span style="color:#f92672">=</span> b, a
+</span></span></code></pre></div><ul>
 <li>اگر متغیری اعلان شود ولی استفاده نشود؛ در هنگاک اجرای برنامه <em>هشدار</em> دریافت میکنیم؛ اگر میخوواهیم این هشدار تبدبل به خطا شود و برنامه اجرا نشود از ارگومان <code>-prod</code> در هنگام کامپایل استفاده مکنیم</li>
 <li>این حرکت مشابه <code>go</code> است</li>
 </ul>
 <h3 id="types-3">Types <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bool
-
-string
-
-i8    i16  int  i64      i128 (soon)
-byte  u16  u32  u64      u128 (soon)
-
-rune <span style="color:#f92672">//</span> represents a Unicode code point
-
-f32 f64
-
-isize, usize <span style="color:#f92672">//</span> platform<span style="color:#f92672">-</span>dependent, the size <span style="color:#f92672">is</span> how many bytes it takes to reference any location <span style="color:#f92672">in</span> memory
-
-voidptr <span style="color:#f92672">//</span> this one <span style="color:#f92672">is</span> mostly used <span style="color:#66d9ef">for</span> C interoperability
-
-any <span style="color:#f92672">//</span> similar to C<span style="color:#e6db74">&#39;s void* and Go&#39;</span>s interface{}
-</code></pre></div><h3 id="string">string:</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">name <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
-println(name<span style="color:#f92672">.</span>len)
-println(name[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">//</span> indexing gives a byte B
-println(name[<span style="color:#ae81ff">1..3</span>]) <span style="color:#f92672">//</span> slicing gives a string <span style="color:#e6db74">&#39;ob&#39;</span>
-windows_newline <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">//</span> escape special characters like <span style="color:#f92672">in</span> C
-<span style="color:#66d9ef">assert</span> windows_newline<span style="color:#f92672">.</span>len <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>
-
-<span style="color:#f92672">//-----</span>
-
-country <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Netherlands&#39;</span>
-println(country[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">//</span> Output: <span style="color:#ae81ff">78</span>
-println(country[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>ascii_str()) <span style="color:#f92672">//</span> Output: N
-
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>bool
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>string
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>i8    i16  int  i64      i128 (soon)
+</span></span><span style="display:flex;"><span>byte  u16  u32  u64      u128 (soon)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>rune <span style="color:#f92672">//</span> represents a Unicode code point
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>f32 f64
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>isize, usize <span style="color:#f92672">//</span> platform<span style="color:#f92672">-</span>dependent, the size <span style="color:#f92672">is</span> how many bytes it takes to reference any location <span style="color:#f92672">in</span> memory
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>voidptr <span style="color:#f92672">//</span> this one <span style="color:#f92672">is</span> mostly used <span style="color:#66d9ef">for</span> C interoperability
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>any <span style="color:#f92672">//</span> similar to C<span style="color:#e6db74">&#39;s void* and Go&#39;</span>s interface{}
+</span></span></code></pre></div><h3 id="string">string:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>name <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
+</span></span><span style="display:flex;"><span>println(name<span style="color:#f92672">.</span>len)
+</span></span><span style="display:flex;"><span>println(name[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">//</span> indexing gives a byte B
+</span></span><span style="display:flex;"><span>println(name[<span style="color:#ae81ff">1..3</span>]) <span style="color:#f92672">//</span> slicing gives a string <span style="color:#e6db74">&#39;ob&#39;</span>
+</span></span><span style="display:flex;"><span>windows_newline <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;</span><span style="color:#ae81ff">\r\n</span><span style="color:#e6db74">&#39;</span> <span style="color:#f92672">//</span> escape special characters like <span style="color:#f92672">in</span> C
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> windows_newline<span style="color:#f92672">.</span>len <span style="color:#f92672">==</span> <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//-----</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>country <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Netherlands&#39;</span>
+</span></span><span style="display:flex;"><span>println(country[<span style="color:#ae81ff">0</span>]) <span style="color:#f92672">//</span> Output: <span style="color:#ae81ff">78</span>
+</span></span><span style="display:flex;"><span>println(country[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>ascii_str()) <span style="color:#f92672">//</span> Output: N
+</span></span></code></pre></div><ul>
 <li>رشته ها هم تغییر پذیر نیستند در نتیجه دستور <code>name[0] = 'C'</code> هم نامعتبر است</li>
 <li>رشته ترکیبی از بلیت ها هست همانند <code>go</code></li>
 <li>اما کاراکتر ها از نوع <code>rune</code> هستند</li>
 </ul>
 <p>کاراکتر ها:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rocket <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">`</span>h<span style="color:#960050;background-color:#1e0010">`</span>
-<span style="color:#66d9ef">assert</span> <span style="color:#e6db74">&#39;aloha!&#39;</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#960050;background-color:#1e0010">`</span>a<span style="color:#960050;background-color:#1e0010">`</span>
-</code></pre></div><p>متن های خام:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s <span style="color:#f92672">:=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;hello\nworld&#39;</span>
-println(s) <span style="color:#f92672">//</span> <span style="color:#e6db74">&#34;hello</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">world&#34;</span>
-</code></pre></div><p>تبدیل رشته به عدد:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;42&#39;</span>
-n <span style="color:#f92672">:=</span> s<span style="color:#f92672">.</span>int() <span style="color:#f92672">//</span> <span style="color:#ae81ff">42</span>
-</code></pre></div><p>تبدیل رشته ها به <code>runes</code> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hello <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Hello World 👋&#39;</span>
-hello_runes <span style="color:#f92672">:=</span> hello<span style="color:#f92672">.</span>runes() <span style="color:#f92672">//</span> [<span style="color:#960050;background-color:#1e0010">`</span>H<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>e<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>l<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>l<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>o<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>W<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>o<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>r<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>l<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>d<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`👋`</span>]
-</code></pre></div><p>درونیابی رشته ها :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">name <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
-println(<span style="color:#e6db74">&#39;Hello, $name!&#39;</span>) <span style="color:#f92672">//</span> Hello, Bob<span style="color:#960050;background-color:#1e0010">!</span>
-</code></pre></div><blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>rocket <span style="color:#f92672">:=</span> <span style="color:#960050;background-color:#1e0010">`</span>h<span style="color:#960050;background-color:#1e0010">`</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">assert</span> <span style="color:#e6db74">&#39;aloha!&#39;</span>[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">==</span> <span style="color:#960050;background-color:#1e0010">`</span>a<span style="color:#960050;background-color:#1e0010">`</span>
+</span></span></code></pre></div><p>متن های خام:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>s <span style="color:#f92672">:=</span> <span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;hello\nworld&#39;</span>
+</span></span><span style="display:flex;"><span>println(s) <span style="color:#f92672">//</span> <span style="color:#e6db74">&#34;hello</span><span style="color:#ae81ff">\n</span><span style="color:#e6db74">world&#34;</span>
+</span></span></code></pre></div><p>تبدیل رشته به عدد:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>s <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;42&#39;</span>
+</span></span><span style="display:flex;"><span>n <span style="color:#f92672">:=</span> s<span style="color:#f92672">.</span>int() <span style="color:#f92672">//</span> <span style="color:#ae81ff">42</span>
+</span></span></code></pre></div><p>تبدیل رشته ها به <code>runes</code> :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>hello <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Hello World 👋&#39;</span>
+</span></span><span style="display:flex;"><span>hello_runes <span style="color:#f92672">:=</span> hello<span style="color:#f92672">.</span>runes() <span style="color:#f92672">//</span> [<span style="color:#960050;background-color:#1e0010">`</span>H<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>e<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>l<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>l<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>o<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>W<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>o<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>r<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>l<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span>d<span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#960050;background-color:#1e0010">`</span>, <span style="color:#960050;background-color:#1e0010">`👋`</span>]
+</span></span></code></pre></div><p>درونیابی رشته ها :</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>name <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
+</span></span><span style="display:flex;"><span>println(<span style="color:#e6db74">&#39;Hello, $name!&#39;</span>) <span style="color:#f92672">//</span> Hello, Bob<span style="color:#960050;background-color:#1e0010">!</span>
+</span></span></code></pre></div><blockquote>
 <p>It also works with fields: &lsquo;age = $user.age&rsquo;. If you need more complex expressions, use ${}: &lsquo;can register = ${user.age &gt; 13}&rsquo;.</p>
 </blockquote>
 <p>الحاق <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> :</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">name <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
-bobby <span style="color:#f92672">:=</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;by&#39;</span> <span style="color:#f92672">//</span> <span style="color:#f92672">+</span> <span style="color:#f92672">is</span> used to concatenate strings
-println(bobby) <span style="color:#f92672">//</span> <span style="color:#e6db74">&#34;Bobby&#34;</span>
-mut s <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;hello &#39;</span>
-s <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;world&#39;</span> <span style="color:#f92672">//</span> <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#f92672">+=</span><span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#f92672">is</span> used to append to a string
-println(s) <span style="color:#f92672">//</span> <span style="color:#e6db74">&#34;hello world&#34;</span>
-
-<span style="color:#f92672">//</span>
-
-age <span style="color:#f92672">:=</span> <span style="color:#ae81ff">10</span>
-println(<span style="color:#e6db74">&#39;age = &#39;</span> <span style="color:#f92672">+</span> age) <span style="color:#f92672">//</span> <span style="color:#f92672">not</span> allowed
-
-
-age <span style="color:#f92672">:=</span> <span style="color:#ae81ff">11</span>
-println(<span style="color:#e6db74">&#39;age = &#39;</span> <span style="color:#f92672">+</span> age<span style="color:#f92672">.</span>str())
-</code></pre></div><h3 id="integers">integers:</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0x7B</span>
-b <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0b01111011</span>
-c <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0o173</span>
-
-num <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1_000_000</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">1000000</span>
-three <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0b0_11</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">0b11</span>
-float_num <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3_122.55</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">3122.55</span>
-hexa <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0xF_F</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">255</span>
-oct <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0o17_3</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">0o173</span>
-
-a <span style="color:#f92672">:=</span> i64(<span style="color:#ae81ff">123</span>)
-b <span style="color:#f92672">:=</span> byte(<span style="color:#ae81ff">42</span>)
-c <span style="color:#f92672">:=</span> i16(<span style="color:#ae81ff">12345</span>)
-
-f <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1.0</span>
-f1 <span style="color:#f92672">:=</span> f64(<span style="color:#ae81ff">3.14</span>)
-f2 <span style="color:#f92672">:=</span> f32(<span style="color:#ae81ff">3.14</span>)
-
-f0 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">42e1</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">420</span>
-f1 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">123e-2</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">1.23</span>
-f2 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">456e+2</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">45600</span>
-</code></pre></div><section class="footnotes" role="doc-endnotes">
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>name <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;Bob&#39;</span>
+</span></span><span style="display:flex;"><span>bobby <span style="color:#f92672">:=</span> name <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;by&#39;</span> <span style="color:#f92672">//</span> <span style="color:#f92672">+</span> <span style="color:#f92672">is</span> used to concatenate strings
+</span></span><span style="display:flex;"><span>println(bobby) <span style="color:#f92672">//</span> <span style="color:#e6db74">&#34;Bobby&#34;</span>
+</span></span><span style="display:flex;"><span>mut s <span style="color:#f92672">:=</span> <span style="color:#e6db74">&#39;hello &#39;</span>
+</span></span><span style="display:flex;"><span>s <span style="color:#f92672">+=</span> <span style="color:#e6db74">&#39;world&#39;</span> <span style="color:#f92672">//</span> <span style="color:#960050;background-color:#1e0010">`</span><span style="color:#f92672">+=</span><span style="color:#960050;background-color:#1e0010">`</span> <span style="color:#f92672">is</span> used to append to a string
+</span></span><span style="display:flex;"><span>println(s) <span style="color:#f92672">//</span> <span style="color:#e6db74">&#34;hello world&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">//</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>age <span style="color:#f92672">:=</span> <span style="color:#ae81ff">10</span>
+</span></span><span style="display:flex;"><span>println(<span style="color:#e6db74">&#39;age = &#39;</span> <span style="color:#f92672">+</span> age) <span style="color:#f92672">//</span> <span style="color:#f92672">not</span> allowed
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>age <span style="color:#f92672">:=</span> <span style="color:#ae81ff">11</span>
+</span></span><span style="display:flex;"><span>println(<span style="color:#e6db74">&#39;age = &#39;</span> <span style="color:#f92672">+</span> age<span style="color:#f92672">.</span>str())
+</span></span></code></pre></div><h3 id="integers">integers:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>a <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0x7B</span>
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0b01111011</span>
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0o173</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>num <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1_000_000</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">1000000</span>
+</span></span><span style="display:flex;"><span>three <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0b0_11</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">0b11</span>
+</span></span><span style="display:flex;"><span>float_num <span style="color:#f92672">:=</span> <span style="color:#ae81ff">3_122.55</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">3122.55</span>
+</span></span><span style="display:flex;"><span>hexa <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0xF_F</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">255</span>
+</span></span><span style="display:flex;"><span>oct <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0o17_3</span> <span style="color:#f92672">//</span> same <span style="color:#66d9ef">as</span> <span style="color:#ae81ff">0o173</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>a <span style="color:#f92672">:=</span> i64(<span style="color:#ae81ff">123</span>)
+</span></span><span style="display:flex;"><span>b <span style="color:#f92672">:=</span> byte(<span style="color:#ae81ff">42</span>)
+</span></span><span style="display:flex;"><span>c <span style="color:#f92672">:=</span> i16(<span style="color:#ae81ff">12345</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>f <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1.0</span>
+</span></span><span style="display:flex;"><span>f1 <span style="color:#f92672">:=</span> f64(<span style="color:#ae81ff">3.14</span>)
+</span></span><span style="display:flex;"><span>f2 <span style="color:#f92672">:=</span> f32(<span style="color:#ae81ff">3.14</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>f0 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">42e1</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">420</span>
+</span></span><span style="display:flex;"><span>f1 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">123e-2</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">1.23</span>
+</span></span><span style="display:flex;"><span>f2 <span style="color:#f92672">:=</span> <span style="color:#ae81ff">456e+2</span> <span style="color:#f92672">//</span> <span style="color:#ae81ff">45600</span>
+</span></span></code></pre></div><div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn:1" role="doc-endnote">
+<li id="fn:1">
 <p><a href="https://github.com/vlang/v/blob/master/doc/docs.md#functions">https://github.com/vlang/v/blob/master/doc/docs.md#functions</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<li id="fn:2">
 <p><a href="https://github.com/vlang/v/blob/master/doc/docs.md#symbol-visibility">https://github.com/vlang/v/blob/master/doc/docs.md#symbol-visibility</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:3" role="doc-endnote">
+<li id="fn:3">
 <p><a href="https://github.com/vlang/v/blob/master/doc/docs.md#v-types">https://github.com/vlang/v/blob/master/doc/docs.md#v-types</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:4" role="doc-endnote">
+<li id="fn:4">
 <p><a href="https://github.com/vlang/v/blob/master/doc/docs.md#string-operators">https://github.com/vlang/v/blob/master/doc/docs.md#string-operators</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 </ol>
-</section>
+</div>
 
   </div>
 
