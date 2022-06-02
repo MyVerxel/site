@@ -410,6 +410,14 @@ dayofweek()
 month()
 ```
 
+# sign
+
+علامت منفی یا مثبت و یا ثفر را برمیگرداند
+
+
+```python
+sign( Close - Ref( Close, -1 ) )
+```
  
  [^5]: https://www.amibroker.com/guide/afl/applystop.html
  [^4]: http://www.amibroker.com/guide/afl/lastvalue.html
