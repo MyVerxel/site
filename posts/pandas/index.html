@@ -54,7 +54,7 @@
       
       
       
-      4 s
+      50 s
       &nbsp;
     
     
@@ -68,6 +68,27 @@
 <p>ایمپورت کردن :</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
 </span></span></code></pre></div><p>تمامی دیتا فریم ها رو با d نشون خواهم داد</p>
+<p>در پانداس مبنای کار بر اساس دیتا فریم است؛ در مرحله اول دیتا ها را باید به شکل دیتافریم ایجد کنیم تا بتوانیم توسط پانداس با آنها کار کنیم</p>
+<p>دیتاها میتوانند از متغیر ها و یا از فایلها وارد شوند</p>
+<h2 id="read-from-excel">read from excel</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>d <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_excel(<span style="color:#e6db74">&#34;file.xls&#34;</span>,
+</span></span><span style="display:flex;"><span>	header<span style="color:#f92672">=</span>[<span style="color:#ae81ff">1</span>]
+</span></span><span style="display:flex;"><span>	)
+</span></span></code></pre></div><p>توسز پارامتر header تعییرن میکنیم که کدام که سطر اول را به عنوان هدر فیلد ها در نظر بگیرد</p>
+<h2 id="read-from-csv">read from csv</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>d <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#34;file.csv&#34;</span>,
+</span></span><span style="display:flex;"><span>	header <span style="color:#f92672">=</span> <span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span>	skiprows <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,
+</span></span><span style="display:flex;"><span>	usecols<span style="color:#f92672">=</span>[<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>],
+</span></span><span style="display:flex;"><span>	names<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;colA&#39;</span>, <span style="color:#e6db74">&#39;colB&#39;</span>],
+</span></span><span style="display:flex;"><span>	sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;;&#39;</span>
+</span></span><span style="display:flex;"><span>	)
+</span></span></code></pre></div><p>دیتا توس فایل csv وارد میشوند؛ در اینجا سطر اول به طور پیش فرض بعنوان هدر در نظر گردفته میشود</p>
+<p>توسط header میتوانیم تعیین کنیم سطر چندم بعنوام هدر در نظر گرفته شود</p>
+<p>توسط skiprow میتوانیم تعیین کنیم چند سط نادیده گرفته شود</p>
+<p>توسط usecols تعییر مکینیم که چه سطر هایی را وارد کند و از بقیه سطر ها صرف نظر میکند</p>
+<p>توس names تعیین میکنیم هر ستون چه نامی داشته باشد</p>
+<p>توسط sep کاراکتر جدا کننده فیلدها از یکدیگر را مشخص میکنیم</p>
 
   </div>
 

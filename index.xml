@@ -15,7 +15,10 @@
       
       <guid>https://f4.anthus.ir/posts/pandas/</guid>
       <description>Start ایمپورت کردن :
-import pandas as pd تمامی دیتا فریم ها رو با d نشون خواهم داد</description>
+import pandas as pd تمامی دیتا فریم ها رو با d نشون خواهم داد
+در پانداس مبنای کار بر اساس دیتا فریم است؛ در مرحله اول دیتا ها را باید به شکل دیتافریم ایجد کنیم تا بتوانیم توسط پانداس با آنها کار کنیم
+دیتاها میتوانند از متغیر ها و یا از فایلها وارد شوند
+read from excel d = pd.read_excel(&amp;#34;file.xls&amp;#34;, header=[1] ) توسز پارامتر header تعییرن میکنیم که کدام که سطر اول را به عنوان هدر فیلد ها در نظر بگیرد</description>
     </item>
     
     <item>
