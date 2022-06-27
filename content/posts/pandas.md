@@ -55,4 +55,10 @@ d = pd.read_csv("file.csv",
 توسط sep کاراکتر جدا کننده فیلدها از یکدیگر را مشخص میکنیم
 
 
+## pct_changes
 
+میزان درصد تغییرات رو نشون میده
+
+```python
+d.Close.pct_changes()
+```
