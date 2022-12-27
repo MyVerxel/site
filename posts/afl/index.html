@@ -3,7 +3,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.101.0" />
+  <meta name="generator" content="Hugo 0.109.0">
   <title> Afl | Blog </title>
   <meta name="description" content="A simple and concise hugo theme.">
   <link rel="stylesheet" href="https://f4.anthus.ir/css/simpleness.css">
@@ -83,8 +83,8 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>a[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">//</span>get
 </span></span></code></pre></div><h2 id="مثال">مثال</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>MA( Close, <span style="color:#ae81ff">10</span> );
-</span></span><span style="display:flex;"><span> IIf( H <span style="color:#f92672">&gt;</span> Ref(H,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>), MA(H,<span style="color:#ae81ff">20</span>), MA(C,<span style="color:#ae81ff">20</span>) );
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>MA(<span style="color:#960050;background-color:#1e0010"> </span>Close,<span style="color:#960050;background-color:#1e0010"> </span><span style="color:#ae81ff">10</span><span style="color:#960050;background-color:#1e0010"> </span>);
+</span></span><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010"> </span>IIf(<span style="color:#960050;background-color:#1e0010"> </span>H<span style="color:#960050;background-color:#1e0010"> </span><span style="color:#f92672">&gt;</span><span style="color:#960050;background-color:#1e0010"> </span>Ref(H,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>),<span style="color:#960050;background-color:#1e0010"> </span>MA(H,<span style="color:#ae81ff">20</span>),<span style="color:#960050;background-color:#1e0010"> </span>MA(C,<span style="color:#ae81ff">20</span>) );
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>relational ( <span style="color:#f92672">&lt;</span>, <span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;=</span>, <span style="color:#f92672">&gt;=</span> )
 </span></span><span style="display:flex;"><span>equality ( <span style="color:#f92672">==</span>, <span style="color:#f92672">!=</span> )
 </span></span><span style="display:flex;"><span>
@@ -120,7 +120,7 @@
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span> <span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span> )
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span>( i <span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#ae81ff">0</span>; i <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010"> </span><span style="color:#ae81ff">10</span>; i<span style="color:#f92672">++</span> )
 </span></span><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><hr>
@@ -158,10 +158,10 @@
 </span></span><span style="display:flex;"><span>[] array element operator
 </span></span></code></pre></div><hr>
 <h3 id="ثابت-barcount-تعداد-نهایی-کندلهایی-که-در-دسترس-داریم-را-بر-میگرداند">ثابت BarCount تعداد نهایی کندلهایی که در دسترس داریم را بر میگرداند</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BarCount constant gives the number of bars <span style="color:#f92672">in</span> array (such <span style="color:#66d9ef">as</span> Close, High, Low, Open, Volume, etc)<span style="color:#f92672">.</span> Array elements are numbered <span style="color:#f92672">from</span> <span style="color:#ae81ff">0</span> (zero) to BarCount<span style="color:#f92672">-</span><span style="color:#ae81ff">1.</span> BarCount does NOT change <span style="color:#66d9ef">as</span> long <span style="color:#66d9ef">as</span> your formula continues execution, but it may change between executions when new bars are added, zoom factor <span style="color:#f92672">is</span> changed <span style="color:#f92672">or</span> symbol <span style="color:#f92672">is</span> changed<span style="color:#f92672">.</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>BarCount<span style="color:#960050;background-color:#1e0010"> </span>constant gives the number of bars <span style="color:#f92672">in</span> array (such <span style="color:#66d9ef">as</span> Close, High, Low, Open, Volume, etc)<span style="color:#f92672">.</span> Array elements are numbered <span style="color:#f92672">from</span> <span style="color:#ae81ff">0</span> (zero) to BarCount<span style="color:#f92672">-</span><span style="color:#ae81ff">1.</span> BarCount does NOT change <span style="color:#66d9ef">as</span> long <span style="color:#66d9ef">as</span> your formula continues execution, but it may change between executions when new bars are added, zoom factor <span style="color:#f92672">is</span> changed <span style="color:#f92672">or</span> symbol <span style="color:#f92672">is</span> changed<span style="color:#f92672">.</span>
 </span></span></code></pre></div><h1 id="matrix">matrix</h1>
 <p>یه ارایه دو بعدی است</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_var_name <span style="color:#f92672">=</span> Matrix( rows, cols, initvalue);
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>my_var_name <span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010"> </span>Matrix( rows, cols, initvalue);
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>To access matrix elements, use:
 </span></span><span style="display:flex;"><span>my_var_name[ row ][ col ];
