@@ -31,6 +31,19 @@ docker build -t NAME:TAG . docker build -t mybash:v1 . اجرا docker run --rm 
     </item>
     
     <item>
+      <title>Pandas</title>
+      <link>https://f4.anthus.ir/posts/pandas/</link>
+      <pubDate>Wed, 11 Mar 1401 16:14:59 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/pandas/</guid>
+      <description>Start ایمپورت کردن :
+import pandas as pd تمامی دیتا فریم ها رو با d نشون خواهم داد
+در پانداس مبنای کار بر اساس دیتا فریم است؛ در مرحله اول دیتا ها را باید به شکل دیتافریم ایجد کنیم تا بتوانیم توسط پانداس با آنها کار کنیم
+دیتاها میتوانند از متغیر ها و یا از فایلها وارد شوند
+read from excel d = pd.read_excel(&amp;#34;file.xls&amp;#34;, header=[1] ) توسز پارامتر header تعییرن میکنیم که کدام که سطر اول را به عنوان هدر فیلد ها در نظر بگیرد</description>
+    </item>
+    
+    <item>
       <title>android</title>
       <link>https://f4.anthus.ir/posts/android/</link>
       <pubDate>Sat, 04 Oct 1400 00:00:27 +0000</pubDate>
