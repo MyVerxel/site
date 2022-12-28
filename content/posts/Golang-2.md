@@ -110,7 +110,7 @@ func main() {
 
 ابتدا مقدار x برابر با ۱۰ شد و تایع صدا زده شد؛ در تابع مقدار x به صورت محلی به ۱۱ تغییر پیدا کرد؛ ولی با خروج از تابع مقدار ۱۰ در x مانده بود؛ سپس تابع دوم که اشاره گر ثبول میکرد صدا شده شد و مقدار x تغییر داده شد و در x کلی هم تغییر داده شد
 
-[مثال])(https://go.dev/tour/methods/4)
+[مثال](https://go.dev/tour/methods/4)
 
 > With a value receiver, the Scale method operates on a copy of the original Vertex value. The  method must have a pointer receiver to change the Vertex value declared in the main function. 
 
