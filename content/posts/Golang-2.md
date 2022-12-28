@@ -114,3 +114,102 @@ func main() {
 
 > With a value receiver, the Scale method operates on a copy of the original Vertex value. The  method must have a pointer receiver to change the Vertex value declared in the main function. 
 
+### interface
+
+اینترفیس یک type است که مشخص میکند struct باید دارای چه متدهایی باشد
+
+نکته: هر strct ای که دارای این متد ها باشد میتوند عضوی از interface باشد
+
+```go
+type I interface {
+  M()
+}
+```
+
+کپ بالا یک interface بنام I را تعریف میکند که باید تابع M در آن تعریف شده باشد
+
+در ساختاری که تابع M داشته باشد میتواند بعنوان I نیز تعریف شود
+
+```go
+package main
+
+import "fmt"
+
+type I interface {
+  M()
+}
+
+type T struct {
+  S string
+}
+
+func (t T) M() {
+  fmt.Println(t.S)
+}
+
+func main() {
+  var i I = T{"hello"}
+  i.M()
+}
+```
+[منبع](https://go.dev/tour/methods/10)
+
+در کد بالا متغیر i از نوع interface به نام I تعریف شده؛ اما ساختار T به آن اختصاص داده شده است؛ چون ساختار T‌ دارای متد M است؛ در نتیجه این پیاده سازی صحیح است و میتوان تابع M‌ را فراخونی کرد
+
+
+[ex1](https://gobyexample.com/interfaces) - 
+[ex2](https://golangbyexample.com/interface-in-golang/) - 
+
+```go
+package main
+
+import "fmt"
+
+type i interface {
+  p1()
+  p2()
+}
+
+type S struct {}
+type Z struct {}
+
+func (s S) p1 () {
+  fmt.Println("s1" )
+}
+
+func (s S) p2 () {
+  fmt.Println("s2" )
+}
+
+
+
+func (s Z) p1 () {
+  fmt.Println("z1" )
+}
+
+func (s Z) p2 () {
+  fmt.Println("z2" )
+}
+
+func (s Z) p3 () {
+  fmt.Println("z3" )
+}
+
+func main() {
+  var s i = S{}
+  var z i = Z{}
+  s.p1()
+  z.p2()
+}
+
+```
+
+در مثال بالا ساختار Z سه متد p1 p2 p3 را پیاده ازی کرده است؛ اما همچنان میتواند عضوی از اینترفیس i باشد؛ زیرا در این اینترفیس پیاده سازی  فقط دو متد p1 p2 اهمیت دارد و هر ساختاری که این دو متذ را پیاده کند میتواند از نوع اینترفیس i باشید؛
+
+اما متغیر z دیگر به p3 دسترسین ندارد و نمیتواند آن را فراخوانی کند؛ برای دسترسی به p3 بدون اینترفیس باید بنویسیم:
+
+```go
+var z Z = Z{}
+z.p3()
+```
+
