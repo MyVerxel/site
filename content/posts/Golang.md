@@ -369,11 +369,8 @@ var _ = Book {
 اما اگر به فرم  زیر بنویسیم کاما احتیاج نیست
 
 ```go
-var _ = Book {
-	author: "Tapir",
-	pages: 256,
-	title: "Go 101", // here, the "," must be present
-}
+// The last "," in the following line is optional.
+var _ = Book{author: "Tapir", pages: 256, title: "Go 101",}
 ```
 
 ### Pointers to structs
