@@ -349,6 +349,33 @@ s := []struct {
 
 ```
 
+در هنگام ست کردن دیتا بهش کل زیر حتما باید در اخر از کانا استفاده کینم
+
+
+```go
+type Book struct {
+	title, author string
+	pages         int
+}
+
+var _ = Book {
+	author: "Tapir",
+	pages: 256,
+	title: "Go 101", // here, the "," must be present
+}
+
+```
+
+اما اگر به فرم  زیر بنویسیم کاما احتیاج نیست
+
+```go
+var _ = Book {
+	author: "Tapir",
+	pages: 256,
+	title: "Go 101", // here, the "," must be present
+}
+```
+
 ### Pointers to structs
 
 - در اشاگر های ساختار هنگام دسترسی به یک فیلد باید بنویسم `(*p).X` اما به علت دست و پا گیر بودن زبان به ما این اجازه را میدهد که بنویسم `p.X` 
