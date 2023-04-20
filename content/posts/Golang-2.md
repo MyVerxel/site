@@ -126,7 +126,7 @@ type I interface {
 }
 ```
 
-کپ بالا یک interface بنام I را تعریف میکند که باید تابع M در آن تعریف شده باشد
+کد بالا یک interface بنام I را تعریف میکند که باید تابع M در آن تعریف شده باشد
 
 در ساختاری که تابع M داشته باشد میتواند بعنوان I نیز تعریف شود
 
@@ -211,5 +211,42 @@ func main() {
 ```go
 var z Z = Z{}
 z.p3()
+```
+
+### Interface values
+
+اینترفیس ها مقدار و تایپ خودشون رو در زیر لایه هایی که میشه بهش دسترسی داشت نگه داری میکنند
+
+[در یک همچنین فرمتی](https://go.dev/tour/methods/11)
+```go
+(value, type)
+```
+مثال
+
+```go
+type I interface {
+  M()
+}
+type T struct {
+  S string
+}
+func (t *T) M() {
+  fmt.Println(t.S)
+}
+func main() {
+  var i I
+
+  i = &T{"Hello"}
+  describe(i)
+  i.M()
+
+}
+
+func describe(i I) {
+  fmt.Printf("(%v, %T)\n", i, i)
+}
+
+//(&{Hello}, *main.T)
+//Hello
 ```
 
