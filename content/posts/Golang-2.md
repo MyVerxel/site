@@ -250,3 +250,34 @@ func describe(i I) {
 //Hello
 ```
 
+### empty interface
+
+لینترفیس های خالی زیر مجموعه هر تایپی هستند
+
+(منبع)[https://go.dev/tour/methods/14]
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+  var i interface{}
+  describe(i)
+
+  i = 42
+  describe(i)
+
+  i = "hello"
+  describe(i)
+}
+
+func describe(i interface{}) {
+  fmt.Printf("(%v, %T)\n", i, i)
+}
+
+//(<nil>, <nil>)
+//(42, int)
+//(hello, string)
+```
+
