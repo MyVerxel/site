@@ -311,3 +311,30 @@ func main() {
 // "hello" is 5 bytes long
 // I don't know about type bool!
 ```
+
+### Stringers
+
+این اینترفیس در پکیچ fmt تعریف شده است
+
+اگر بهنوان متد تعریف شود میتواند در هنگام فراخوانی خود struct؛ مقدار string ای که خودمان میخواییم نشان داده شود را برگرداند
+
+```go
+type U struct {
+  i string
+  j string
+}
+  
+func (u U) String() string {
+  return fmt.Sprintf( "%v <=> %v" , u.i , u.j )
+}
+
+func main () {
+  
+  m := U{"a","b"}
+
+  fmt.Println(m)
+  
+}
+
+// a <=> b
+```
