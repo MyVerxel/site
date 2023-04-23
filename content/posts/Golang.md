@@ -118,6 +118,20 @@ func main() {
 // 7 10
 ```
 
+### سمی کالن
+
+```go
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	fmt.Println("Hello"); fmt.Println("World!")
+}
+```
+
 ### Variables:
 
 - متغیر ها توسط کلیمه کلیدی `var` تعریف میشوند
