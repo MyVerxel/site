@@ -7,7 +7,16 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>&lt;3</copyright>
-    <lastBuildDate>Thu, 08 Oct 1401 15:29:30 +0000</lastBuildDate><atom:link href="https://f4.anthus.ir/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 03 Feb 1402 03:35:02 +0000</lastBuildDate><atom:link href="https://f4.anthus.ir/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Golang-libs</title>
+      <link>https://f4.anthus.ir/posts/golang-libs/</link>
+      <pubDate>Wed, 03 Feb 1402 03:35:02 +0000</pubDate>
+      
+      <guid>https://f4.anthus.ir/posts/golang-libs/</guid>
+      <description>fmt fmt.Println(i) fmt.Sprintf(&amp;#34;%v&amp;#34;, v) fmt.Sprintf(&amp;#34;%d&amp;#34;, ip[0]) str := fmt.Sprint( int( ip[i] ) ) bytes var buffer bytes.Buffer buffer.WriteString( fmt.Sprintf(&amp;#34;%v&amp;#34;, v) ) return buffer.String() strconv strconv.Itoa( int(b) ) //if b str or byte strconv.Itoa( b ) strings strings.Join( arr , &amp;#34;.&amp;#34;) time time.Now() // 2009-11-10 23:00:00 +0000 UTC m=+0.000000001 </description>
+    </item>
+    
     <item>
       <title>Golang-2</title>
       <link>https://f4.anthus.ir/posts/golang-2/</link>

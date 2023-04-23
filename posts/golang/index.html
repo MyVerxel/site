@@ -366,11 +366,8 @@
 </span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">title</span>: <span style="color:#e6db74">&#34;Go 101&#34;</span>, <span style="color:#75715e">// here, the &#34;,&#34; must be present
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
 </span></span></code></pre></div><p>اما اگر به فرم  زیر بنویسیم کاما احتیاج نیست</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">Book</span> {
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">author</span>: <span style="color:#e6db74">&#34;Tapir&#34;</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">pages</span>: <span style="color:#ae81ff">256</span>,
-</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">title</span>: <span style="color:#e6db74">&#34;Go 101&#34;</span>, <span style="color:#75715e">// here, the &#34;,&#34; must be present
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>}
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#75715e">// The last &#34;,&#34; in the following line is optional.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">_</span> = <span style="color:#a6e22e">Book</span>{<span style="color:#a6e22e">author</span>: <span style="color:#e6db74">&#34;Tapir&#34;</span>, <span style="color:#a6e22e">pages</span>: <span style="color:#ae81ff">256</span>, <span style="color:#a6e22e">title</span>: <span style="color:#e6db74">&#34;Go 101&#34;</span>,}
 </span></span></code></pre></div><h3 id="pointers-to-structs">Pointers to structs</h3>
 <ul>
 <li>در اشاگر های ساختار هنگام دسترسی به یک فیلد باید بنویسم <code>(*p).X</code> اما به علت دست و پا گیر بودن زبان به ما این اجازه را میدهد که بنویسم <code>p.X</code></li>
