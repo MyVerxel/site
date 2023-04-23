@@ -14,7 +14,8 @@
       <pubDate>Wed, 03 Feb 1402 03:35:02 +0000</pubDate>
       
       <guid>https://f4.anthus.ir/posts/golang-libs/</guid>
-      <description>fmt fmt.Println(i) fmt.Sprintf(&amp;#34;%v&amp;#34;, v) fmt.Sprintf(&amp;#34;%d&amp;#34;, ip[0]) str := fmt.Sprint( int( ip[i] ) ) bytes var buffer bytes.Buffer buffer.WriteString( fmt.Sprintf(&amp;#34;%v&amp;#34;, v) ) return buffer.String() strconv strconv.Itoa( int(b) ) //if b str or byte strconv.Itoa( b ) strings strings.Join( arr , &amp;#34;.&amp;#34;) time time.Now() // 2009-11-10 23:00:00 +0000 UTC m=+0.000000001 </description>
+      <description>fmt fmt.Println(i) fmt.Sprintf(&amp;#34;%v&amp;#34;, v) fmt.Sprintf(&amp;#34;%d&amp;#34;, ip[0]) str := fmt.Sprint( int( ip[i] ) ) Printf فایل pdf
+var ( planet = &amp;#34;venus&amp;#34; distance = 261 orbital = 224.701 hasLife = false ) // swiss army knife %v verb fmt.Printf(&amp;#34;Planet: %v\n&amp;#34;, planet) fmt.Printf(&amp;#34;Distance: %v millions kms\n&amp;#34;, distance) fmt.Printf(&amp;#34;Orbital Period: %v days\n&amp;#34;, orbital) fmt.Printf(&amp;#34;Does %v have life? %v\n&amp;#34;, planet, hasLife) fmt.Printf(&amp;#34;Orbital Period: %f days\n&amp;#34;, orbital) fmt.Printf(&amp;#34;Orbital Period: %.0f days\n&amp;#34;, orbital) fmt.Printf(&amp;#34;Orbital Period: %.1f days\n&amp;#34;, orbital) fmt.</description>
     </item>
     
     <item>
@@ -94,8 +95,10 @@ int float double char boolean byte short long محاسبات حرف ٪ به مع
       
       <guid>https://f4.anthus.ir/posts/golang/</guid>
       <description>package: هر برنامه باید دارای یک پکیچ باشد :
-package main import ( &amp;#34;fmt&amp;#34; &amp;#34;math/rand&amp;#34; ) func main() { fmt.Println(&amp;#34;My favorite number is&amp;#34;, rand.Intn(10)) } Exported names : نامهای اکسپورت شده فقط با حروف بزرگ شروع میشوند در غیر اینصورت اکسپورت نخواهند شد `fmt.Println(math.pi)` // error `fmt.Println(math.Pi)` // correct Functions: برای تعریف آرایه باید حتما براکت باز شدن در همان خز اول باشد
-func NAME ( [ARGs] ) [TYPE[,...] ] { // &amp;lt;-mohem } // ERROR: func NAME ( [ARGs] ) [TYPE[,.</description>
+package main import ( &amp;#34;fmt&amp;#34; &amp;#34;math/rand&amp;#34; ) func main() { fmt.Println(&amp;#34;My favorite number is&amp;#34;, rand.Intn(10)) } import توسط import میتوانیم پیکیج‌ی را وارد برنام کنیم؛
+نام پکیج باید استرینگ باشد؛ یعنی در دابل کوتیشین قرار بگیرد
+import &amp;#34;fmt&amp;#34; همچنین شبیه به پایتون میتوانیم برای پکیج بک نام تعیین کنیم تا توسط آن نام به پکیج دسترسی داشته باشیم
+import f &amp;#34;fmt&amp;#34; که در انجا بچای استفاده از fmt در برنام میتوانیم از f استفاده کنیم</description>
     </item>
     
     <item>

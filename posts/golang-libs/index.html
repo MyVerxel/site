@@ -54,7 +54,7 @@
       
       
       
-      13 s
+      41 s
       &nbsp;
     
     
@@ -71,7 +71,37 @@
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%d&#34;</span>, <span style="color:#a6e22e">ip</span>[<span style="color:#ae81ff">0</span>])
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">str</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprint</span>( int( <span style="color:#a6e22e">ip</span>[<span style="color:#a6e22e">i</span>] ) )
-</span></span></code></pre></div><h3 id="bytes">bytes</h3>
+</span></span></code></pre></div><h4 id="printf">Printf</h4>
+<p><a href="https://raw.githubusercontent.com/saturn99/learngo/master/07-printf/printf%20cheatsheet.pdf">فایل pdf</a></p>
+<p><img src="/image/allpPintfFormat.jpg" alt="Printf Format"></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> (
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">planet</span>   = <span style="color:#e6db74">&#34;venus&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">distance</span> = <span style="color:#ae81ff">261</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">orbital</span>  = <span style="color:#ae81ff">224.701</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">hasLife</span>  = <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>  )
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// swiss army knife %v verb
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Planet: %v\n&#34;</span>, <span style="color:#a6e22e">planet</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Distance: %v millions kms\n&#34;</span>, <span style="color:#a6e22e">distance</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Orbital Period: %v days\n&#34;</span>, <span style="color:#a6e22e">orbital</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Does %v have life? %v\n&#34;</span>, <span style="color:#a6e22e">planet</span>, <span style="color:#a6e22e">hasLife</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Orbital Period: %f days\n&#34;</span>, <span style="color:#a6e22e">orbital</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Orbital Period: %.0f days\n&#34;</span>, <span style="color:#a6e22e">orbital</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Orbital Period: %.1f days\n&#34;</span>, <span style="color:#a6e22e">orbital</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>(<span style="color:#e6db74">&#34;Orbital Period: %.2f days\n&#34;</span>, <span style="color:#a6e22e">orbital</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Planet: venus
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Distance: 261 millions kms
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Orbital Period: 224.701 days
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Does venus have life? false
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#75715e">// Orbital Period: 224.701000 days
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Orbital Period: 225 days
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Orbital Period: 224.7 days
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>  <span style="color:#75715e">// Orbital Period: 224.70 days
+</span></span></span></code></pre></div><h3 id="bytes">bytes</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">buffer</span> <span style="color:#a6e22e">bytes</span>.<span style="color:#a6e22e">Buffer</span>
 </span></span><span style="display:flex;"><span><span style="color:#a6e22e">buffer</span>.<span style="color:#a6e22e">WriteString</span>( <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%v&#34;</span>, <span style="color:#a6e22e">v</span>) )
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">return</span> <span style="color:#a6e22e">buffer</span>.<span style="color:#a6e22e">String</span>()
