@@ -93,3 +93,8 @@ f, err := os.Open("sid.jpg")
 ```go
 log.Fatal(err)
 ```
+### ioutil
+```go
+caCert, err := ioutil.ReadFile("GeoTrust_Global_CA.pem")
+body, err := ioutil.ReadAll(resp.Body)
+```
