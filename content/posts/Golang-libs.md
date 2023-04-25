@@ -73,6 +73,7 @@ strconv.Itoa(rr.t) // convert int to strint
 
 ```go
 strings.Join( arr , ".")
+strings.TrimSpace(name)
 ```
 
 ### time
