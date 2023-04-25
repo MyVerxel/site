@@ -13,6 +13,8 @@ fmt.Sprintf("%v", v)
 fmt.Sprintf("%d", ip[0])
 
 str := fmt.Sprint( int( ip[i] ) )
+
+fmt.Fprintf(conn, text)
 ```
 
 #### Printf
