@@ -66,6 +66,7 @@ return buffer.String()
 ```go
 strconv.Itoa( int(b) ) //if b str or byte
 strconv.Itoa(     b  ) 
+strconv.Itoa(rr.t) // convert int to strint
 ```
 
 ### strings
