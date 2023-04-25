@@ -338,3 +338,102 @@ func main () {
 
 // a <=> b
 ```
+
+
+### ERROR
+
+برای خطاها میتوانیم از نوع درونی error استفاده کنیم 
+
+همونطور که قبلا گفتین توابع میتواند چندین مقدار را برگشت دهد؛ برای برگشت دادن خطا در هنگاه بازشگت مقدار توابع؛ معمولا بطور قرار دادی آخرین مقدار سمت راست را برای error در نظر میگیرند
+
+هیچ قانونی برای این کار وجود ندارد و به صورت قرار دادی است
+
+
+برای برگشت دادن مقدار ای از نوع error چنیدن راه وجود دارد
+
+#### روش اول
+
+روش اول ایجاد struct خودمان است؛ این اسختار باید تایع Error را پیاده سازی کند
+
+```go
+type error interface {
+    Error() string
+}
+```
+در ساختار زیر تابع Error را پیاده سازی کردیم که مقدار string را برمیگرداند
+
+```go
+type myError struct {
+  errorMSG string
+}
+
+func (e *myError) Error() string {
+  return e.errorMSG
+}
+```
+
+برای استفاده میتوانیم باید کدی شبیه به کد زر را بنویسم
+
+```go
+package main
+
+import "fmt"
+
+type myError struct {
+  errorMSG string
+}
+
+func (e *myError) Error() string {
+  return e.errorMSG
+}
+
+func run() error {
+  var t int
+  t = 2
+
+  if t == 1 {
+    return nil
+  } else {
+    return &myError{ "ERROR: t is not equal 1" }
+  }
+  
+}
+
+func main() {
+  if err := run(); err != nil {
+    fmt.Printf( "%v\n" , err )
+  }
+}
+```
+
+در اینجا ما تابع run را اجرا میکنیم که میتواند یک مقدار را از نوع error برگرداند؛ 
+
+توجه شود که نوع برگشتی این تابع از نوع error مباشد؛ و هر ساختاری که تایع Error را پیاده سازی کرده باشد میتواند تولید خطا کند؛ 
+
+#### روش دوم
+
+استفاده از کتابخانه fmt
+
+```go
+func run() error {
+  return fmt.Errorf("Error msg")
+}
+```
+
+#### روش سوم
+
+استفاده از کتابخانه errors
+
+```go
+import "errors"
+
+
+func run() error {
+  return errors.New("sssadasd")
+}
+```
+
+#### و سایر روشها
+....
+
+
