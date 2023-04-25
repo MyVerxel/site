@@ -80,7 +80,7 @@ strings.TrimSpace(name)
 
 ```go
 time.Now() // 2009-11-10 23:00:00 +0000 UTC m=+0.000000001
-``````
+```
 
 ### os
 
