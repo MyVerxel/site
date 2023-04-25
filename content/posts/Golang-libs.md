@@ -93,6 +93,16 @@ f, err := os.Open("sid.jpg")
 ```go
 log.Fatal(err)
 ```
+
+### bufio
+
+> In Golang, bufio is a package used for buffered IO. Buffering IO is a technique used to temporarily accumulate the results for an IO operation before transmitting it forward. This technique can increase the speed of a program by reducing the number of system calls, which are typically slow operations. In this shot, we will look at some of the abstractions bufio provides for writing and reading operations.
+
+```go
+reader := bufio.NewReader(os.Stdin)
+text, _ := reader.ReadString('\n')
+```
+
 ### ioutil
 ```go
 caCert, err := ioutil.ReadFile("GeoTrust_Global_CA.pem")
