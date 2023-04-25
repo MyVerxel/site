@@ -54,9 +54,9 @@
       
       
       
-        4 min
+        5 min
       
-      11 s
+      27 s
       &nbsp;
     
     
@@ -331,7 +331,72 @@ Here&rsquo;s Abs written as a regular function with no change in functionality.<
 </span></span><span style="display:flex;"><span>}
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e">// a &lt;=&gt; b
-</span></span></span></code></pre></div>
+</span></span></span></code></pre></div><h3 id="error">ERROR</h3>
+<p>برای خطاها میتوانیم از نوع درونی error استفاده کنیم</p>
+<p>همونطور که قبلا گفتین توابع میتواند چندین مقدار را برگشت دهد؛ برای برگشت دادن خطا در هنگاه بازشگت مقدار توابع؛ معمولا بطور قرار دادی آخرین مقدار سمت راست را برای error در نظر میگیرند</p>
+<p>هیچ قانونی برای این کار وجود ندارد و به صورت قرار دادی است</p>
+<p>برای برگشت دادن مقدار ای از نوع error چنیدن راه وجود دارد</p>
+<h4 id="روش-اول">روش اول</h4>
+<p>روش اول ایجاد struct خودمان است؛ این اسختار باید تایع Error را پیاده سازی کند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#66d9ef">error</span> <span style="color:#66d9ef">interface</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">Error</span>() <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>در ساختار زیر تابع Error را پیاده سازی کردیم که مقدار string را برمیگرداند</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">myError</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">errorMSG</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">e</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myError</span>) <span style="color:#a6e22e">Error</span>() <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">errorMSG</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>برای استفاده میتوانیم باید کدی شبیه به کد زر را بنویسم</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">myError</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">errorMSG</span> <span style="color:#66d9ef">string</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">e</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">myError</span>) <span style="color:#a6e22e">Error</span>() <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">errorMSG</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">run</span>() <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">t</span> <span style="color:#66d9ef">int</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#a6e22e">t</span> = <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">t</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">nil</span>
+</span></span><span style="display:flex;"><span>  } <span style="color:#66d9ef">else</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">myError</span>{ <span style="color:#e6db74">&#34;ERROR: t is not equal 1&#34;</span> }
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">run</span>(); <span style="color:#a6e22e">err</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">nil</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Printf</span>( <span style="color:#e6db74">&#34;%v\n&#34;</span> , <span style="color:#a6e22e">err</span> )
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>در اینجا ما تابع run را اجرا میکنیم که میتواند یک مقدار را از نوع error برگرداند؛</p>
+<p>توجه شود که نوع برگشتی این تابع از نوع error مباشد؛ و هر ساختاری که تایع Error را پیاده سازی کرده باشد میتواند تولید خطا کند؛</p>
+<h4 id="روش-دوم">روش دوم</h4>
+<p>استفاده از کتابخانه fmt</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">run</span>() <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Errorf</span>(<span style="color:#e6db74">&#34;Error msg&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="روش-سوم">روش سوم</h4>
+<p>استفاده از کتابخانه errors</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">import</span> <span style="color:#e6db74">&#34;errors&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">run</span>() <span style="color:#66d9ef">error</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">errors</span>.<span style="color:#a6e22e">New</span>(<span style="color:#e6db74">&#34;sssadasd&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="و-سایر-روشها">و سایر روشها</h4>
+<p>&hellip;.</p>
+
   </div>
 
   <footer class="post-footer">
