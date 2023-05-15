@@ -14,8 +14,8 @@
       <pubDate>Wed, 03 Feb 1402 03:35:02 +0000</pubDate>
       
       <guid>https://f4.anthus.ir/posts/golang-libs/</guid>
-      <description>fmt fmt.Println(i) fmt.Sprintf(&amp;#34;%v&amp;#34;, v) fmt.Sprintf(&amp;#34;%d&amp;#34;, ip[0]) str := fmt.Sprint( int( ip[i] ) ) fmt.Fprintf(conn, text) Printf فایل pdf
-var ( planet = &amp;#34;venus&amp;#34; distance = 261 orbital = 224.701 hasLife = false ) // swiss army knife %v verb fmt.Printf(&amp;#34;Planet: %v\n&amp;#34;, planet) fmt.Printf(&amp;#34;Distance: %v millions kms\n&amp;#34;, distance) fmt.Printf(&amp;#34;Orbital Period: %v days\n&amp;#34;, orbital) fmt.Printf(&amp;#34;Does %v have life? %v\n&amp;#34;, planet, hasLife) fmt.Printf(&amp;#34;Orbital Period: %f days\n&amp;#34;, orbital) fmt.Printf(&amp;#34;Orbital Period: %.0f days\n&amp;#34;, orbital) fmt.Printf(&amp;#34;Orbital Period: %.</description>
+      <description>fmt fmt.Println(i) fmt.Sprintf(&amp;#34;%v&amp;#34;, v) fmt.Sprintf(&amp;#34;%d&amp;#34;, ip[0]) str := fmt.Sprint( int( ip[i] ) ) fmt.Fprintf(conn, text) var input string fmt.Scanln(&amp;amp;input) //read Printf فایل pdf
+var ( planet = &amp;#34;venus&amp;#34; distance = 261 orbital = 224.701 hasLife = false ) // swiss army knife %v verb fmt.Printf(&amp;#34;Planet: %v\n&amp;#34;, planet) fmt.Printf(&amp;#34;Distance: %v millions kms\n&amp;#34;, distance) fmt.Printf(&amp;#34;Orbital Period: %v days\n&amp;#34;, orbital) fmt.Printf(&amp;#34;Does %v have life? %v\n&amp;#34;, planet, hasLife) fmt.Printf(&amp;#34;Orbital Period: %f days\n&amp;#34;, orbital) fmt.Printf(&amp;#34;Orbital Period: %.</description>
     </item>
     
     <item>
