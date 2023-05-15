@@ -15,6 +15,9 @@ fmt.Sprintf("%d", ip[0])
 str := fmt.Sprint( int( ip[i] ) )
 
 fmt.Fprintf(conn, text)
+
+var input string
+fmt.Scanln(&input) //read
 ```
 
 #### Printf
@@ -80,6 +83,7 @@ strings.TrimSpace(name)
 
 ```go
 time.Now() // 2009-11-10 23:00:00 +0000 UTC m=+0.000000001
+time.Sleep(time.Second) //Sleep one second
 ```
 
 ### os
@@ -107,4 +111,13 @@ text, _ := reader.ReadString('\n')
 ```go
 caCert, err := ioutil.ReadFile("GeoTrust_Global_CA.pem")
 body, err := ioutil.ReadAll(resp.Body)
+```
+### sync
+```go
+//mutex
+m := new(sync.Mutex)
+m.Lock()
+  //Write code here
+m.Unlock()
+///end mutex
 ```
